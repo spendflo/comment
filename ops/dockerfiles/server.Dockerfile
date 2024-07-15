@@ -8,7 +8,7 @@ RUN set -ex \
   && apk add --no-cache \
   bash coreutils git python3 py3-pip curl postgresql16-client docker-cli zip py3-wheel aws-cli \
   && mkdir -p /radical /root/.aws \
-  && echo -e '[default]\nregion=eu-west-2\noutput=json' >/root/.aws/config
+  && echo -e '[default]\nregion=us-east-2\noutput=json' >/root/.aws/config
 
 COPY node_modules /radical/node_modules
 COPY build /radical/build
@@ -40,8 +40,14 @@ COPY \
 # being cached by Docker.)
 RUN apk upgrade --no-cache
 
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 ENV NODE_OPTIONS=--max_old_space_size=3072
+
+EXPOSE 8101
+EXPOSE 8111
+EXPOSE 8123
+EXPOSE 8161
+EXPOSE 8171
 
 WORKDIR /radical
 

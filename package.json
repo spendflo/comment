@@ -132,6 +132,7 @@
     "ajv-formats": "^2.1.1",
     "apollo-server-core": "^3.12.1",
     "apollo-server-express": "^3.12.1",
+    "at-least-node": "^1.0.0",
     "auth0": "^3.7.2",
     "axios": "^1.6.8",
     "backo2": "^1.0.2",
