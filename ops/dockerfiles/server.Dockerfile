@@ -51,5 +51,6 @@ EXPOSE 8171
 
 WORKDIR /radical
 
-ENTRYPOINT ["/radical/entrypoint.sh"]
-CMD ["./run-server.sh"]
+RUN npm install sharp
+
+CMD ["npm", "run" ,"start-server-prod"]
