@@ -1,4 +1,4 @@
-FROM node:18-alpine3.19
+FROM --platform=linux/amd64 node:18-alpine3.19
 
 # The following step will likely be cached by docker build. It will only re-run
 # if the base image has changed, or after we ran `docker system prune`, which
@@ -43,11 +43,23 @@ RUN apk upgrade --no-cache
 ENV NODE_ENV=development
 ENV NODE_OPTIONS=--max_old_space_size=3072
 
+# Status APP
 EXPOSE 8101
+
+# Metrics server
 EXPOSE 8111
+
+# Admin server
 EXPOSE 8123
+
+# API server
 EXPOSE 8161
+
+# Console server
 EXPOSE 8171
+
+# Public downloads app
+EXPOSE 8147 
 
 WORKDIR /radical
 
