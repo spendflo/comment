@@ -1,9 +1,38 @@
+var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+}) : x)(function(x) {
+  if (typeof require !== "undefined") return require.apply(this, arguments);
+  throw Error('Dynamic require of "' + x + '" is not supported');
+});
+var __commonJS = (cb, mod2) => function __require2() {
+  return mod2 || (0, cb[__getOwnPropNames(cb)[0]])((mod2 = { exports: {} }).exports, mod2), mod2.exports;
+};
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod2, isNodeMode, target) => (target = mod2 != null ? __create(__getProtoOf(mod2)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod2 || !mod2.__esModule ? __defProp(target, "default", { value: mod2, enumerable: true }) : target,
+  mod2
+));
 var __decorateClass = (decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
@@ -12,6 +41,3347 @@ var __decorateClass = (decorators, target, key, kind) => {
   if (kind && result) __defProp(target, key, result);
   return result;
 };
+
+// opensource/sdk-js/packages/types/dist/cjs/index.js
+var require_cjs = __commonJS({
+  "opensource/sdk-js/packages/types/dist/cjs/index.js"(exports) {
+    "use strict";
+    var resources = {
+      en: {
+        default: {},
+        composer: {
+          // The placeholder for sending a message that will create a new thread
+          send_message_placeholder: "Add a comment...",
+          // The placeholder for sending a message to a thread with messages in it
+          reply_placeholder: "Reply...",
+          // The placeholder for editing a message
+          edit_message_placeholder: "Edit message...",
+          // The tooltip for the "mention someone" menu button
+          mention_someone_tooltip: "Mention someone",
+          // The text of the button that starts an annotation
+          annotate_action: "Annotate",
+          // The tooltip for the annotation button if there is already an annotation
+          // and clicking the button will cause it to be replaced
+          replace_annotation_tooltip: "Replace annotation",
+          // The tooltip for the button that adds an emoji to the message
+          add_emoji_tooltip: "Add emoji",
+          // The tooltip for the button that removes a task from the message
+          remove_task_tooltip: "Remove task",
+          // The tooltip for the button that adds a task to the message
+          create_task_tooltip: "Create task",
+          // The tooltip for the button that attaches a file to the message
+          attach_file_tooltip: "Attach file",
+          // The tooltip for the button that removes an attached file from the
+          // message
+          remove_file_action: "Remove",
+          // The text of the button that initiates the Slack linking flow
+          connect_to_slack_action: "Connect your Slack team",
+          // The instructions shown in a message while the Slack linking flow is in
+          // progress
+          slack_follow_instructions: "Follow the instructions",
+          // The text of the status indicator shown when a previous message is being
+          // edited
+          editing_status: "Editing",
+          // The text of the button that cancels editing a previous message
+          cancel_editing_action: "Cancel",
+          // The text of the status indicator when the composer is disabled because
+          // a thread is resolved
+          resolved_status: "Resolved",
+          // The text of the button in the composer that unresolves a thread
+          unresolve_action: "Reopen to reply",
+          // The text of the pill shown for an annotation when the annotation has no
+          // more specific label
+          annotation: "Your annotation",
+          // The text of the button that removes an annotation from a message
+          remove_annotation_action: "Remove",
+          // The error text shown when a message failed to send
+          send_message_action_failure: "Failed to send message. <restore>Restore the message</restore>",
+          // The text shown when a user is dragging files over the composer
+          drag_and_drop_files_tooltip: "Drop Files",
+          attach_file_action_failure: "Failed to upload file: {{message}}"
+        },
+        thread: {
+          // The title of the placeholder shown in an empty thread
+          placeholder_title: "Chat with your team, right here",
+          // The body of the placeholder shown in an empty thread
+          placeholder_body: "Ask a question, give feedback, or just say 'Hi'. Comments can be seen by anyone who can access this page.",
+          // The status text shown next to a thread where the first message is
+          // unread
+          new_status: "New",
+          // The text of the link to add a reply to a thread
+          reply_action: "Reply...",
+          // The status text shown below a thread when it has unread replies
+          new_replies_status_one: "1 unread",
+          new_replies_status_other: "{{count}} unread",
+          // The status text shown below a thread when it has no unread replies
+          replies_status_one: "1 reply",
+          replies_status_other: "{{count}} replies",
+          // The text of the link that shows more messages in a thread when the list
+          // of messages has been paginated
+          show_more_one: "Show 1 more",
+          show_more_other: "Show {{count}} more",
+          // The text of the menu item that marks all messages in a thread as read
+          mark_as_read_action: "Mark as read",
+          // The text of the menu item that shares a thread with Slack
+          share_via_slack_action: "Share with Slack",
+          // The text of the menu item when an empty thread is set to
+          share_via_slack_channel_action: "Share to #{{slackChannel}}",
+          // The text of the menu item that shares a thread with Slack when the user
+          // has not linked their Slack account
+          share_via_slack_action_not_connected: "Connect to share",
+          // The text shown after sharing a thread to Slack succeeds
+          share_via_slack_action_success: "Shared to #{{slackChannel}}",
+          // The placeholder for the input box for choosing a Slack channel to share
+          // a thread to
+          share_via_slack_channel_placeholder: "Type or select",
+          // The text shown when sharing a thread to Slack and there are no public
+          // channels in the Slack workspace the user has linked to
+          share_via_slack_no_channels: "No public channels found",
+          // The text shown when sharing a thread to Slack fails for an unknown reason
+          share_via_slack_action_failure: "Error sharing to Slack, please try again",
+          // The text of the menu item that shares a thread by email
+          share_via_email_action: "Share via email",
+          // The text of the button that shares a thread by email
+          share_via_email_button_action: "$t(share_via_email_action)",
+          // The text of the header for the email sharing dialog
+          share_via_email_header: "$t(share_via_email_action)",
+          // The text shown after sharing a thread to email succeeds
+          share_via_email_action_success: "Shared to {{email}}",
+          // The warning text shown to inform the user that when sharing a thread by
+          // email, a screenshot will be sent with the email
+          share_via_email_screenshot_warning: "A screenshot of this page will be included in the email.",
+          // The placeholder for the input box for choosing an email address to
+          // share a thread with
+          share_via_email_placeholder: "email@email.com",
+          // The text of the menu item that subscribes the user to a thread
+          subscribe_action: "Subscribe",
+          // The text shown after a user subscribes to a thread
+          subscribe_action_success: "You've subscribed to this thread",
+          // The text of the menu item that unsubscribes the user from a thread
+          unsubscribe_action: "Unsubscribe",
+          // The text shown after a user unsubscribes from a thread
+          unsubscribe_action_success: "You've unsubscribed from this thread",
+          // The text of the menu item that resolves a thread
+          resolve_action: "Resolve",
+          // The text shown after a user resolves a thread
+          resolve_action_success: "You resolved this thread",
+          // The status text shown on a resolved thread
+          resolved_status: "Resolved",
+          // The text of the menu item that unresolves a thread
+          unresolve_action: "Reopen",
+          // The text shown after a user unresolves a thread
+          unresolve_action_success: "You have reopened this thread",
+          // The text shown on the action to collapse an expanded thread
+          collapse_action: "Collapse thread",
+          // The text shown next to the facepile of users that are currently typing
+          // into a thread
+          typing_users_status: "Typing"
+        },
+        threads: {
+          // The title placeholder text shown when no threads are shown in the
+          // threads component
+          placeholder_title: "Be the first to add a comment",
+          // The body placeholder text shown when no threads are shown in a threaded
+          // comments component
+          placeholder_body: "Ask a question, give feedback, or just say 'Hi'. Comments can be seen by anyone who can access this page."
+        },
+        thread_list: {
+          // The title placeholder text shown when no threads are shown in a thread
+          // list
+          placeholder_title: "Be the first to add a comment",
+          // The body placeholder text shown when no threads are shown in a thread
+          // list
+          placeholder_body: "Ask a question, give feedback, or just say 'Hi'. Comments can be seen by anyone who can access this page.",
+          // The text of the link that toggles the display of resolved threads from
+          // not showing to showing
+          show_resolved_threads_action: "Show resolved threads",
+          // The text of the link that toggles the display of resolved threads from
+          // showing to not showing
+          hide_resolved_threads_action: "Hide resolved threads"
+        },
+        thread_preview: {
+          // The text of the link that reveals the replies to a thread when there
+          // are no unread messages in the thread
+          show_replies_action_read_one: "1 reply",
+          show_replies_action_read_other: "{{count}} replies",
+          // The text of the link that reveals the replies to a thread when there
+          // are unread messages in the thread
+          show_replies_action_unread_one: "1 new reply",
+          show_replies_action_unread_other: "{{count}} new replies",
+          // The text of the link that hides the replies to a thread
+          hide_replies_action: "Hide replies",
+          // The text of the link that starts composing a reply to the thread
+          reply_action: "Reply"
+        },
+        threaded_comments: {
+          // The title placeholder text shown when no threads are shown in the unresolved threads portion of a
+          // threaded comments component
+          placeholder_title: "Be the first to add a comment",
+          // The body placeholder text shown when no threads are shown in a threaded
+          // comments component
+          placeholder_body: "Ask a question, give feedback, or just say 'Hi'. Comments can be seen by anyone who can access this page.",
+          // The title placeholder text shown when no threads are shown in the
+          // resolved threads portion of a threaded comments component
+          resolved_placeholder_title: "This is where resolved comments will appear",
+          // The body placeholder text shown when no threads are shown in the
+          // resolved threads portion of a threaded comments component
+          resolved_placeholder_body: "Resolved comments can be seen by anyone who can access this page.",
+          // The text of the button that shows unresolved threads
+          show_unresolved: "Open",
+          // The text of the button that shows resolved threads
+          show_resolved: "Resolved",
+          // The text of the link that toggles the display of resolved threads from
+          // not showing to showing
+          show_resolved_threads_action: "$t(thread_list:show_resolved_threads_action)",
+          // The text of the link that toggles the display of resolved threads from
+          // showing to not showing
+          hide_resolved_threads_action: "$t(thread_list:hide_resolved_threads_action)",
+          // The text of the link that shows additional threads when the list of
+          // threads has been paginated
+          load_more_action: "Load more",
+          // The text of the link that reveals the replies to a thread when there
+          // are no unread messages in the thread
+          show_replies_action_read_one: "1 reply",
+          show_replies_action_read_other: "{{count}} replies",
+          // The text of the link that reveals the replies to a thread when there
+          // are unread messages in the thread
+          show_replies_action_unread_one: "1 new reply",
+          show_replies_action_unread_other: "{{count}} new replies",
+          // The text of the link that hides the replies to a thread
+          hide_replies_action: "Hide replies",
+          // The text of the link that shows more replies in a thread when the list
+          // of messages has been paginated
+          show_more_replies_action: "Show more",
+          // The text of the link that starts composing a reply to the thread
+          reply_action: "Reply",
+          // The status text shown on a resolved thread
+          resolved_status: "$t(thread:resolved_status)",
+          // The text of the menu item that unresolves a thread
+          unresolve_action: "$t(thread:unresolve_action)"
+        },
+        message: {
+          // The text of the link to download an attached file
+          download_action: "Download",
+          // The error text shown when an attached file that is not an image cannot
+          // be displayed
+          unable_to_display_document: "Unable to display document",
+          // The error text shown when an attached image file cannot be displayed
+          unable_to_display_image: "Unable to display image",
+          // The text shown next to a message that is currently being edited
+          editing_status: "(Editing)",
+          // The text shown next to a message that was previously edited
+          edited_status: "(Edited)",
+          // The text of the menu item that starts editing of a message
+          edit_action: "Edit",
+          // The text of the menu item that starts editing of a message in a
+          // resolved thread
+          edit_resolved_action: "Reopen to edit",
+          // The text of the menu item that deletes a message
+          delete_action: "Delete",
+          // The status text that indicates a message was deleted
+          deleted_message: "{{user.displayName}} deleted a message",
+          // The status text that indicates one or more messages were deleted
+          deleted_messages_one: "{{user.displayName}} deleted a message",
+          deleted_messages_other: "{{user.displayName}} deleted {{count}} messages",
+          // The tooltip on the indicator that a message arrived in Cord from Slack
+          sent_via_slack_tooltip: "Sent via Slack",
+          // The tooltip on the indicator that a message arrived in Cord from email
+          sent_via_email_tooltip: "Sent via Email",
+          // The text of the link that undeletes a message
+          undo_delete_action: "Undo",
+          // The text of the menu item that adds a reaction to a message
+          add_reaction_action: "Add reaction",
+          // The tooltip for the options menu on a message
+          message_options_tooltip: "Options",
+          // The status text shown when a screenshot is loading
+          screenshot_loading_status: "Loading",
+          // The status text shown when a screenshot is unavailable
+          screenshot_missing_status: "No screenshot found",
+          // The text shown on the button that displays a screenshot at a larger
+          // size
+          screenshot_expand_action: "Image",
+          // The tooltip shown on the button that displays a screenshot at a larger
+          // size
+          screenshot_expand_tooltip: "Click to expand",
+          // The status text showing who has seen a message when the list of users
+          // is short enough to show every user individually
+          seen_by_status: "Seen by {{users, list(style: short)}}",
+          // The status text showing who has seen a message when the list of users
+          // is too long to show every user individually
+          seen_by_status_overflow_one: "Seen by {{users, list(style: narrow)}}, and 1 other",
+          seen_by_status_overflow_other: "Seen by {{users, list(style: narrow)}}, and {{count}} others",
+          // The text of the button in the media modal that copies a link to the
+          // media
+          image_modal_copy_link_action: "Link",
+          // The tooltip for the button in the media modal that copies a link to the
+          // media
+          image_modal_copy_link_tooltip: "Click to copy",
+          // The text shown after a user copies a link in the media modal
+          image_modal_copy_link_success: "Copied to clipboard",
+          // The status text shown below a blurred image in the media modal
+          image_modal_blurred_status: "Potentially confidential content has been blurred",
+          // The header text shown in the media modal for a screenshot accompanying
+          // an annotation
+          image_modal_annotation_header: "{{user.displayName}} annotated this <datespan>on {{date}}</datespan>",
+          // The header text shown in the media modal for a normal file attachment
+          image_modal_attachment_header: "{{user.displayName}} attached this <datespan>on {{date}}</datespan>",
+          // The dayjs date format string used to display the date in the media
+          // modal header
+          image_modal_header_date_format: "D MMM [at] h:mm A",
+          // The tooltip for a set of message reactions.
+          reaction_with_emoji_name_tooltip_one: "{{users, list(style: narrow)}} reacted with {{emojiName}}",
+          reaction_with_emoji_name_tooltip_other: "{{users, list(style: narrow)}} reacted with {{emojiName}}",
+          // The tooltip for a set of message reactions where the viewer is one of
+          // the users that reacted.
+          reaction_with_emoji_name_including_viewer_tooltip_one: "{{users, list(style: narrow)}} reacted with {{emojiName}}",
+          reaction_with_emoji_name_including_viewer_tooltip_other: "{{users, list(style: narrow)}} reacted with {{emojiName}}",
+          // The strings used to display a relative timestamp on a message
+          timestamp: {
+            in_less_than_a_minute: "in less than a minute",
+            just_now: "just now",
+            in_minutes_one: "in 1 min",
+            in_minutes_other: "in {{count}} mins",
+            minutes_ago_one: "1 min ago",
+            minutes_ago_other: "{{count}} mins ago",
+            in_hours_one: "in 1 hour",
+            in_hours_other: "in {{count}} hours",
+            hours_ago_one: "1 hour ago",
+            hours_ago_other: "{{count}} hours ago",
+            yesterday_format: "[yesterday]",
+            last_week_format: "dddd",
+            tomorrow_format: "[tomorrow]",
+            next_week_format: "dddd",
+            this_year_format: "MMM D",
+            other_format: "MMM D, YYYY"
+          },
+          // The strings used to display an absolute timestamp on a message
+          absolute_timestamp: {
+            today_format: "h:mm A",
+            yesterday_format: "MMM D",
+            last_week_format: "MMM D",
+            tomorrow_format: "MMM D",
+            next_week_format: "MMM D",
+            this_year_format: "MMM D",
+            other_format: "MMM D, YYYY",
+            tooltip: "{{date, datetime(dateStyle: short; timeStyle: medium)}}"
+          }
+        },
+        // The message_templates namespace is used for translating the body of Cord
+        // messages by marking the messages with a translationKey.  See
+        // https://docs.cord.com/customization/translations for more details on message
+        // translation.
+        message_templates: {
+          cord: {
+            // The message shown when a user resolves a thread
+            thread_resolved: [
+              {
+                type: "p",
+                children: [
+                  {
+                    type: "mention",
+                    user: { id: "{{mention1.userID}}" },
+                    children: [{ text: "{{mention1.text}}" }]
+                  },
+                  { text: " resolved this thread" }
+                ]
+              }
+            ],
+            // The message shown when a user unresolves a thread
+            thread_unresolved: [
+              {
+                type: "p",
+                children: [
+                  {
+                    type: "mention",
+                    user: { id: "{{mention1.userID}}" },
+                    children: [{ text: "{{mention1.text}}" }]
+                  },
+                  { text: " reopened this thread" }
+                ]
+              }
+            ]
+          }
+        },
+        sidebar: {
+          // The text of the button that starts composing a message in a new thread
+          add_comment_action: "Add comment",
+          // The status text shown above the composer for a new thread
+          add_comment_instruction: "Add your comment",
+          // The tooltip for the button that closes the sidebar
+          close_sidebar_tooltip: "Close",
+          // The tooltip for the button that closes the settings in the sidebar
+          close_settings_tooltip: "Close",
+          // The tooltip for the button that shows the inbox
+          inbox_tooltip: "All updates",
+          // The text of the button that shows the thread options menu
+          thread_options_menu: "Options",
+          // The text shown above the list of threads
+          thread_list_title: "Comments",
+          // The text of the button that returns from a thread to the thread list
+          return_to_list_action: "All",
+          // The text shown above the composer that suggests annotating the page.
+          // The <l> tag will cause the contents to be a link that starts
+          // annotating.
+          annotation_nudge: "Why not try <l>annotating part of the page</l>?"
+        },
+        notifications: {
+          // The title of the notifications list
+          notifications_title: "Notifications",
+          // The text of the button that marks all notifications as read
+          mark_all_as_read_action: "Mark all as read",
+          // The text of the menu item that marks one notification as read
+          mark_as_read_action: "Mark as read",
+          // The text of the menu item that marks one notification as unread
+          mark_as_unread_action: "Mark as unread",
+          // The text of the menu item that deletes a notification
+          delete_action: "Delete notification",
+          // The title text shown when there are no notifications to display
+          empty_state_title: "You\u2019re all caught up",
+          // The body text shown when there are no notifications to display
+          empty_state_body: "When someone @mentions you or replies to your comments, we\u2019ll let you know here.",
+          // The tooltip for the button that shows the notification options
+          notification_options_tooltip: "Options",
+          // The strings used to display a relative timestamp on a message
+          timestamp: {
+            in_less_than_a_minute: "In less than a minute",
+            just_now: "Just now",
+            in_minutes_one: "In 1 min",
+            in_minutes_other: "In {{count}} mins",
+            minutes_ago_one: "1 min ago",
+            minutes_ago_other: "{{count}} mins ago",
+            in_hours_one: "In 1 hour",
+            in_hours_other: "In {{count}} hours",
+            hours_ago_one: "1 hour ago",
+            hours_ago_other: "{{count}} hours ago",
+            yesterday_format: "[Yesterday at] h:mma",
+            last_week_format: "dddd",
+            tomorrow_format: "[Tomorrow at] h:mma",
+            next_week_format: "dddd",
+            this_year_format: "MMM D, YYYY",
+            other_format: "MMM D, YYYY"
+          },
+          absolute_timestamp: {
+            today_format: "h:mm A",
+            yesterday_format: "MMM D",
+            last_week_format: "MMM D",
+            tomorrow_format: "MMM D",
+            next_week_format: "MMM D",
+            this_year_format: "MMM D",
+            other_format: "MMM D, YYYY",
+            tooltip: "{{date, datetime(dateStyle: short; timeStyle: medium)}}"
+          }
+        },
+        // The message_templates namespace is used for translating the body of Cord
+        // notifications.
+        notification_templates: {
+          cord: {
+            // A notification that a single user reacted to a message
+            reaction_single: "<user>{{senders.0.displayName}}</user> reacted {{reaction}} to your message",
+            // A notification that two users reacted to a message
+            reaction_double: "<user>{{senders.0.displayName}}</user> <bold>and</bold> <user>{{senders.1.displayName}}</user> reacted {{reaction}} to your message",
+            // A notification that three or more users reacted to a message
+            reaction_overflow_one: "<user>{{senders.0.displayName}}</user> <bold>and 1 other</bold> reacted {{reaction}} to your message",
+            reaction_overflow_other: "<user>{{senders.0.displayName}}</user> <bold>and {{count}} others</bold> reacted {{reaction}} to your message",
+            // A notification that a user replied to a message
+            reply: "<user>{{senders.0.displayName}}</user> replied on <bold>{{threadName}}</bold>",
+            // A notification that a user mentioned the viewer in a message
+            reply_mention: "<user>{{senders.0.displayName}}</user> mentioned you in <bold>{{threadName}}</bold>",
+            // A notification that a user mentioned and assigned the viewer in a
+            // message
+            reply_mention_assign: "<user>{{senders.0.displayName}}</user> mentioned you and assigned you to a task in <bold>{{threadName}}</bold>",
+            // A notification that a user mentioned and unassigned the viewer in a
+            // message
+            reply_mention_unassign: "<user>{{senders.0.displayName}}</user> mentioned you and unassigned you from a task in <bold>{{threadName}}</bold>",
+            // A notification that a user mentioned the viewer in a message and
+            // attached a file to that message
+            reply_mention_attachment: "<user>{{senders.0.displayName}}</user> mentioned you and sent you a file in <bold>{{threadName}}</bold>",
+            // A notification that a user assigned a task to the viewer in a message
+            reply_assign: "<user>{{senders.0.displayName}}</user> assigned you to a task in <bold>{{threadName}}</bold>",
+            // A notification that a user unassigned a task from the viewer in a
+            // message
+            reply_unassign: "<user>{{senders.0.displayName}}</user> unassigned you from a task in <bold>{{threadName}}</bold>",
+            // A notification that a user created a new thread
+            thread_create: "<user>{{senders.0.displayName}}</user> created a new thread named <bold>{{threadName}}</bold>",
+            // A notification that a user resolved a thread
+            thread_resolve: "<user>{{senders.0.displayName}}</user> resolved the thread <bold>{{threadName}}</bold>",
+            // A notification that a user unresolved a thread
+            thread_unresolve: "<user>{{senders.0.displayName}}</user> reopened the thread <bold>{{threadName}}</bold>"
+          }
+        },
+        presence: {
+          // The string shown when a user is currently active
+          viewing: "Viewing",
+          // The strings used to display a relative timestamp in a presence display
+          timestamp: {
+            in_less_than_a_minute: "Viewing in less than a minute",
+            just_now: "Viewed just now",
+            in_minutes_one: "Viewing in 1 min",
+            in_minutes_other: "Viewing in {{count}} mins",
+            minutes_ago_one: "Viewed 1 min ago",
+            minutes_ago_other: "Viewed {{count}} mins ago",
+            in_hours_one: "Viewing in 1 hour",
+            in_hours_other: "Viewing in {{count}} hours",
+            hours_ago_one: "Viewed 1 hour ago",
+            hours_ago_other: "Viewed {{count}} hours ago",
+            yesterday_format: "[Viewed yesterday at] h:mma",
+            last_week_format: "[Viewed] dddd",
+            tomorrow_format: "[Viewing tomorrow at] h:mma",
+            next_week_format: "[Viewing] dddd",
+            this_year_format: "[Viewed] MMM D, YYYY",
+            other_format: "[Viewed] MMM D, YYYY"
+          }
+        },
+        inbox: {
+          // The text of the link that navigates to the page a thread is on
+          go_to_page_action: "Go to page",
+          // The tooltip of the button that closes the inbox
+          close_tooltip: "Close",
+          // The title of the list of threads in the inbox
+          inbox_title: "Your Inbox",
+          // The title of the list of threads across all locations
+          all_pages_title: "All Pages",
+          // The tooltip of the button that displays the settings
+          settings_tooltip: "Collaboration settings",
+          // The text of the button that marks all threads in the inbox as read
+          mark_all_as_read_action: "Mark all as read",
+          // The title text shown when there are no threads in the inbox
+          empty_state_title: "You\u2019re all caught up",
+          // The body text shown when there are no threads in the inbox
+          empty_state_body: "When someone @mentions you or replies to your comments, we\u2019ll let you know here."
+        },
+        annotation: {
+          // The instructional text shown when annotating
+          click_prompt: "Click to comment",
+          // The tooltip shown next to the cursor when annotating an area that does
+          // not have selectable text
+          click_tooltip: "Click to comment",
+          // The tooltip shown next to the cursor when annotating an area that has
+          // selectable text
+          click_or_select_tooltip: "Click or select text to comment",
+          // The text shown on the link to cancel annotating
+          cancel_annotating: "Cancel",
+          // The text of the pill shown for an annotation when the annotation has no
+          // more specific label
+          annotation: "Annotation",
+          // The text shown on the button that unhides the annotation from the page
+          keep_pin_on_page_action: "Keep pin on page",
+          // The status text shown when the element the annotation was associated
+          // with cannot be found on the page
+          changed: "The annotated area has changed",
+          // The text for the link next to an annotation pin that hides the
+          // annotation from the page
+          hide_action: "Hide for you",
+          // The text for the link that shows the message associated with an
+          // annotation
+          show_message_action: "Click to view message"
+        },
+        user: {
+          // The text shown for the viewer
+          viewer_user: "{{user.displayName}} (you)",
+          // The text shown for the viewer when further name context is needed
+          viewer_user_subtitle: "{{user.secondaryDisplayName}}",
+          // The text shown for a non-viewer user
+          other_user: "{{user.displayName}}",
+          // The text shown for a non-viewer user when further name context is
+          // needed
+          other_user_subtitle: "{{user.secondaryDisplayName}}",
+          // Text needed for showing simple first person indication
+          // (i.e. for reactions where you have reacted)
+          viewer_user_short: "You"
+        },
+        // Cord's emoji picker is an external library, which doesn't use i18next,
+        // nor conforms to Cord's patterns. You can still translate these strings
+        // like you would translate any other string in this file.
+        // For more context, see https://www.npmjs.com/package/emoji-picker-element#internationalization
+        emoji_picker: {
+          categories: {
+            custom: "Custom",
+            "smileys-emotion": "Smileys and emoticons",
+            "people-body": "People and body",
+            "animals-nature": "Animals and nature",
+            "food-drink": "Food and drink",
+            "travel-places": "Travel and places",
+            activities: "Activities",
+            objects: "Objects",
+            symbols: "Symbols",
+            flags: "Flags"
+          },
+          categoriesLabel: "Categories",
+          emojiUnsupportedMessage: "Your browser does not support color emoji.",
+          favoritesLabel: "Favorites",
+          loadingMessage: "Loading\u2026",
+          networkErrorMessage: "Could not load emoji.",
+          regionLabel: "Emoji picker",
+          searchDescription: "When search results are available, press up or down to select and enter to choose.",
+          searchLabel: "Search",
+          searchResultsLabel: "Search results",
+          skinToneDescription: "When expanded, press up or down to select and enter to choose.",
+          skinToneLabel: "Choose a skin tone (currently {skinTone})",
+          skinTones: [
+            "Default",
+            "Light",
+            "Medium-Light",
+            "Medium",
+            "Medium-Dark",
+            "Dark"
+          ],
+          skinTonesLabel: "Skin tones"
+        }
+      },
+      // Cord's emoji picker is an external library, which doesn't use i18next, thus it
+      // doesn't support "ci mode" out of the box. So we add our own:
+      cimode: {
+        emoji_picker: {
+          categories: {
+            custom: "custom",
+            "smileys-emotion": "smileys-emotion",
+            "people-body": "people-body",
+            "animals-nature": "animals-nature",
+            "food-drink": "food-drink",
+            "travel-places": "travel-places",
+            activities: "activities",
+            objects: "objects",
+            symbols: "symbols",
+            flags: "flags"
+          },
+          categoriesLabel: "categoriesLabel",
+          emojiUnsupportedMessage: "emojiUnsupportedMessage",
+          favoritesLabel: "favoritesLabel",
+          loadingMessage: "loadingMessage",
+          networkErrorMessage: "networkErrorMessage",
+          regionLabel: "regionLabel",
+          searchDescription: "searchDescription",
+          searchLabel: "searchLabel",
+          searchResultsLabel: "searchResultsLabel",
+          skinToneDescription: "skinToneDescription",
+          skinToneLabel: "skinToneLabel",
+          skinTones: [
+            "Default",
+            "Light",
+            "Medium-Light",
+            "Medium",
+            "Medium-Dark",
+            "Dark"
+          ],
+          skinTonesLabel: "skinTonesLabel"
+        }
+      }
+    };
+    function isEqualLocation(a, b) {
+      if (a === b) {
+        return true;
+      }
+      if (!a || !b) {
+        return false;
+      }
+      const aKeys = Object.keys(a);
+      if (aKeys.length !== Object.keys(b).length) {
+        return false;
+      }
+      if (!aKeys.every((aKey) => Object.prototype.hasOwnProperty.call(b, aKey))) {
+        return false;
+      }
+      return aKeys.every((key) => a[key] === b[key]);
+    }
+    exports.MessageNodeType = void 0;
+    (function(MessageNodeType13) {
+      MessageNodeType13["ASSIGNEE"] = "assignee";
+      MessageNodeType13["BULLET"] = "bullet";
+      MessageNodeType13["CODE"] = "code";
+      MessageNodeType13["LINK"] = "link";
+      MessageNodeType13["MENTION"] = "mention";
+      MessageNodeType13["NUMBER_BULLET"] = "number_bullet";
+      MessageNodeType13["PARAGRAPH"] = "p";
+      MessageNodeType13["QUOTE"] = "quote";
+      MessageNodeType13["TODO"] = "todo";
+      MessageNodeType13["MARKDOWN"] = "markdown";
+    })(exports.MessageNodeType || (exports.MessageNodeType = {}));
+    var MARKS = ["bold", "italic", "underline", "code"];
+    var STYLED_BLOCK_TYPES = [
+      exports.MessageNodeType.BULLET,
+      exports.MessageNodeType.NUMBER_BULLET,
+      exports.MessageNodeType.TODO,
+      exports.MessageNodeType.QUOTE
+    ];
+    function isStyledBlockType(t) {
+      return STYLED_BLOCK_TYPES.includes(t);
+    }
+    var COMPOSER_SIZE = ["small", "medium", "large"];
+    var VIRTUALISED_LISTS = [
+      "monacoEditor",
+      "reactTree",
+      "konvaCanvas"
+    ];
+    var BLUR_DISPLAY_LOCATIONS = ["everywhere", "outside_page"];
+    var CAPTURE_SCREENSHOT_EVENT = [
+      "new-annotation",
+      "share-via-email",
+      "new-thread",
+      "new-message"
+    ];
+    function isCaptureScreenshotEvent(captureEvent) {
+      return CAPTURE_SCREENSHOT_EVENT.indexOf(captureEvent) !== -1;
+    }
+    function isBlurDisplayLocation(behavior) {
+      return BLUR_DISPLAY_LOCATIONS.indexOf(behavior) !== -1;
+    }
+    var ANNOTATION_MODES = [
+      "everywhere",
+      "custom_targets_only",
+      "none"
+    ];
+    function isAnnotationMode(mode) {
+      return ANNOTATION_MODES.indexOf(mode) !== -1;
+    }
+    var CORD_ANNOTATION_LOCATION_DATA_ATTRIBUTE = "data-cord-annotation-location";
+    var CORD_ANNOTATION_ALLOWED_DATA_ATTRIBUTE = "data-cord-annotation-allowed";
+    var CORD_COMPONENT_WRAPS_DOM_DATA_ATTRIBUTE = "data-cord-component-wraps-dom";
+    var CORD_SCREENSHOT_TARGET_DATA_ATTRIBUTE = "data-cord-screenshot-target";
+    function locationJson3(c) {
+      return JSON.stringify(Object.fromEntries(Object.entries(c).filter(([_key, value]) => value !== void 0).sort(([keyA], [keyB]) => keyA < keyB ? -1 : 1)));
+    }
+    exports.ANNOTATION_MODES = ANNOTATION_MODES;
+    exports.BLUR_DISPLAY_LOCATIONS = BLUR_DISPLAY_LOCATIONS;
+    exports.CAPTURE_SCREENSHOT_EVENT = CAPTURE_SCREENSHOT_EVENT;
+    exports.COMPOSER_SIZE = COMPOSER_SIZE;
+    exports.CORD_ANNOTATION_ALLOWED_DATA_ATTRIBUTE = CORD_ANNOTATION_ALLOWED_DATA_ATTRIBUTE;
+    exports.CORD_ANNOTATION_LOCATION_DATA_ATTRIBUTE = CORD_ANNOTATION_LOCATION_DATA_ATTRIBUTE;
+    exports.CORD_COMPONENT_WRAPS_DOM_DATA_ATTRIBUTE = CORD_COMPONENT_WRAPS_DOM_DATA_ATTRIBUTE;
+    exports.CORD_SCREENSHOT_TARGET_DATA_ATTRIBUTE = CORD_SCREENSHOT_TARGET_DATA_ATTRIBUTE;
+    exports.MARKS = MARKS;
+    exports.VIRTUALISED_LISTS = VIRTUALISED_LISTS;
+    exports.isAnnotationMode = isAnnotationMode;
+    exports.isBlurDisplayLocation = isBlurDisplayLocation;
+    exports.isCaptureScreenshotEvent = isCaptureScreenshotEvent;
+    exports.isEqualLocation = isEqualLocation;
+    exports.isStyledBlockType = isStyledBlockType;
+    exports.locationJson = locationJson3;
+    exports.translationResources = resources;
+  }
+});
+
+// opensource/sdk-js/packages/api-types/dist/cjs/index.js
+var require_cjs2 = __commonJS({
+  "opensource/sdk-js/packages/api-types/dist/cjs/index.js"(exports) {
+    "use strict";
+    var schema2 = {
+      CreateApplicationVariables: {
+        description: "https://docs.cord.com/rest-apis/applications/",
+        type: "object",
+        properties: {
+          emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
+          name: {
+            description: "Name of the project",
+            minLength: 1,
+            type: "string"
+          },
+          iconURL: {
+            description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          eventWebhookURL: {
+            description: "The URL that the events webhook is sent to",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          redirectURI: {
+            description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
+            type: ["null", "string"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "emailSettings",
+          "name",
+          "iconURL",
+          "eventWebhookURL",
+          "redirectURI"
+        ],
+        required: ["name"],
+        definitions: {
+          "Partial<EmailSettings>": {
+            type: "object",
+            properties: {
+              name: {
+                description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
+                type: ["null", "string"]
+              },
+              imageURL: {
+                description: "URL for your logo image. The default for this is the Cord logo.",
+                type: ["null", "string"]
+              },
+              sender: {
+                description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
+                format: "email",
+                type: ["null", "string"]
+              },
+              logoConfig: {
+                description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
+                anyOf: [
+                  {
+                    type: "object",
+                    properties: {
+                      width: { minimum: 0, maximum: 240, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["width"],
+                    required: ["width"]
+                  },
+                  {
+                    type: "object",
+                    properties: {
+                      height: { minimum: 0, maximum: 120, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["height"],
+                    required: ["height"]
+                  },
+                  { type: "null" }
+                ]
+              },
+              enableEmailNotifications: {
+                description: "Whether you want your users to receive notification emails. The default value is true.",
+                type: "boolean"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "name",
+              "imageURL",
+              "sender",
+              "logoConfig",
+              "enableEmailNotifications"
+            ]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdateApplicationVariables: {
+        description: "https://docs.cord.com/rest-apis/applications/",
+        type: "object",
+        properties: {
+          emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
+          name: {
+            description: "Name of the project",
+            minLength: 1,
+            type: "string"
+          },
+          iconURL: {
+            description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          eventWebhookURL: {
+            description: "The URL that the events webhook is sent to",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          redirectURI: {
+            description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
+            type: ["null", "string"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "emailSettings",
+          "name",
+          "iconURL",
+          "eventWebhookURL",
+          "redirectURI"
+        ],
+        definitions: {
+          "Partial<EmailSettings>": {
+            type: "object",
+            properties: {
+              name: {
+                description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
+                type: ["null", "string"]
+              },
+              imageURL: {
+                description: "URL for your logo image. The default for this is the Cord logo.",
+                type: ["null", "string"]
+              },
+              sender: {
+                description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
+                format: "email",
+                type: ["null", "string"]
+              },
+              logoConfig: {
+                description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
+                anyOf: [
+                  {
+                    type: "object",
+                    properties: {
+                      width: { minimum: 0, maximum: 240, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["width"],
+                    required: ["width"]
+                  },
+                  {
+                    type: "object",
+                    properties: {
+                      height: { minimum: 0, maximum: 120, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["height"],
+                    required: ["height"]
+                  },
+                  { type: "null" }
+                ]
+              },
+              enableEmailNotifications: {
+                description: "Whether you want your users to receive notification emails. The default value is true.",
+                type: "boolean"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "name",
+              "imageURL",
+              "sender",
+              "logoConfig",
+              "enableEmailNotifications"
+            ]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      DeleteApplicationVariables: {
+        description: "https://docs.cord.com/rest-apis/applications/",
+        type: "object",
+        properties: {
+          secret: {
+            description: "Secret key of the project that you want to delete. This can be found\nwithin the Cord Console.",
+            minLength: 1,
+            type: "string"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["secret"],
+        required: ["secret"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      BatchAPIVariables: {
+        description: "https://docs.cord.com/rest-apis/batch/",
+        type: "object",
+        properties: {
+          users: {
+            description: "List of user objects. Every object must include the id field. If the user\nalready exists, all other fields are optional and only updated when\npresent. If the user does not already exist, fields are required as\ndescribed in the [Create or update a\nuser](/rest-apis/users#Create-or-update-a-user)\nAPI.",
+            maxItems: 1e4,
+            type: "array",
+            items: { $ref: "#/definitions/BatchUpdateUser" }
+          },
+          organizations: {
+            maxItems: 1e3,
+            type: "array",
+            items: { $ref: "#/definitions/BatchUpdateGroup" }
+          },
+          groups: {
+            description: "List of group objects. Every object must include the id field. If\nthe group already exists, all other fields are optional and only\nupdated when present. If the group does not already exist, fields\nare required as described in the [Create or update a\ngroup](/rest-apis/groups/#create-or-update-a-group)\nAPI.",
+            maxItems: 1e3,
+            type: "array",
+            items: { $ref: "#/definitions/BatchUpdateGroup" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["users", "organizations", "groups"],
+        definitions: {
+          BatchUpdateUser: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              name: { description: "Full user name", type: ["null", "string"] },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: { enum: ["active", "deleted"], type: "string" },
+              email: {
+                description: "Email address",
+                format: "email",
+                type: ["null", "string"]
+              },
+              shortName: {
+                description: "Short user name. In most cases, this will be preferred over name when set.",
+                type: ["null", "string"]
+              },
+              short_name: { type: ["null", "string"] },
+              profilePictureURL: {
+                description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              profile_picture_url: {
+                description: "Alias for profilePictureURL. This field is deprecated.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              first_name: {
+                description: "User's first name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              },
+              last_name: {
+                description: "User's last name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              },
+              id: { $ref: "#/definitions/ID" }
+            },
+            required: ["id"]
+          },
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] },
+          BatchUpdateGroup: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              name: {
+                description: "Group name. Required when creating an group.",
+                type: "string"
+              },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: {
+                description: "Whether this group is active or deleted.  Attempting to log into a\ndeleted group will fail.",
+                enum: ["active", "deleted"],
+                type: "string"
+              },
+              members: {
+                description: "List of partner-specific IDs of the users who are members of this group.\nThis will replace the existing members.",
+                type: "array",
+                items: { $ref: "#/definitions/ID" }
+              },
+              id: { $ref: "#/definitions/ID" }
+            },
+            required: ["id"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreateFileVariables: {
+        type: "object",
+        properties: {
+          ownerID: {
+            description: "The ID of the user that owns the file.  Files can only be attached to\nmessages authored by their owner.",
+            type: "string"
+          },
+          name: {
+            description: "The name of the file.  This will be shown to the user when attached to a\nmessage and will be the file's name if it's downloaded.  If not supplied,\nit will be taken from the filename of the `file` parameter.",
+            type: "string"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["ownerID", "name"],
+        required: ["ownerID"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreateMessageVariables: {
+        description: "https://docs.cord.com/rest-apis/messages/",
+        type: "object",
+        properties: {
+          addReactions: {
+            description: "The reactions you want to add to this message.\nThe default timestamp is the current time.\nTrying to create a reaction that already exists for a user does nothing.\nDoing the same as before with a timestamp will update the reaction with the new timestamp.\nThe reaction users need to be an [active member of the group](/rest-apis/groups#Update-group-members) that the message and thread belong to.",
+            type: "array",
+            items: { $ref: "#/definitions/ServerAddReactions" }
+          },
+          addAttachments: {
+            description: "A list of attachments to add to the message.  The same file cannot be\nattached to the same message multiple times.",
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                type: {
+                  description: "The type of attachment.  This is `file` for file attachments.",
+                  type: "string",
+                  const: "file"
+                },
+                id: {
+                  description: "The ID of the file to attach.  This must have been previously uploaded via\nthe [file API](/js-apis-and-hooks/file-api/uploadFile).",
+                  type: "string"
+                }
+              },
+              additionalProperties: false,
+              propertyOrder: ["type", "id"],
+              required: ["id", "type"]
+            }
+          },
+          createThread: {
+            description: "The parameters for creating a thread if the supplied thread doesn't exist\nyet.  If the thread doesn't exist but `createThread` isn't provided, the\ncall will generate an error.  This value is ignored if the thread already\nexists.",
+            $ref: '#/definitions/Omit<ServerCreateThread,"id">'
+          },
+          subscribeToThread: {
+            description: "Whether to subscribe the sender of the message to the thread, so that they\nget notified about replies.  If not specified, defaults to `true`.  If\nfalse, the user's subscription status will be left unchanged.",
+            type: "boolean"
+          },
+          content: {
+            $ref: "#/definitions/MessageContent",
+            description: "The content of the message."
+          },
+          authorID: {
+            description: "The ID for the user that sent the message.",
+            type: "string"
+          },
+          type: {
+            description: "The type of message this is.  A `user_message` is a message that the author\nsent.  An `action_message` is a message about something that happened, such\nas the thread being resolved.  The default value is `user_message`.",
+            enum: ["action_message", "user_message"],
+            type: "string"
+          },
+          id: {
+            description: "The ID for the message.  If a message is created with no ID, a random\nUUID-based ID will be automatically created for it.",
+            type: "string"
+          },
+          url: {
+            description: "A URL where the message can be seen.  This determines where a user is sent\nwhen they click on a reference to this message, such as in a notification.\nIf unset, it defaults to the thread's URL.",
+            type: ["null", "string"]
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          createdTimestamp: {
+            description: "The timestamp when this message was created.  The default value is the\ncurrent time.",
+            type: "string",
+            format: "date-time"
+          },
+          extraClassnames: {
+            description: "A optional space separated list of classnames to add to the message.",
+            type: ["null", "string"]
+          },
+          updatedTimestamp: {
+            description: "The timestamp when this message was last edited, if it ever was.  If unset,\nthe message does not show as edited.",
+            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+          },
+          deletedTimestamp: {
+            description: "The timestamp when this message was deleted, if it was.  If unset, the\nmessage is not deleted.",
+            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+          },
+          iconURL: {
+            description: "The URL of the icon to show next to the message.  This is only used for\n`action_message` messages; other messages show the avatar of the author.\nIf an `action_message` does not have an icon set, no icon is shown.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          translationKey: {
+            description: "An optional translation key used for this message.  This is useful for\nsystem-generated messages where you might want to translate or customize\nthem at runtime.  See [the translations\ndocumentation](/customization/translations) for more\ninformation.",
+            type: ["null", "string"]
+          },
+          skipLinkPreviews: {
+            description: "If set, Cord won't analyze links in the message to generate previews.",
+            type: "boolean"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "addReactions",
+          "addAttachments",
+          "createThread",
+          "subscribeToThread",
+          "content",
+          "authorID",
+          "type",
+          "id",
+          "url",
+          "metadata",
+          "createdTimestamp",
+          "extraClassnames",
+          "updatedTimestamp",
+          "deletedTimestamp",
+          "iconURL",
+          "translationKey",
+          "skipLinkPreviews"
+        ],
+        required: ["authorID", "content"],
+        definitions: {
+          ServerAddReactions: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              reaction: { description: "The emoji reaction.", type: "string" },
+              userID: {
+                description: "The ID of the user who reacted to the message.",
+                type: "string"
+              },
+              timestamp: {
+                description: "The timestamp of when the reaction was created.",
+                type: "string",
+                format: "date-time"
+              }
+            },
+            required: ["reaction", "userID"]
+          },
+          'Omit<ServerCreateThread,"id">': {
+            type: "object",
+            properties: {
+              location: {
+                description: "The [location](/reference/location) of this thread.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              url: {
+                description: "A URL where the thread can be seen.  This determines where a user is sent\nwhen they click on a reference to this thread, such as in a notification,\nor if they click on a reference to a message in the thread and the message\ndoesn't have its own URL.",
+                type: "string"
+              },
+              name: {
+                description: "The name of the thread.  This is shown to users when the thread is\nreferenced, such as in notifications.  This should generally be something\nlike the page title.",
+                type: "string"
+              },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              resolved: { type: "boolean" },
+              organizationID: {
+                description: "The organization ID this thread is in.",
+                type: "string"
+              },
+              groupID: {
+                description: "The group ID this thread is in.",
+                type: "string"
+              },
+              extraClassnames: {
+                description: "An optional space separated list of classnames to add to the thread.",
+                type: ["null", "string"]
+              },
+              addSubscribers: {
+                description: "A list of subscribers to add to this thread.",
+                type: "array",
+                items: { type: "string" }
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "location",
+              "url",
+              "name",
+              "metadata",
+              "resolved",
+              "organizationID",
+              "groupID",
+              "extraClassnames",
+              "addSubscribers"
+            ],
+            required: ["groupID", "location", "name", "url"]
+          },
+          MessageAnyNode: {
+            anyOf: [
+              { $ref: "#/definitions/MessageAssigneeNode" },
+              { $ref: "#/definitions/MessageBulletNode" },
+              { $ref: "#/definitions/MessageCodeNode" },
+              { $ref: "#/definitions/MessageLinkNode" },
+              { $ref: "#/definitions/MessageMentionNode" },
+              { $ref: "#/definitions/MessageNumberBulletNode" },
+              { $ref: "#/definitions/MessageParagraphNode" },
+              { $ref: "#/definitions/MessageQuoteNode" },
+              { $ref: "#/definitions/MessageTextNode" },
+              { $ref: "#/definitions/MessageTodoNode" },
+              { $ref: "#/definitions/MessageMarkdownNode" }
+            ]
+          },
+          MessageAssigneeNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "assignee" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              user: {
+                type: "object",
+                properties: { id: { type: "string" } },
+                additionalProperties: false,
+                propertyOrder: ["id"],
+                required: ["id"]
+              }
+            },
+            required: ["children", "type", "user"]
+          },
+          MessageContent: {
+            type: "array",
+            items: { $ref: "#/definitions/MessageAnyNode" }
+          },
+          MessageBulletNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "bullet" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              indent: { type: "number" }
+            },
+            required: ["children", "type"]
+          },
+          MessageCodeNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "code" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          MessageLinkNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "link" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              url: { type: "string" }
+            },
+            required: ["children", "type", "url"]
+          },
+          MessageMentionNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "mention" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              user: {
+                type: "object",
+                properties: { id: { type: "string" } },
+                additionalProperties: false,
+                propertyOrder: ["id"],
+                required: ["id"]
+              }
+            },
+            required: ["children", "type", "user"]
+          },
+          MessageNumberBulletNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "number_bullet" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              bulletNumber: { type: "number" },
+              indent: { type: "number" }
+            },
+            required: ["bulletNumber", "children", "type"]
+          },
+          MessageParagraphNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "p" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          MessageQuoteNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "quote" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          MessageTextNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: {
+                enum: [
+                  "assignee",
+                  "bullet",
+                  "code",
+                  "link",
+                  "markdown",
+                  "mention",
+                  "number_bullet",
+                  "p",
+                  "quote",
+                  "todo"
+                ],
+                type: "string"
+              },
+              class: { type: "string" },
+              text: { type: "string" },
+              bold: { type: "boolean" },
+              code: { type: "boolean" },
+              italic: { type: "boolean" },
+              underline: { type: "boolean" }
+            },
+            required: ["text"]
+          },
+          MessageTodoNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "todo" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              todoID: { type: "string" },
+              done: { type: "boolean" }
+            },
+            required: ["children", "done", "todoID", "type"]
+          },
+          MessageMarkdownNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "markdown" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdateMessageVariables: {
+        description: "https://docs.cord.com/rest-apis/messages/",
+        type: "object",
+        properties: {
+          deleted: {
+            description: "Whether we want to mark this message as deleted. Setting this to `true` without\nproviding a value for `deletedTimestamp` is equivalent to setting `deletedTimestamp` to current\ntime and setting this to `false` is equivalent to setting `deletedTimestamp` to `null`.",
+            type: "boolean"
+          },
+          deletedTimestamp: {
+            description: "The timestamp when this message was deleted, if it was. If set to null, the message is not deleted.\nDeleting a message this way will only soft delete it, replacing the content of the message with a\nrecord of the deletion on the frontend. If you'd like to permanently delete it instead, use the\n[delete message endpoint](/rest-apis/messages#Delete-a-message).",
+            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+          },
+          removeReactions: {
+            description: "The reactions you want to remove from this message.\nRemoving a reaction that does not exist will have no effect and will not return an error.\nAn error is returned if a reaction is both added and deleted in the same request.",
+            type: "array",
+            items: { $ref: "#/definitions/ServerRemoveReactions" }
+          },
+          removeAttachments: {
+            description: "The attachments you want to remove from this message.  Removing an\nattachment that doesn't exist has no effect and won't return an error.\nAttempting to add and remove the same attachment in one request is an\nerror.",
+            type: "array",
+            items: { $ref: "#/definitions/RemoveAttachment" }
+          },
+          type: {
+            description: "The type of message this is.  A `user_message` is a message that the author\nsent.  An `action_message` is a message about something that happened, such\nas the thread being resolved.  The default value is `user_message`.",
+            enum: ["action_message", "user_message"],
+            type: "string"
+          },
+          id: {
+            description: "The ID for the message.  If a message is created with no ID, a random\nUUID-based ID will be automatically created for it.",
+            type: "string"
+          },
+          url: {
+            description: "A URL where the message can be seen.  This determines where a user is sent\nwhen they click on a reference to this message, such as in a notification.\nIf unset, it defaults to the thread's URL.",
+            type: ["null", "string"]
+          },
+          content: {
+            description: "The content of the message.",
+            $ref: "#/definitions/MessageContent"
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          createdTimestamp: {
+            description: "The timestamp when this message was created.  The default value is the\ncurrent time.",
+            type: "string",
+            format: "date-time"
+          },
+          authorID: {
+            description: "The ID for the user that sent the message.",
+            type: "string"
+          },
+          extraClassnames: {
+            description: "A optional space separated list of classnames to add to the message.",
+            type: ["null", "string"]
+          },
+          updatedTimestamp: {
+            description: "The timestamp when this message was last edited, if it ever was.  If unset,\nthe message does not show as edited.",
+            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+          },
+          iconURL: {
+            description: "The URL of the icon to show next to the message.  This is only used for\n`action_message` messages; other messages show the avatar of the author.\nIf an `action_message` does not have an icon set, no icon is shown.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          translationKey: {
+            description: "An optional translation key used for this message.  This is useful for\nsystem-generated messages where you might want to translate or customize\nthem at runtime.  See [the translations\ndocumentation](/customization/translations) for more\ninformation.",
+            type: ["null", "string"]
+          },
+          skipLinkPreviews: {
+            description: "If set, Cord won't analyze links in the message to generate previews.",
+            type: "boolean"
+          },
+          addReactions: {
+            description: "The reactions you want to add to this message.\nThe default timestamp is the current time.\nTrying to create a reaction that already exists for a user does nothing.\nDoing the same as before with a timestamp will update the reaction with the new timestamp.\nThe reaction users need to be an [active member of the group](/rest-apis/groups#Update-group-members) that the message and thread belong to.",
+            type: "array",
+            items: { $ref: "#/definitions/ServerAddReactions" }
+          },
+          addAttachments: {
+            description: "A list of attachments to add to the message.  The same file cannot be\nattached to the same message multiple times.",
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                type: {
+                  description: "The type of attachment.  This is `file` for file attachments.",
+                  type: "string",
+                  const: "file"
+                },
+                id: {
+                  description: "The ID of the file to attach.  This must have been previously uploaded via\nthe [file API](/js-apis-and-hooks/file-api/uploadFile).",
+                  type: "string"
+                }
+              },
+              additionalProperties: false,
+              propertyOrder: ["type", "id"],
+              required: ["id", "type"]
+            }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "deleted",
+          "deletedTimestamp",
+          "removeReactions",
+          "removeAttachments",
+          "type",
+          "id",
+          "url",
+          "content",
+          "metadata",
+          "createdTimestamp",
+          "authorID",
+          "extraClassnames",
+          "updatedTimestamp",
+          "iconURL",
+          "translationKey",
+          "skipLinkPreviews",
+          "addReactions",
+          "addAttachments"
+        ],
+        definitions: {
+          ServerRemoveReactions: {
+            type: "object",
+            properties: {
+              reaction: { description: "The emoji reaction.", type: "string" },
+              userID: {
+                description: "The ID of the user who reacted to the message.",
+                type: "string"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["reaction", "userID"],
+            required: ["reaction", "userID"]
+          },
+          RemoveAttachment: {
+            anyOf: [
+              {
+                type: "object",
+                properties: {
+                  type: {
+                    description: "The type of attachment to remove.  This is `file` for file attachments.",
+                    type: "string",
+                    const: "file"
+                  },
+                  id: {
+                    description: "The ID of the file attachment to remove.",
+                    type: "string"
+                  }
+                },
+                additionalProperties: false,
+                propertyOrder: ["type", "id"],
+                required: ["id", "type"]
+              },
+              {
+                type: "object",
+                properties: {
+                  type: {
+                    description: "The type of attachment to remove.  This is `link_preview` for link preview attachments.",
+                    type: "string",
+                    const: "link_preview"
+                  },
+                  id: {
+                    description: "The ID of the link preview attachment to remove.",
+                    type: "string"
+                  }
+                },
+                additionalProperties: false,
+                propertyOrder: ["type", "id"],
+                required: ["id", "type"]
+              }
+            ]
+          },
+          MessageAnyNode: {
+            anyOf: [
+              { $ref: "#/definitions/MessageAssigneeNode" },
+              { $ref: "#/definitions/MessageBulletNode" },
+              { $ref: "#/definitions/MessageCodeNode" },
+              { $ref: "#/definitions/MessageLinkNode" },
+              { $ref: "#/definitions/MessageMentionNode" },
+              { $ref: "#/definitions/MessageNumberBulletNode" },
+              { $ref: "#/definitions/MessageParagraphNode" },
+              { $ref: "#/definitions/MessageQuoteNode" },
+              { $ref: "#/definitions/MessageTextNode" },
+              { $ref: "#/definitions/MessageTodoNode" },
+              { $ref: "#/definitions/MessageMarkdownNode" }
+            ]
+          },
+          MessageAssigneeNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "assignee" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              user: {
+                type: "object",
+                properties: { id: { type: "string" } },
+                additionalProperties: false,
+                propertyOrder: ["id"],
+                required: ["id"]
+              }
+            },
+            required: ["children", "type", "user"]
+          },
+          MessageContent: {
+            type: "array",
+            items: { $ref: "#/definitions/MessageAnyNode" }
+          },
+          MessageBulletNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "bullet" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              indent: { type: "number" }
+            },
+            required: ["children", "type"]
+          },
+          MessageCodeNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "code" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          MessageLinkNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "link" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              url: { type: "string" }
+            },
+            required: ["children", "type", "url"]
+          },
+          MessageMentionNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "mention" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              user: {
+                type: "object",
+                properties: { id: { type: "string" } },
+                additionalProperties: false,
+                propertyOrder: ["id"],
+                required: ["id"]
+              }
+            },
+            required: ["children", "type", "user"]
+          },
+          MessageNumberBulletNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "number_bullet" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              bulletNumber: { type: "number" },
+              indent: { type: "number" }
+            },
+            required: ["bulletNumber", "children", "type"]
+          },
+          MessageParagraphNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "p" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          MessageQuoteNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "quote" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          MessageTextNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: {
+                enum: [
+                  "assignee",
+                  "bullet",
+                  "code",
+                  "link",
+                  "markdown",
+                  "mention",
+                  "number_bullet",
+                  "p",
+                  "quote",
+                  "todo"
+                ],
+                type: "string"
+              },
+              class: { type: "string" },
+              text: { type: "string" },
+              bold: { type: "boolean" },
+              code: { type: "boolean" },
+              italic: { type: "boolean" },
+              underline: { type: "boolean" }
+            },
+            required: ["text"]
+          },
+          MessageTodoNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "todo" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" },
+              todoID: { type: "string" },
+              done: { type: "boolean" }
+            },
+            required: ["children", "done", "todoID", "type"]
+          },
+          MessageMarkdownNode: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              type: { type: "string", const: "markdown" },
+              class: { type: "string" },
+              children: { $ref: "#/definitions/MessageContent" }
+            },
+            required: ["children", "type"]
+          },
+          ServerAddReactions: {
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              reaction: { description: "The emoji reaction.", type: "string" },
+              userID: {
+                description: "The ID of the user who reacted to the message.",
+                type: "string"
+              },
+              timestamp: {
+                description: "The timestamp of when the reaction was created.",
+                type: "string",
+                format: "date-time"
+              }
+            },
+            required: ["reaction", "userID"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListThreadMessageParameters: {
+        description: "https://docs.cord.com/rest-apis/messages/",
+        type: "object",
+        properties: {
+          sortDirection: {
+            description: "Return messages in ascending or descending order of creation timestamp.  'descending' is the default.",
+            enum: ["ascending", "descending"],
+            type: "string"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["sortDirection"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListMessageParameters: {
+        description: "https://docs.cord.com/rest-apis/messages/",
+        type: "object",
+        properties: {
+          limit: {
+            description: "Number of messages to return. Defaults to 1000.",
+            type: "number"
+          },
+          token: {
+            description: "Pagination token. This is returned in the `pagination` object of a previous response.",
+            type: "string"
+          },
+          filter: {
+            description: "Messages will be matched against the filters specified.\nThis is a partial match, which means any keys other than the ones you specify are ignored\nwhen checking for a match. Please note that because this is a query parameter in a REST API,\nthis JSON object must be URI encoded before being sent.",
+            type: "object",
+            properties: {
+              metadata: {
+                description: "Arbitrary key-value pairs of data associated with the message.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              location: {
+                description: "The [location](/reference/location) of the thread containing the message.",
+                type: "string"
+              },
+              authorID: {
+                description: "If provided, will return messages created by this author.",
+                type: "string"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["metadata", "location", "authorID"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["limit", "token", "filter"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      AppendMessageVariables: {
+        type: "object",
+        properties: {
+          text: {
+            description: "The text that will be appended to the markdown node in the message.",
+            type: "string"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["text"],
+        required: ["text"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreateNotificationVariables: {
+        description: "https://docs.cord.com/rest-apis/notifications/",
+        type: "object",
+        properties: {
+          actorID: {
+            description: 'ID of user who is the "actor" sending the notification, i.e., the user\ntaking the action the notification is about.\n\nRequired if `template` includes `{{actor}}`.',
+            type: "string"
+          },
+          actor_id: { type: "string" },
+          recipientID: {
+            description: "ID of user receiving the notification.",
+            type: "string"
+          },
+          recipient_id: { type: "string" },
+          template: {
+            description: "Template for the header of the notification. The expressions `{{actor}}`\nand `{{recipient}}` will be replaced respectively with the notification's\nactor and recipient. (See below for an example.)",
+            type: "string"
+          },
+          url: {
+            description: "URL of page to go to when the notification is clicked.",
+            type: "string"
+          },
+          iconUrl: {
+            description: "URL of an icon image if a specific one is desired. For notifications with\nan `actor_id` this will default to the sender's profile picture, otherwise\nit will default to a bell icon.",
+            type: "string"
+          },
+          type: {
+            description: "Currently must be set to `url`. In the future this may specify different\ntypes of notifications, but for now only `url` is defined.",
+            type: "string",
+            const: "url"
+          },
+          metadata: {
+            description: "An arbitrary JSON object that can be used to set additional metadata on the\nnotification. When displaying a [list of\nnotifications](/components/cord-notification-list),\nyou can filter the list by metadata value.\n\nKeys are strings, and values can be strings, numbers or booleans.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          extraClassnames: {
+            description: "An optional space separated list of classnames to add to the notification.",
+            type: ["null", "string"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "actorID",
+          "actor_id",
+          "recipientID",
+          "recipient_id",
+          "template",
+          "url",
+          "iconUrl",
+          "type",
+          "metadata",
+          "extraClassnames"
+        ],
+        required: ["template", "type", "url"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdatePlatformOrganizationVariables: {
+        type: "object",
+        properties: {
+          name: {
+            description: "Organization name. Required when creating an organization.",
+            type: "string"
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          status: {
+            description: "Whether this organization is active or deleted.  Attempting to log into a\ndeleted organization will fail.",
+            enum: ["active", "deleted"],
+            type: "string"
+          },
+          members: {
+            description: "List of partner-specific IDs of the users who are members of this organization.\nThis will replace the existing members.",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["name", "metadata", "status", "members"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdatePlatformOrganizationMembersVariables: {
+        type: "object",
+        properties: {
+          add: {
+            description: "The IDs of users to add to this organization.",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          },
+          remove: {
+            description: "The IDs of users to remove from this organization.",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["add", "remove"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreatePlatformOrganizationVariables: {
+        type: "object",
+        properties: {
+          id: { $ref: "#/definitions/ID", description: "ID of the organization" },
+          name: {
+            description: "Organization name. Required when creating an organization.",
+            type: "string"
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          status: {
+            description: "Whether this organization is active or deleted.  Attempting to log into a\ndeleted organization will fail.",
+            enum: ["active", "deleted"],
+            type: "string"
+          },
+          members: {
+            description: "List of partner-specific IDs of the users who are members of this organization",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["id", "name", "metadata", "status", "members"],
+        required: ["id", "name"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdatePlatformGroupVariables: {
+        description: "https://docs.cord.com/rest-apis/groups/",
+        type: "object",
+        properties: {
+          name: {
+            description: "Group name. Required when creating an group.",
+            type: "string"
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          status: {
+            description: "Whether this group is active or deleted.  Attempting to log into a\ndeleted group will fail.",
+            enum: ["active", "deleted"],
+            type: "string"
+          },
+          members: {
+            description: "List of partner-specific IDs of the users who are members of this group.\nThis will replace the existing members.",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["name", "metadata", "status", "members"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdatePlatformGroupMembersVariables: {
+        description: "https://docs.cord.com/rest-apis/groups/",
+        type: "object",
+        properties: {
+          add: {
+            description: "The IDs of users to add to this group.",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          },
+          remove: {
+            description: "The IDs of users to remove from this group.",
+            type: "array",
+            items: { $ref: "#/definitions/ID" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["add", "remove"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdateUserPreferenceVariables: {
+        description: "https://docs.cord.com/rest-apis/preferences/",
+        type: "object",
+        properties: {
+          key: {
+            description: "The preference key. `notification_channels` controls how users get notified about Cord activity.",
+            type: "string",
+            const: "notification_channels"
+          },
+          value: {
+            $ref: "#/definitions/Partial<NotificationPreferences>",
+            description: 'The updated preference value. This will update only the keys that are passed along.\nFor example, to disable Slack notification, but leave email untouched, you can use this value:\n\n```json\n{\n   "value": { "sendViaSlack": "false" },\n}\n```'
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["key", "value"],
+        required: ["key", "value"],
+        definitions: {
+          "Partial<NotificationPreferences>": {
+            type: "object",
+            properties: {
+              sendViaSlack: {
+                description: "Whether notifications should be sent via slack.",
+                type: "boolean"
+              },
+              sendViaEmail: {
+                description: "Whether notifications should be sent via email.",
+                type: "boolean"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["sendViaSlack", "sendViaEmail"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdateUserPresenceVariables: {
+        description: "https://docs.cord.com/rest-apis/presence/",
+        type: "object",
+        properties: {
+          organizationID: { type: "string" },
+          exclusiveWithin: {
+            description: 'Sets an "exclusivity region" for the ephemeral presence set by this update.\nA user can only be present at one location for a given value of exclusiveWithin.\nIf the user becomes present at a different location with the same value of\nexclusiveWithin, they automatically become no longer present at all other\nlocations with that value of exclusive_within.\nThis is useful to more easily track presence as a user moves among sub-locations.\nFor example, suppose we\'d like to track which specific paragraph on a page\na user is present. We could make those updates like this:\n\n```json\n{\n   "groupID": "<GROUP_ID>",\n   "location": { "page": "<PAGE_ID>", "paragraph": "<PARAGRAPH_ID>" },\n   "exclusiveWithin": { "page": "<PAGE_ID>" }\n}\n```\n\nAs a user moves around a page, their paragraphID will change, while their\npageID will remain the same. The above call to setPresent will mark them\npresent at their specific paragraph. However, since every update uses the\nsame exclusiveWithin, each time they are marked present at one paragraph\nthey will become no longer present at their previous paragraph.',
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          location: {
+            description: "The [location](/reference/location) you want the user to be in.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          groupID: {
+            description: "The ID of the group which should be able to see this presence update",
+            type: "string"
+          },
+          durable: {
+            description: "When `true`, this is a [durable presence](/js-apis-and-hooks/presence-api)\nupdate, when `false`, or is not used, it is an [ephemeral presence](/js-apis-and-hooks/presence-api) update.\n\nThis value defaults to `false.`",
+            type: "boolean"
+          },
+          absent: {
+            description: "When `true`, this is an *absence* update, meaning that the user has just left\nthis [location](/reference/location).\nIf the user is currently present at that location, it is cleared.\nThis cannot be used with a [durable presence](/js-apis-and-hooks/presence-api) update.\n\nThis value defaults to `false.` The user will be set as present at the location.",
+            type: "boolean"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "organizationID",
+          "exclusiveWithin",
+          "location",
+          "groupID",
+          "durable",
+          "absent"
+        ],
+        required: ["location"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreateProjectVariables: {
+        description: "https://docs.cord.com/rest-apis/projects/",
+        type: "object",
+        properties: {
+          emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
+          name: {
+            description: "Name of the project",
+            minLength: 1,
+            type: "string"
+          },
+          iconURL: {
+            description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          eventWebhookURL: {
+            description: "The URL that the events webhook is sent to",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          redirectURI: {
+            description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
+            type: ["null", "string"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "emailSettings",
+          "name",
+          "iconURL",
+          "eventWebhookURL",
+          "redirectURI"
+        ],
+        required: ["name"],
+        definitions: {
+          "Partial<EmailSettings>": {
+            type: "object",
+            properties: {
+              name: {
+                description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
+                type: ["null", "string"]
+              },
+              imageURL: {
+                description: "URL for your logo image. The default for this is the Cord logo.",
+                type: ["null", "string"]
+              },
+              sender: {
+                description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
+                format: "email",
+                type: ["null", "string"]
+              },
+              logoConfig: {
+                description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
+                anyOf: [
+                  {
+                    type: "object",
+                    properties: {
+                      width: { minimum: 0, maximum: 240, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["width"],
+                    required: ["width"]
+                  },
+                  {
+                    type: "object",
+                    properties: {
+                      height: { minimum: 0, maximum: 120, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["height"],
+                    required: ["height"]
+                  },
+                  { type: "null" }
+                ]
+              },
+              enableEmailNotifications: {
+                description: "Whether you want your users to receive notification emails. The default value is true.",
+                type: "boolean"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "name",
+              "imageURL",
+              "sender",
+              "logoConfig",
+              "enableEmailNotifications"
+            ]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdateProjectVariables: {
+        description: "https://docs.cord.com/rest-apis/projects/",
+        type: "object",
+        properties: {
+          emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
+          name: {
+            description: "Name of the project",
+            minLength: 1,
+            type: "string"
+          },
+          iconURL: {
+            description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          eventWebhookURL: {
+            description: "The URL that the events webhook is sent to",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          redirectURI: {
+            description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
+            type: ["null", "string"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "emailSettings",
+          "name",
+          "iconURL",
+          "eventWebhookURL",
+          "redirectURI"
+        ],
+        definitions: {
+          "Partial<EmailSettings>": {
+            type: "object",
+            properties: {
+              name: {
+                description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
+                type: ["null", "string"]
+              },
+              imageURL: {
+                description: "URL for your logo image. The default for this is the Cord logo.",
+                type: ["null", "string"]
+              },
+              sender: {
+                description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
+                format: "email",
+                type: ["null", "string"]
+              },
+              logoConfig: {
+                description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
+                anyOf: [
+                  {
+                    type: "object",
+                    properties: {
+                      width: { minimum: 0, maximum: 240, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["width"],
+                    required: ["width"]
+                  },
+                  {
+                    type: "object",
+                    properties: {
+                      height: { minimum: 0, maximum: 120, type: "number" }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["height"],
+                    required: ["height"]
+                  },
+                  { type: "null" }
+                ]
+              },
+              enableEmailNotifications: {
+                description: "Whether you want your users to receive notification emails. The default value is true.",
+                type: "boolean"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "name",
+              "imageURL",
+              "sender",
+              "logoConfig",
+              "enableEmailNotifications"
+            ]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      DeleteProjectVariables: {
+        description: "https://docs.cord.com/rest-apis/projects/",
+        type: "object",
+        properties: {
+          secret: {
+            description: "Secret key of the project that you want to delete. This can be found\nwithin the Cord Console.",
+            minLength: 1,
+            type: "string"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["secret"],
+        required: ["secret"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreateThreadVariables: {
+        description: "https://docs.cord.com/rest-apis/threads/",
+        type: "object",
+        properties: {
+          location: {
+            description: "The [location](/reference/location) of this thread.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          id: { description: "The ID for this thread.", type: "string" },
+          url: {
+            description: "A URL where the thread can be seen.  This determines where a user is sent\nwhen they click on a reference to this thread, such as in a notification,\nor if they click on a reference to a message in the thread and the message\ndoesn't have its own URL.",
+            type: "string"
+          },
+          name: {
+            description: "The name of the thread.  This is shown to users when the thread is\nreferenced, such as in notifications.  This should generally be something\nlike the page title.",
+            type: "string"
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          groupID: {
+            description: "The group ID this thread is in.",
+            type: "string"
+          },
+          extraClassnames: {
+            description: "An optional space separated list of classnames to add to the thread.",
+            type: ["null", "string"]
+          },
+          addSubscribers: {
+            description: "A list of subscribers to add to this thread.",
+            type: "array",
+            items: { type: "string" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "location",
+          "id",
+          "url",
+          "name",
+          "metadata",
+          "groupID",
+          "extraClassnames",
+          "addSubscribers"
+        ],
+        required: ["groupID", "location", "name", "url"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdateThreadVariables: {
+        description: "https://docs.cord.com/rest-apis/threads/",
+        type: "object",
+        properties: {
+          location: {
+            description: "The [location](/reference/location) of this thread.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          id: { description: "The ID for this thread.", type: "string" },
+          url: {
+            description: "A URL where the thread can be seen.  This determines where a user is sent\nwhen they click on a reference to this thread, such as in a notification,\nor if they click on a reference to a message in the thread and the message\ndoesn't have its own URL.",
+            type: "string"
+          },
+          name: {
+            description: "The name of the thread.  This is shown to users when the thread is\nreferenced, such as in notifications.  This should generally be something\nlike the page title.",
+            type: "string"
+          },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          organizationID: {
+            description: "The organization ID this thread is in.",
+            type: "string"
+          },
+          groupID: {
+            description: "The group ID this thread is in.",
+            type: "string"
+          },
+          extraClassnames: {
+            description: "An optional space separated list of classnames to add to the thread.",
+            type: ["null", "string"]
+          },
+          resolvedTimestamp: {
+            description: "The timestamp when this thread was resolved. Set to `null` if this thread\nis not resolved.",
+            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+          },
+          userID: {
+            description: `Certain changes to the thread may post a message into the thread -- in
+particular, resolving or unresolving a thread posts a message into the
+thread saying "User un/resolved this thread". This parameter is the ID of
+the User who will be listed as the author of that message. It's optional
+-- if no user is specified, then those messages won't get posted.`,
+            type: "string"
+          },
+          typing: {
+            description: "Marks the specified users as typing in this thread.  The typing indicator\nexpires after 3 seconds, so to continually show the indicator it needs to\nbe called on an interval.  Pass an empty array to clear all users' typing indicators.",
+            type: "array",
+            items: { type: "string" }
+          },
+          resolved: {
+            description: "Whether the thread is resolved.  Setting this to `true` is equivalent to\nsetting `resolvedTimestamp` to the current time, and setting this to\n`false` is equivalent to setting `resolvedTimestamp` to `null`.",
+            type: "boolean"
+          },
+          seenByUsers: {
+            description: "Marks the specified users as having seen/not seen this thread. If a user\nis not included in this list, the seen status will not be changed.",
+            type: "array",
+            items: { $ref: "#/definitions/ServerThreadSeenUser" }
+          },
+          addSubscribers: {
+            description: "A list of subscribers to add to this thread.",
+            type: "array",
+            items: { type: "string" }
+          },
+          removeSubscribers: {
+            description: "A list of subscribers to remove from this thread.",
+            type: "array",
+            items: { type: "string" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "location",
+          "id",
+          "url",
+          "name",
+          "metadata",
+          "organizationID",
+          "groupID",
+          "extraClassnames",
+          "resolvedTimestamp",
+          "userID",
+          "typing",
+          "resolved",
+          "seenByUsers",
+          "addSubscribers",
+          "removeSubscribers"
+        ],
+        definitions: {
+          ServerThreadSeenUser: {
+            description: "https://docs.cord.com/rest-apis/threads/",
+            type: "object",
+            properties: {
+              userID: {
+                description: "ID of the user that has seen/not seen the thread.",
+                type: "string"
+              },
+              seen: {
+                description: "Whether the user has seen the thread or not.",
+                type: "boolean"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["userID", "seen"],
+            required: ["seen", "userID"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListThreadQueryParameters: {
+        description: "https://docs.cord.com/rest-apis/threads/",
+        type: "object",
+        properties: {
+          filter: {
+            description: "Threads will be matched against the filters specified.\nThis is a partial match, which means any keys other than the ones you specify are ignored\nwhen checking for a match. Please note that because this is a query parameter in a REST API,\nthis JSON object must be URI encoded before being sent.",
+            $ref: "#/definitions/ServerListThreadFilter"
+          },
+          limit: {
+            description: "Number of threads to return. Defaults to 1000.",
+            type: "number"
+          },
+          token: {
+            description: "Pagination token. This is returned in the `pagination` object of a previous response.",
+            type: "string"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["filter", "limit", "token"],
+        definitions: {
+          ServerListThreadFilter: {
+            type: "object",
+            properties: {
+              location: {
+                description: "The [Location](/reference/location) of the threads.\nThis can either be just the location value or an object with a value for\nboth the location and partialMatch properties.\n\nThe value for partialMatch will default to false if only location is provided.",
+                anyOf: [
+                  {
+                    type: "object",
+                    additionalProperties: { type: ["string", "number", "boolean"] },
+                    propertyOrder: []
+                  },
+                  {
+                    type: "object",
+                    properties: {
+                      value: {
+                        description: "The [Location](/reference/location) of the threads.",
+                        type: "object",
+                        additionalProperties: {
+                          type: ["string", "number", "boolean"]
+                        },
+                        propertyOrder: []
+                      },
+                      partialMatch: {
+                        description: "If `true`, perform [partial matching](/reference/location#Partial-Matching)\non the specified location. If `false`, fetch information for only exactly the\nlocation specified.",
+                        type: "boolean"
+                      }
+                    },
+                    additionalProperties: false,
+                    propertyOrder: ["value", "partialMatch"],
+                    required: ["partialMatch", "value"]
+                  }
+                ]
+              },
+              metadata: {
+                description: "Return only objects containing these metadata keys and values. (Metadata is\narbitrary key-value pairs of data that you can associate with an object.)",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              groupID: {
+                description: "Return only threads [belonging to this\ngroup](/reference/permissions).",
+                type: "string"
+              },
+              firstMessageTimestamp: {
+                description: 'Return only threads with a "first message timestamp" within this range. The\n"first message timestamp" of a thread is the timestamp when the first\nmessage in the thread was created. (This is typically when the thread was\ncreated.)',
+                type: "object",
+                properties: {
+                  from: {
+                    description: "Timestamp from where to start the interval. The thread's timestamp must be\n*newer* than (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no start date and any data will\ninclude everything older than the provided `to` timestamp.",
+                    type: "string",
+                    format: "date-time"
+                  },
+                  to: {
+                    description: "Timestamp where to end the interval. The thread's timestamp must be *older*\nthan (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no end date and any data will\ninclude everything newer than the provided `from` timestamp.",
+                    type: "string",
+                    format: "date-time"
+                  }
+                },
+                additionalProperties: false,
+                propertyOrder: ["from", "to"]
+              },
+              mostRecentMessageTimestamp: {
+                description: 'Return only threads with a "most recent message timestamp" within this\nrange. The "most recent message timestamp" of a thread is the timestamp\nwhen the most recent message in the thread was created or updated. (This is\ntypically when the thread was most recently replied to.)',
+                type: "object",
+                properties: {
+                  from: {
+                    description: "Timestamp from where to start the interval. The thread's timestamp must be\n*newer* than (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no start date and any data will\ninclude everything older than the provided `to` timestamp.",
+                    type: "string",
+                    format: "date-time"
+                  },
+                  to: {
+                    description: "Timestamp where to end the interval. The thread's timestamp must be *older*\nthan (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no end date and any data will\ninclude everything newer than the provided `from` timestamp.",
+                    type: "string",
+                    format: "date-time"
+                  }
+                },
+                additionalProperties: false,
+                propertyOrder: ["from", "to"]
+              },
+              resolvedStatus: {
+                description: "If set to `resolved`, only resolved threads will be returned. If set to `unresolved`,\nonly unresolved threads will be returned. If set to `any`, both resolved and\nunresolved threads will be returned.\n\nIf unset, defaults to `any`.",
+                enum: ["any", "resolved", "unresolved"],
+                type: "string"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "location",
+              "metadata",
+              "groupID",
+              "firstMessageTimestamp",
+              "mostRecentMessageTimestamp",
+              "resolvedStatus"
+            ]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      UpdatePlatformUserVariables: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "object",
+        properties: {
+          name: { description: "Full user name", type: ["null", "string"] },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          status: { enum: ["active", "deleted"], type: "string" },
+          email: {
+            description: "Email address",
+            format: "email",
+            type: ["null", "string"]
+          },
+          shortName: {
+            description: "Short user name. In most cases, this will be preferred over name when set.",
+            type: ["null", "string"]
+          },
+          short_name: { type: ["null", "string"] },
+          profilePictureURL: {
+            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          profile_picture_url: {
+            description: "Alias for profilePictureURL. This field is deprecated.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          first_name: {
+            description: "User's first name. This field is deprecated and has no effect.",
+            type: ["null", "string"]
+          },
+          last_name: {
+            description: "User's last name. This field is deprecated and has no effect.",
+            type: ["null", "string"]
+          },
+          addGroups: {
+            description: "A list of group IDs this user should be made a member of.  It is an error\nto specify a group that doesn't exist or one that is also being removed in\nthe same call.  It is not an error to add a user to a group they're already\na member of.",
+            type: "array",
+            items: { type: "string" }
+          },
+          removeGroups: {
+            description: "A list of group IDs this user should stop being a member of.  It is an\nerror to specify a group that doesn't exist or one that is also being added\nin the same call.  It is not an error to remove a user from a group they\nare not a member of.",
+            type: "array",
+            items: { type: "string" }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "name",
+          "metadata",
+          "status",
+          "email",
+          "shortName",
+          "short_name",
+          "profilePictureURL",
+          "profile_picture_url",
+          "first_name",
+          "last_name",
+          "addGroups",
+          "removeGroups"
+        ],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreatePlatformUserVariables: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "object",
+        properties: {
+          name: { description: "Full user name", type: ["null", "string"] },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          status: { enum: ["active", "deleted"], type: "string" },
+          email: {
+            description: "Email address",
+            format: "email",
+            type: ["null", "string"]
+          },
+          shortName: {
+            description: "Short user name. In most cases, this will be preferred over name when set.",
+            type: ["null", "string"]
+          },
+          short_name: { type: ["null", "string"] },
+          profilePictureURL: {
+            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          profile_picture_url: {
+            description: "Alias for profilePictureURL. This field is deprecated.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          first_name: {
+            description: "User's first name. This field is deprecated and has no effect.",
+            type: ["null", "string"]
+          },
+          last_name: {
+            description: "User's last name. This field is deprecated and has no effect.",
+            type: ["null", "string"]
+          },
+          id: { $ref: "#/definitions/ID", description: "Provided ID for the user" }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "name",
+          "metadata",
+          "status",
+          "email",
+          "shortName",
+          "short_name",
+          "profilePictureURL",
+          "profile_picture_url",
+          "first_name",
+          "last_name",
+          "id"
+        ],
+        required: ["id"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListPlatformUserVariables: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "object",
+        properties: {
+          email: { type: ["null", "string"] },
+          id: { $ref: "#/definitions/ID", description: "Provided ID for the user" },
+          name: { description: "Full user name", type: ["null", "string"] },
+          metadata: {
+            description: "Arbitrary key-value pairs that can be used to store additional information.",
+            type: "object",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+            propertyOrder: []
+          },
+          status: { enum: ["active", "deleted"], type: "string" },
+          createdTimestamp: {
+            description: "Creation timestamp",
+            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+          },
+          shortName: {
+            description: "Short user name. In most cases, this will be preferred over name when set.",
+            type: ["null", "string"]
+          },
+          short_name: { type: ["null", "string"] },
+          profilePictureURL: {
+            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          profile_picture_url: {
+            description: "Alias for profilePictureURL. This field is deprecated.",
+            format: "uri",
+            type: ["null", "string"]
+          },
+          first_name: {
+            description: "User's first name. This field is deprecated and has no effect.",
+            type: ["null", "string"]
+          },
+          last_name: {
+            description: "User's last name. This field is deprecated and has no effect.",
+            type: ["null", "string"]
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: [
+          "email",
+          "id",
+          "name",
+          "metadata",
+          "status",
+          "createdTimestamp",
+          "shortName",
+          "short_name",
+          "profilePictureURL",
+          "profile_picture_url",
+          "first_name",
+          "last_name"
+        ],
+        required: [
+          "createdTimestamp",
+          "email",
+          "first_name",
+          "id",
+          "last_name",
+          "metadata",
+          "name",
+          "profilePictureURL",
+          "profile_picture_url",
+          "shortName",
+          "short_name",
+          "status"
+        ],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListUsersResponseWithoutPagination: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "array",
+        items: { $ref: "#/definitions/ServerListUser" },
+        definitions: {
+          ServerListUser: {
+            description: "https://docs.cord.com/rest-apis/users/",
+            type: "object",
+            properties: {
+              email: { type: ["null", "string"] },
+              id: {
+                $ref: "#/definitions/ID",
+                description: "Provided ID for the user"
+              },
+              name: { description: "Full user name", type: ["null", "string"] },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: { enum: ["active", "deleted"], type: "string" },
+              createdTimestamp: {
+                description: "Creation timestamp",
+                anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+              },
+              shortName: {
+                description: "Short user name. In most cases, this will be preferred over name when set.",
+                type: ["null", "string"]
+              },
+              short_name: { type: ["null", "string"] },
+              profilePictureURL: {
+                description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              profile_picture_url: {
+                description: "Alias for profilePictureURL. This field is deprecated.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              first_name: {
+                description: "User's first name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              },
+              last_name: {
+                description: "User's last name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "email",
+              "id",
+              "name",
+              "metadata",
+              "status",
+              "createdTimestamp",
+              "shortName",
+              "short_name",
+              "profilePictureURL",
+              "profile_picture_url",
+              "first_name",
+              "last_name"
+            ],
+            required: [
+              "createdTimestamp",
+              "email",
+              "first_name",
+              "id",
+              "last_name",
+              "metadata",
+              "name",
+              "profilePictureURL",
+              "profile_picture_url",
+              "shortName",
+              "short_name",
+              "status"
+            ]
+          },
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListUsersResponse: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "object",
+        properties: {
+          users: { type: "array", items: { $ref: "#/definitions/ServerListUser" } },
+          pagination: { $ref: "#/definitions/PaginationDetails" }
+        },
+        additionalProperties: false,
+        propertyOrder: ["users", "pagination"],
+        required: ["pagination", "users"],
+        definitions: {
+          ServerListUser: {
+            description: "https://docs.cord.com/rest-apis/users/",
+            type: "object",
+            properties: {
+              email: { type: ["null", "string"] },
+              id: {
+                $ref: "#/definitions/ID",
+                description: "Provided ID for the user"
+              },
+              name: { description: "Full user name", type: ["null", "string"] },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: { enum: ["active", "deleted"], type: "string" },
+              createdTimestamp: {
+                description: "Creation timestamp",
+                anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
+              },
+              shortName: {
+                description: "Short user name. In most cases, this will be preferred over name when set.",
+                type: ["null", "string"]
+              },
+              short_name: { type: ["null", "string"] },
+              profilePictureURL: {
+                description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              profile_picture_url: {
+                description: "Alias for profilePictureURL. This field is deprecated.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              first_name: {
+                description: "User's first name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              },
+              last_name: {
+                description: "User's last name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: [
+              "email",
+              "id",
+              "name",
+              "metadata",
+              "status",
+              "createdTimestamp",
+              "shortName",
+              "short_name",
+              "profilePictureURL",
+              "profile_picture_url",
+              "first_name",
+              "last_name"
+            ],
+            required: [
+              "createdTimestamp",
+              "email",
+              "first_name",
+              "id",
+              "last_name",
+              "metadata",
+              "name",
+              "profilePictureURL",
+              "profile_picture_url",
+              "shortName",
+              "short_name",
+              "status"
+            ]
+          },
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] },
+          PaginationDetails: {
+            type: "object",
+            properties: {
+              token: {
+                description: "The token to use to get the next page of results. If empty, there are no more results.",
+                type: ["null", "string"]
+              },
+              total: {
+                description: 'Total number of results. Might be bigger than the number of results returned on the query. Useful to display a "total" counter.',
+                type: "number"
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["token", "total"],
+            required: ["token", "total"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ListUserQueryParameters: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "object",
+        properties: {
+          limit: {
+            description: "Number of users to return.\nThe default limit is set to 1000.",
+            type: "number"
+          },
+          token: {
+            description: "Pagination token. This is returned in the `pagination` object of a previous response.",
+            type: "string"
+          },
+          filter: {
+            description: "This is a JSON object with one optional entry.  Users will be matched\nagainst the filter specified. This is a partial match, which means any keys\nother than the ones you specify are ignored when checking for a match.\nPlease note that because this is a query parameter in a REST API, this JSON\nobject must be URI encoded before being sent.",
+            $ref: '#/definitions/Pick<FilterParameters,"metadata">'
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["limit", "token", "filter"],
+        definitions: {
+          'Pick<FilterParameters,"metadata">': {
+            type: "object",
+            properties: {
+              metadata: {
+                description: "Return only objects containing these metadata keys and values. (Metadata is\narbitrary key-value pairs of data that you can associate with an object.)",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["metadata"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      DeleteUserVariables: {
+        description: "https://docs.cord.com/rest-apis/users/",
+        type: "object",
+        properties: {
+          permanently_delete: {
+            description: "The user will be deleted only if this value is true.",
+            type: "boolean"
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["permanently_delete"],
+        required: ["permanently_delete"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      CreateWebhookVariables: {
+        type: "object",
+        properties: {
+          url: {
+            description: "The URL to register that will receive webhook events",
+            format: "uri",
+            type: "string"
+          },
+          events: {
+            description: "The events which you will receive",
+            type: "array",
+            items: {
+              enum: [
+                "notification-created",
+                "thread-message-added",
+                "url-verification"
+              ],
+              type: "string"
+            }
+          }
+        },
+        additionalProperties: false,
+        propertyOrder: ["url", "events"],
+        required: ["events", "url"],
+        $schema: "http://json-schema.org/draft-07/schema#"
+      },
+      ClientAuthTokenData: {
+        description: "https://docs.cord.com/reference/authentication/",
+        additionalProperties: true,
+        type: "object",
+        properties: {
+          app_id: { format: "uuid", type: "string" },
+          project_id: {
+            description: "Your project ID",
+            format: "uuid",
+            type: "string"
+          },
+          user_id: { $ref: "#/definitions/ID", description: "The ID for the user" },
+          organization_id: {
+            minLength: 1,
+            maxLength: 128,
+            type: ["string", "number"]
+          },
+          group_id: {
+            minLength: 1,
+            maxLength: 128,
+            description: "The ID for the user\u2019s group",
+            type: ["string", "number"]
+          },
+          user_details: {
+            description: "If present, update\u2019s the user\u2019s details, or creates a user with those\ndetails if the user_id is new to Cord. This is an object that contains the\nsame fields as the [user management REST\nendpoint](/rest-apis/users/)",
+            $ref: "#/definitions/ServerUpdateUser"
+          },
+          organization_details: {
+            $ref: '#/definitions/Partial<Omit<ServerOrganizationData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>'
+          },
+          group_details: {
+            description: "If present, updates the group's details, or creates a group\nwith those details if the group_id is new to Cord. This is an object\nthat contains the same fields as the [group management REST\nendpoint](/rest-apis/groups/)",
+            $ref: '#/definitions/Partial<Omit<ServerGroupData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>'
+          }
+        },
+        propertyOrder: [
+          "app_id",
+          "project_id",
+          "user_id",
+          "organization_id",
+          "group_id",
+          "user_details",
+          "organization_details",
+          "group_details"
+        ],
+        required: ["user_id"],
+        definitions: {
+          ID: { minLength: 1, maxLength: 128, type: ["string", "number"] },
+          ServerUpdateUser: {
+            description: "https://docs.cord.com/rest-apis/users/",
+            additionalProperties: false,
+            type: "object",
+            properties: {
+              name: { description: "Full user name", type: ["null", "string"] },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: { enum: ["active", "deleted"], type: "string" },
+              email: {
+                description: "Email address",
+                format: "email",
+                type: ["null", "string"]
+              },
+              shortName: {
+                description: "Short user name. In most cases, this will be preferred over name when set.",
+                type: ["null", "string"]
+              },
+              short_name: { type: ["null", "string"] },
+              profilePictureURL: {
+                description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              profile_picture_url: {
+                description: "Alias for profilePictureURL. This field is deprecated.",
+                format: "uri",
+                type: ["null", "string"]
+              },
+              first_name: {
+                description: "User's first name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              },
+              last_name: {
+                description: "User's last name. This field is deprecated and has no effect.",
+                type: ["null", "string"]
+              },
+              addGroups: {
+                description: "A list of group IDs this user should be made a member of.  It is an error\nto specify a group that doesn't exist or one that is also being removed in\nthe same call.  It is not an error to add a user to a group they're already\na member of.",
+                type: "array",
+                items: { type: "string" }
+              },
+              removeGroups: {
+                description: "A list of group IDs this user should stop being a member of.  It is an\nerror to specify a group that doesn't exist or one that is also being added\nin the same call.  It is not an error to remove a user from a group they\nare not a member of.",
+                type: "array",
+                items: { type: "string" }
+              }
+            }
+          },
+          'Partial<Omit<ServerOrganizationData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>': {
+            type: "object",
+            properties: {
+              name: {
+                description: "Organization name. Required when creating an organization.",
+                type: "string"
+              },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: {
+                description: "Whether this organization is active or deleted.  Attempting to log into a\ndeleted organization will fail.",
+                enum: ["active", "deleted"],
+                type: "string"
+              },
+              members: {
+                description: "List of partner-specific IDs of the users who are members of this organization.\nThis will replace the existing members.",
+                type: "array",
+                items: { $ref: "#/definitions/ID" }
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["name", "metadata", "status", "members"]
+          },
+          'Partial<Omit<ServerGroupData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>': {
+            type: "object",
+            properties: {
+              name: {
+                description: "Group name. Required when creating an group.",
+                type: "string"
+              },
+              metadata: {
+                description: "Arbitrary key-value pairs that can be used to store additional information.",
+                type: "object",
+                additionalProperties: { type: ["string", "number", "boolean"] },
+                propertyOrder: []
+              },
+              status: {
+                description: "Whether this group is active or deleted.  Attempting to log into a\ndeleted group will fail.",
+                enum: ["active", "deleted"],
+                type: "string"
+              },
+              members: {
+                description: "List of partner-specific IDs of the users who are members of this group.\nThis will replace the existing members.",
+                type: "array",
+                items: { $ref: "#/definitions/ID" }
+              }
+            },
+            additionalProperties: false,
+            propertyOrder: ["name", "metadata", "status", "members"]
+          }
+        },
+        $schema: "http://json-schema.org/draft-07/schema#"
+      }
+    };
+    exports.schema = schema2;
+  }
+});
+
+// opensource/sdk-js/packages/server/dist/cjs/index.js
+var require_cjs3 = __commonJS({
+  "opensource/sdk-js/packages/server/dist/cjs/index.js"(exports) {
+    "use strict";
+    var jwt11 = __require("jsonwebtoken");
+    var crypto9 = __require("crypto");
+    function _interopNamespaceDefault(e) {
+      var n = /* @__PURE__ */ Object.create(null);
+      if (e) {
+        Object.keys(e).forEach(function(k) {
+          if (k !== "default") {
+            var d = Object.getOwnPropertyDescriptor(e, k);
+            Object.defineProperty(n, k, d.get ? d : {
+              enumerable: true,
+              get: function() {
+                return e[k];
+              }
+            });
+          }
+        });
+      }
+      n.default = e;
+      return Object.freeze(n);
+    }
+    var jwt__namespace = /* @__PURE__ */ _interopNamespaceDefault(jwt11);
+    function getClientAuthToken3(project_id, project_secret, payload, options = {}) {
+      if (!payload || !payload.user_id) {
+        throw new Error("Missing user_id. A token without a user_id can be misinterpreted as an administrative server auth token (which should never be given to clients). If you intended to generate a server auth token, call getServerAuthToken instead.");
+      }
+      return jwt__namespace.sign({ ...payload, project_id }, project_secret, {
+        algorithm: "HS512",
+        expiresIn: options.expires ?? "1 min"
+      });
+    }
+    function getServerAuthToken(project_id, project_secret, options = {}) {
+      return jwt__namespace.sign({ app_id: project_id }, project_secret, {
+        algorithm: "HS512",
+        expiresIn: options.expires ?? "1 min"
+      });
+    }
+    function getApplicationManagementAuthToken(customer_id, customer_secret, options = {}) {
+      return jwt__namespace.sign({ customer_id }, customer_secret, {
+        algorithm: "HS512",
+        expiresIn: options.expires ?? "1 min"
+      });
+    }
+    function getProjectManagementAuthToken(customer_id, customer_secret) {
+      return jwt__namespace.sign({ customer_id }, customer_secret, {
+        algorithm: "HS512",
+        expiresIn: "1 min"
+      });
+    }
+    async function fetchCordRESTApi(endpoint, { method = "GET", project_id, project_secret, api_url = "https://api-comment-dev.spendflo.com/", body }) {
+      const encodedBody = typeof body === "undefined" || typeof body === "string" ? body : JSON.stringify(body);
+      const serverAuthToken = getServerAuthToken(project_id, project_secret);
+      const response = await fetch(`${api_url}${endpoint}`, {
+        method,
+        body: encodedBody,
+        headers: {
+          Authorization: `Bearer ${serverAuthToken}`,
+          "Content-Type": "application/json"
+        }
+      });
+      if (response.ok) {
+        return await response.json();
+      } else {
+        const responseText = await response.text();
+        throw new Error(`Error making Cord API call: ${response.status} ${response.statusText} ${responseText}`);
+      }
+    }
+    function validateWebhookSignature(body, cordTimestamp, cordSignature, projectSecret, options = {}) {
+      if (!cordSignature) {
+        throw new Error("Webhook signature is missing");
+      }
+      if (!cordTimestamp) {
+        throw new Error("Webhook signature timestamp is missing");
+      }
+      const acceptAgeSeconds = options.acceptAgeSeconds ?? 60 * 5;
+      if (Number.isNaN(Number(cordTimestamp)) || Math.abs(Date.now() - Number(cordTimestamp)) > 1e3 * acceptAgeSeconds) {
+        throw new Error("Webhook signature timestamp invalid or too old.");
+      }
+      const verifyStr = cordTimestamp + ":" + body;
+      const hmac = crypto9.createHmac("sha256", projectSecret);
+      hmac.update(verifyStr);
+      const incomingSignature = hmac.digest("base64");
+      if (cordSignature !== incomingSignature) {
+        throw new Error("Unable to verify webhook signature");
+      }
+    }
+    function tryValidateWebhookSignature(body, timestamp, signature, clientSecret) {
+      try {
+        validateWebhookSignature(body, timestamp, signature, clientSecret);
+      } catch (e) {
+        return false;
+      }
+      return true;
+    }
+    function parseWebhookBody(body) {
+      const payload = JSON.parse(body);
+      switch (payload.type) {
+        case "thread-message-added":
+          return payload;
+        case "notification-created":
+          return payload;
+        case "url-verification":
+          return payload;
+        default:
+          throw new Error("Unknown webhook request type.");
+      }
+    }
+    exports.fetchCordRESTApi = fetchCordRESTApi;
+    exports.getApplicationManagementAuthToken = getApplicationManagementAuthToken;
+    exports.getClientAuthToken = getClientAuthToken3;
+    exports.getProjectManagementAuthToken = getProjectManagementAuthToken;
+    exports.getServerAuthToken = getServerAuthToken;
+    exports.parseWebhookBody = parseWebhookBody;
+    exports.tryValidateWebhookSignature = tryValidateWebhookSignature;
+    exports.validateWebhookSignature = validateWebhookSignature;
+  }
+});
 
 // server/src/asyncTier/pgboss.ts
 import PgBoss from "pg-boss";
@@ -474,16 +3844,9 @@ function equal(a, b) {
 }
 var isEqual = equal;
 
-// opensource/sdk-js/packages/types/index.ts
-function locationJson(c) {
-  return JSON.stringify(
-    Object.fromEntries(
-      Object.entries(c).filter(([_key, value]) => value !== void 0).sort(([keyA], [keyB]) => keyA < keyB ? -1 : 1)
-    )
-  );
-}
-
 // common/types/index.ts
+var import_types = __toESM(require_cjs(), 1);
+var import_types2 = __toESM(require_cjs(), 1);
 function isValidFlatJsonObject(obj) {
   if (!obj) {
     return false;
@@ -574,7 +3937,7 @@ function locationCompare(a, b) {
   if (lengthA !== lengthB) {
     return lengthA - lengthB;
   }
-  return locationJson(a).localeCompare(locationJson(b));
+  return (0, import_types2.locationJson)(a).localeCompare((0, import_types2.locationJson)(b));
 }
 function toPageContext(pageContext) {
   if (!pageContext) {
@@ -745,7 +4108,7 @@ function emailTextToMessageContent(emailText, attachments) {
 (Unable to display attached files)`;
   }
   return replyText.split(/\r?\n/).filter((l) => l.length > 0).map((line) => ({
-    type: "p" /* PARAGRAPH */,
+    type: import_types2.MessageNodeType.PARAGRAPH,
     children: [{ text: line }]
   }));
 }
@@ -2870,18 +6233,18 @@ async function initBoss() {
     throw new Error("PgBoss has been already initialised");
   }
   const logger = anonymousLogger();
-  const schema = `pgboss_${Env_default.CORD_TIER}`;
+  const schema2 = `pgboss_${Env_default.CORD_TIER}`;
   const newBoss = new PgBoss({
     host: Env_default.POSTGRES_HOST,
     port: Number(Env_default.POSTGRES_PORT),
     database: Env_default.POSTGRES_DB,
     user: Env_default.POSTGRES_USER,
     password: Env_default.POSTGRES_PASSWORD,
-    schema
+    schema: schema2
   });
   newBoss.on("error", logger.exceptionLogger("pgboss error"));
   await newBoss.start();
-  logger.info("pg-boss is ready", { schema });
+  logger.info("pg-boss is ready", { schema: schema2 });
   boss = newBoss;
   return boss;
 }
@@ -2915,6 +6278,7 @@ import Calendar from "dayjs/plugin/calendar.js";
 import isBetween from "dayjs/plugin/isBetween.js";
 
 // opensource/sdk-js/packages/react/common/lib/messageNode.ts
+var import_types5 = __toESM(require_cjs(), 1);
 import { Element } from "slate";
 import { v4 as uuid } from "uuid";
 
@@ -2967,24 +6331,24 @@ function isMessageNodeText(node) {
   return !node.type && "text" in node;
 }
 function createParagraphNode(text = "") {
-  return createMessageNode("p" /* PARAGRAPH */, {
+  return createMessageNode(import_types5.MessageNodeType.PARAGRAPH, {
     children: [{ text }]
   });
 }
 function createMentionNode(userID, name) {
-  return createMessageNode("mention" /* MENTION */, {
+  return createMessageNode(import_types5.MessageNodeType.MENTION, {
     user: { id: userID },
     children: [{ text: `@${name}` }]
   });
 }
 function createLinkNode(url6, text) {
-  return createMessageNode("link" /* LINK */, {
+  return createMessageNode(import_types5.MessageNodeType.LINK, {
     url: url6,
     children: [{ text }]
   });
 }
 var findTodoNodesInSubtree = (parent, accumulator) => {
-  if (parent.type === "todo" /* TODO */) {
+  if (parent.type === import_types5.MessageNodeType.TODO) {
     accumulator.push(parent);
   } else {
     const children = getMessageNodeChildren(parent);
@@ -3026,7 +6390,7 @@ function taskTitleFromMessageNodes(nodes) {
   let pending = "";
   let text = "";
   for (const node of nodes) {
-    if (node.type === "assignee" /* ASSIGNEE */) {
+    if (node.type === import_types5.MessageNodeType.ASSIGNEE) {
       if (text.trim() === "") {
         continue;
       }
@@ -3036,7 +6400,7 @@ function taskTitleFromMessageNodes(nodes) {
     let newText = "";
     if (isMessageNodeText(node)) {
       newText = node.text;
-    } else if (node.type === "mention" /* MENTION */) {
+    } else if (node.type === import_types5.MessageNodeType.MENTION) {
       newText = trimStart(textFromNodeRecursive(node), "@");
     }
     const isEmpty2 = newText.trim() === "";
@@ -3061,7 +6425,7 @@ function taskTitleFromMessageContent(messageContent) {
   return "Task created using Cord";
 }
 function flattenMessage(node, accumulator) {
-  if (isMessageNodeText(node) || node.type === "assignee" /* ASSIGNEE */ || node.type === "mention" /* MENTION */) {
+  if (isMessageNodeText(node) || node.type === import_types5.MessageNodeType.ASSIGNEE || node.type === import_types5.MessageNodeType.MENTION) {
     accumulator.push(node);
     return;
   }
@@ -3093,7 +6457,7 @@ function isDefined(value) {
 function getMentionedUserIDs(content) {
   let users = [];
   for (const node of content) {
-    if (node.type === "mention" /* MENTION */) {
+    if (node.type === import_types2.MessageNodeType.MENTION) {
       users.push(node.user.id);
     } else {
       const children = getMessageNodeChildren(node);
@@ -3111,7 +6475,7 @@ function getReferencedUserIDs(content) {
 }
 function gatherReferencedUserIDs(nodes, accumulator) {
   for (const node of nodes) {
-    if (node.type === "mention" /* MENTION */ || node.type === "assignee" /* ASSIGNEE */) {
+    if (node.type === import_types2.MessageNodeType.MENTION || node.type === import_types2.MessageNodeType.ASSIGNEE) {
       accumulator.add(node.user.id);
       continue;
     }
@@ -3351,7 +6715,7 @@ function cleanseNode(node) {
     return void 0;
   } else if (node.type === "a" /* LINK_DEPRECATED */) {
     return {
-      type: "link" /* LINK */,
+      type: import_types2.MessageNodeType.LINK,
       url: node.url,
       children: [{ text: node.text }]
     };
@@ -7373,7 +10737,7 @@ var AWS_REGION = "eu-west-2";
 // server/src/slack/util.ts
 import * as url5 from "url";
 import { v4 as uuid24 } from "uuid";
-import * as jwt11 from "jsonwebtoken";
+import * as jwt10 from "jsonwebtoken";
 import { Op as Op25 } from "sequelize";
 
 // server/src/entity/user/util.ts
@@ -10539,7 +13903,7 @@ var PageVisitorLoader = class {
          AND u.state != 'deleted'
        ORDER BY pv."userID", "lastPresentTimestamp" DESC`,
       {
-        bind: [locationJson(matcher), orgIDs],
+        bind: [(0, import_types.locationJson)(matcher), orgIDs],
         type: QueryTypes9.SELECT
       }
     );
@@ -12635,6 +15999,9 @@ async function getRelevantContext(originalContext, threadOrgID) {
   return !threadOrgID || originalContext.session.viewer.orgID === threadOrgID ? originalContext : await contextWithOtherOrg(originalContext, threadOrgID);
 }
 
+// server/src/slack/mrkdwnImpl.ts
+var import_types14 = __toESM(require_cjs(), 1);
+
 // server/src/util/splitStringToWsAndText.ts
 function splitStringToWsAndText(string) {
   const [_, wsStart, middleText, wsEnd] = string.match(/^(\s*)(.*?)(\s*)$/s);
@@ -12721,11 +16088,11 @@ async function nodesToMrkdwnSegments(nodes, helpers) {
       continue;
     }
     switch (node.type) {
-      case "p" /* PARAGRAPH */:
+      case import_types14.MessageNodeType.PARAGRAPH:
         segments.push(nodesToMrkdwnSegments(node.children, helpers));
         segments.push([{ text: "\n" }]);
         break;
-      case "link" /* LINK */: {
+      case import_types14.MessageNodeType.LINK: {
         const nodeText = node.children[0].text;
         segments.push([
           {
@@ -12734,10 +16101,10 @@ async function nodesToMrkdwnSegments(nodes, helpers) {
         ]);
         break;
       }
-      case "bullet" /* BULLET */:
+      case import_types14.MessageNodeType.BULLET:
         segments.push(newLinePrefixAndIndent("\u2022 ", "  ", node, helpers));
         break;
-      case "number_bullet" /* NUMBER_BULLET */:
+      case import_types14.MessageNodeType.NUMBER_BULLET:
         segments.push(
           newLinePrefixAndIndent(
             `${++numberBulletCount}. `,
@@ -12747,14 +16114,14 @@ async function nodesToMrkdwnSegments(nodes, helpers) {
           )
         );
         break;
-      case "quote" /* QUOTE */:
+      case import_types14.MessageNodeType.QUOTE:
         segments.push(newLinePrefixAndIndent("> ", "  ", node, helpers));
         break;
-      case "todo" /* TODO */:
+      case import_types14.MessageNodeType.TODO:
         segments.push(newLinePrefixAndIndent("[] ", "  ", node, helpers));
         break;
-      case "mention" /* MENTION */:
-      case "assignee" /* ASSIGNEE */: {
+      case import_types14.MessageNodeType.MENTION:
+      case import_types14.MessageNodeType.ASSIGNEE: {
         const userID = node.user.id;
         segments.push(
           helpers.lookUpSlackUserID(userID).then((slackUserID) => {
@@ -12767,7 +16134,7 @@ async function nodesToMrkdwnSegments(nodes, helpers) {
         );
         break;
       }
-      case "code" /* CODE */:
+      case import_types14.MessageNodeType.CODE:
         segments.push(
           // eslint-disable-next-line @typescript-eslint/no-shadow -- Disabling for pre-existing problems. Please do not copy this comment, and consider fixing this one!
           nodesToMrkdwnSegments(node.children, helpers).then(
@@ -12821,6 +16188,7 @@ var SlackMessageLoader = class {
 
 // server/src/entity/message/MessageMutator.ts
 import { Sequelize as Sequelize11 } from "sequelize";
+var import_types15 = __toESM(require_cjs(), 1);
 
 // server/src/util/locks.ts
 var LOCK_TTL_MS = 5e3;
@@ -13033,7 +16401,7 @@ var MessageMutator = class {
 };
 function convertAssignees(content, removedAssignees) {
   return content.map((node) => {
-    if (isMessageNodeType(node, "assignee" /* ASSIGNEE */)) {
+    if (isMessageNodeType(node, import_types15.MessageNodeType.ASSIGNEE)) {
       const removed = removedAssignees.find(
         (assignee) => assignee.userID === node.user.id
       );
@@ -13844,6 +17212,7 @@ async function findTaskAndMessageEntitiesFromExternalTaskID(externalTaskID, thir
 }
 
 // server/src/third_party_tasks/jira/util.ts
+var import_types16 = __toESM(require_cjs(), 1);
 var textNodeStyleToMarks = (node) => {
   const marks = [];
   if (node.bold) {
@@ -13905,7 +17274,7 @@ var convertNodeToAtlassianDocumentNode = (node) => {
     };
   } else {
     switch (node.type) {
-      case "link" /* LINK */: {
+      case import_types16.MessageNodeType.LINK: {
         const nodeText = node.children[0].text;
         if (nodeText.length === 0) {
           return void 0;
@@ -13921,8 +17290,8 @@ var convertNodeToAtlassianDocumentNode = (node) => {
           ]
         };
       }
-      case "p" /* PARAGRAPH */:
-      case "markdown" /* MARKDOWN */: {
+      case import_types16.MessageNodeType.PARAGRAPH:
+      case import_types16.MessageNodeType.MARKDOWN: {
         const content = convertNodeListToAtlassianDocumentNodes(node.children);
         if (content.length === 0) {
           return void 0;
@@ -13932,8 +17301,8 @@ var convertNodeToAtlassianDocumentNode = (node) => {
           content
         };
       }
-      case "todo" /* TODO */:
-      case "bullet" /* BULLET */: {
+      case import_types16.MessageNodeType.TODO:
+      case import_types16.MessageNodeType.BULLET: {
         const content = convertNodeListToAtlassianDocumentNodes(node.children);
         if (content.length === 0) {
           return void 0;
@@ -13948,7 +17317,7 @@ var convertNodeToAtlassianDocumentNode = (node) => {
           ]
         };
       }
-      case "number_bullet" /* NUMBER_BULLET */: {
+      case import_types16.MessageNodeType.NUMBER_BULLET: {
         const content = convertNodeListToAtlassianDocumentNodes(node.children);
         if (content.length === 0) {
           return void 0;
@@ -13963,19 +17332,19 @@ var convertNodeToAtlassianDocumentNode = (node) => {
           ]
         };
       }
-      case "assignee" /* ASSIGNEE */:
+      case import_types16.MessageNodeType.ASSIGNEE:
         return {
           type: "text",
           text: node.children[0].text
           // TODO: strip +
         };
-      case "mention" /* MENTION */:
+      case import_types16.MessageNodeType.MENTION:
         return {
           type: "text",
           text: node.children[0].text
           // TODO: strip @
         };
-      case "quote" /* QUOTE */: {
+      case import_types16.MessageNodeType.QUOTE: {
         const content = convertNodeListToAtlassianDocumentNodes(node.children);
         if (content.length === 0) {
           return void 0;
@@ -13985,7 +17354,7 @@ var convertNodeToAtlassianDocumentNode = (node) => {
           content: content.map(wrapTextInParagraphIfNecessary)
         };
       }
-      case "code" /* CODE */: {
+      case import_types16.MessageNodeType.CODE: {
         const content = convertNodeListToAtlassianDocumentNodes(node.children);
         if (content.length === 0) {
           return void 0;
@@ -14464,2507 +17833,10 @@ function validateExternalID(id, fieldName) {
 }
 
 // server/src/public/routes/platform/validatorFunction.ts
+var import_api_types = __toESM(require_cjs2(), 1);
 import Ajv from "ajv";
 import { fullFormats } from "ajv-formats/dist/formats.js";
 import addFormat from "ajv-formats";
-
-// opensource/sdk-js/packages/api-types/generate/schema.ts
-var schema_default = {
-  CreateApplicationVariables: {
-    description: "https://docs.cord.com/rest-apis/applications/",
-    type: "object",
-    properties: {
-      emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
-      name: {
-        description: "Name of the project",
-        minLength: 1,
-        type: "string"
-      },
-      iconURL: {
-        description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      eventWebhookURL: {
-        description: "The URL that the events webhook is sent to",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      redirectURI: {
-        description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
-        type: ["null", "string"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "emailSettings",
-      "name",
-      "iconURL",
-      "eventWebhookURL",
-      "redirectURI"
-    ],
-    required: ["name"],
-    definitions: {
-      "Partial<EmailSettings>": {
-        type: "object",
-        properties: {
-          name: {
-            description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
-            type: ["null", "string"]
-          },
-          imageURL: {
-            description: "URL for your logo image. The default for this is the Cord logo.",
-            type: ["null", "string"]
-          },
-          sender: {
-            description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
-            format: "email",
-            type: ["null", "string"]
-          },
-          logoConfig: {
-            description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
-            anyOf: [
-              {
-                type: "object",
-                properties: {
-                  width: { minimum: 0, maximum: 240, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["width"],
-                required: ["width"]
-              },
-              {
-                type: "object",
-                properties: {
-                  height: { minimum: 0, maximum: 120, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["height"],
-                required: ["height"]
-              },
-              { type: "null" }
-            ]
-          },
-          enableEmailNotifications: {
-            description: "Whether you want your users to receive notification emails. The default value is true.",
-            type: "boolean"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "name",
-          "imageURL",
-          "sender",
-          "logoConfig",
-          "enableEmailNotifications"
-        ]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdateApplicationVariables: {
-    description: "https://docs.cord.com/rest-apis/applications/",
-    type: "object",
-    properties: {
-      emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
-      name: {
-        description: "Name of the project",
-        minLength: 1,
-        type: "string"
-      },
-      iconURL: {
-        description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      eventWebhookURL: {
-        description: "The URL that the events webhook is sent to",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      redirectURI: {
-        description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
-        type: ["null", "string"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "emailSettings",
-      "name",
-      "iconURL",
-      "eventWebhookURL",
-      "redirectURI"
-    ],
-    definitions: {
-      "Partial<EmailSettings>": {
-        type: "object",
-        properties: {
-          name: {
-            description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
-            type: ["null", "string"]
-          },
-          imageURL: {
-            description: "URL for your logo image. The default for this is the Cord logo.",
-            type: ["null", "string"]
-          },
-          sender: {
-            description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
-            format: "email",
-            type: ["null", "string"]
-          },
-          logoConfig: {
-            description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
-            anyOf: [
-              {
-                type: "object",
-                properties: {
-                  width: { minimum: 0, maximum: 240, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["width"],
-                required: ["width"]
-              },
-              {
-                type: "object",
-                properties: {
-                  height: { minimum: 0, maximum: 120, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["height"],
-                required: ["height"]
-              },
-              { type: "null" }
-            ]
-          },
-          enableEmailNotifications: {
-            description: "Whether you want your users to receive notification emails. The default value is true.",
-            type: "boolean"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "name",
-          "imageURL",
-          "sender",
-          "logoConfig",
-          "enableEmailNotifications"
-        ]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  DeleteApplicationVariables: {
-    description: "https://docs.cord.com/rest-apis/applications/",
-    type: "object",
-    properties: {
-      secret: {
-        description: "Secret key of the project that you want to delete. This can be found\nwithin the Cord Console.",
-        minLength: 1,
-        type: "string"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["secret"],
-    required: ["secret"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  BatchAPIVariables: {
-    description: "https://docs.cord.com/rest-apis/batch/",
-    type: "object",
-    properties: {
-      users: {
-        description: "List of user objects. Every object must include the id field. If the user\nalready exists, all other fields are optional and only updated when\npresent. If the user does not already exist, fields are required as\ndescribed in the [Create or update a\nuser](/rest-apis/users#Create-or-update-a-user)\nAPI.",
-        maxItems: 1e4,
-        type: "array",
-        items: { $ref: "#/definitions/BatchUpdateUser" }
-      },
-      organizations: {
-        maxItems: 1e3,
-        type: "array",
-        items: { $ref: "#/definitions/BatchUpdateGroup" }
-      },
-      groups: {
-        description: "List of group objects. Every object must include the id field. If\nthe group already exists, all other fields are optional and only\nupdated when present. If the group does not already exist, fields\nare required as described in the [Create or update a\ngroup](/rest-apis/groups/#create-or-update-a-group)\nAPI.",
-        maxItems: 1e3,
-        type: "array",
-        items: { $ref: "#/definitions/BatchUpdateGroup" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["users", "organizations", "groups"],
-    definitions: {
-      BatchUpdateUser: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          name: { description: "Full user name", type: ["null", "string"] },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: { enum: ["active", "deleted"], type: "string" },
-          email: {
-            description: "Email address",
-            format: "email",
-            type: ["null", "string"]
-          },
-          shortName: {
-            description: "Short user name. In most cases, this will be preferred over name when set.",
-            type: ["null", "string"]
-          },
-          short_name: { type: ["null", "string"] },
-          profilePictureURL: {
-            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          profile_picture_url: {
-            description: "Alias for profilePictureURL. This field is deprecated.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          first_name: {
-            description: "User's first name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          },
-          last_name: {
-            description: "User's last name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          },
-          id: { $ref: "#/definitions/ID" }
-        },
-        required: ["id"]
-      },
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] },
-      BatchUpdateGroup: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          name: {
-            description: "Group name. Required when creating an group.",
-            type: "string"
-          },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: {
-            description: "Whether this group is active or deleted.  Attempting to log into a\ndeleted group will fail.",
-            enum: ["active", "deleted"],
-            type: "string"
-          },
-          members: {
-            description: "List of partner-specific IDs of the users who are members of this group.\nThis will replace the existing members.",
-            type: "array",
-            items: { $ref: "#/definitions/ID" }
-          },
-          id: { $ref: "#/definitions/ID" }
-        },
-        required: ["id"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreateFileVariables: {
-    type: "object",
-    properties: {
-      ownerID: {
-        description: "The ID of the user that owns the file.  Files can only be attached to\nmessages authored by their owner.",
-        type: "string"
-      },
-      name: {
-        description: "The name of the file.  This will be shown to the user when attached to a\nmessage and will be the file's name if it's downloaded.  If not supplied,\nit will be taken from the filename of the `file` parameter.",
-        type: "string"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["ownerID", "name"],
-    required: ["ownerID"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreateMessageVariables: {
-    description: "https://docs.cord.com/rest-apis/messages/",
-    type: "object",
-    properties: {
-      addReactions: {
-        description: "The reactions you want to add to this message.\nThe default timestamp is the current time.\nTrying to create a reaction that already exists for a user does nothing.\nDoing the same as before with a timestamp will update the reaction with the new timestamp.\nThe reaction users need to be an [active member of the group](/rest-apis/groups#Update-group-members) that the message and thread belong to.",
-        type: "array",
-        items: { $ref: "#/definitions/ServerAddReactions" }
-      },
-      addAttachments: {
-        description: "A list of attachments to add to the message.  The same file cannot be\nattached to the same message multiple times.",
-        type: "array",
-        items: {
-          type: "object",
-          properties: {
-            type: {
-              description: "The type of attachment.  This is `file` for file attachments.",
-              type: "string",
-              const: "file"
-            },
-            id: {
-              description: "The ID of the file to attach.  This must have been previously uploaded via\nthe [file API](/js-apis-and-hooks/file-api/uploadFile).",
-              type: "string"
-            }
-          },
-          additionalProperties: false,
-          propertyOrder: ["type", "id"],
-          required: ["id", "type"]
-        }
-      },
-      createThread: {
-        description: "The parameters for creating a thread if the supplied thread doesn't exist\nyet.  If the thread doesn't exist but `createThread` isn't provided, the\ncall will generate an error.  This value is ignored if the thread already\nexists.",
-        $ref: '#/definitions/Omit<ServerCreateThread,"id">'
-      },
-      subscribeToThread: {
-        description: "Whether to subscribe the sender of the message to the thread, so that they\nget notified about replies.  If not specified, defaults to `true`.  If\nfalse, the user's subscription status will be left unchanged.",
-        type: "boolean"
-      },
-      content: {
-        $ref: "#/definitions/MessageContent",
-        description: "The content of the message."
-      },
-      authorID: {
-        description: "The ID for the user that sent the message.",
-        type: "string"
-      },
-      type: {
-        description: "The type of message this is.  A `user_message` is a message that the author\nsent.  An `action_message` is a message about something that happened, such\nas the thread being resolved.  The default value is `user_message`.",
-        enum: ["action_message", "user_message"],
-        type: "string"
-      },
-      id: {
-        description: "The ID for the message.  If a message is created with no ID, a random\nUUID-based ID will be automatically created for it.",
-        type: "string"
-      },
-      url: {
-        description: "A URL where the message can be seen.  This determines where a user is sent\nwhen they click on a reference to this message, such as in a notification.\nIf unset, it defaults to the thread's URL.",
-        type: ["null", "string"]
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      createdTimestamp: {
-        description: "The timestamp when this message was created.  The default value is the\ncurrent time.",
-        type: "string",
-        format: "date-time"
-      },
-      extraClassnames: {
-        description: "A optional space separated list of classnames to add to the message.",
-        type: ["null", "string"]
-      },
-      updatedTimestamp: {
-        description: "The timestamp when this message was last edited, if it ever was.  If unset,\nthe message does not show as edited.",
-        anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-      },
-      deletedTimestamp: {
-        description: "The timestamp when this message was deleted, if it was.  If unset, the\nmessage is not deleted.",
-        anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-      },
-      iconURL: {
-        description: "The URL of the icon to show next to the message.  This is only used for\n`action_message` messages; other messages show the avatar of the author.\nIf an `action_message` does not have an icon set, no icon is shown.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      translationKey: {
-        description: "An optional translation key used for this message.  This is useful for\nsystem-generated messages where you might want to translate or customize\nthem at runtime.  See [the translations\ndocumentation](/customization/translations) for more\ninformation.",
-        type: ["null", "string"]
-      },
-      skipLinkPreviews: {
-        description: "If set, Cord won't analyze links in the message to generate previews.",
-        type: "boolean"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "addReactions",
-      "addAttachments",
-      "createThread",
-      "subscribeToThread",
-      "content",
-      "authorID",
-      "type",
-      "id",
-      "url",
-      "metadata",
-      "createdTimestamp",
-      "extraClassnames",
-      "updatedTimestamp",
-      "deletedTimestamp",
-      "iconURL",
-      "translationKey",
-      "skipLinkPreviews"
-    ],
-    required: ["authorID", "content"],
-    definitions: {
-      ServerAddReactions: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          reaction: { description: "The emoji reaction.", type: "string" },
-          userID: {
-            description: "The ID of the user who reacted to the message.",
-            type: "string"
-          },
-          timestamp: {
-            description: "The timestamp of when the reaction was created.",
-            type: "string",
-            format: "date-time"
-          }
-        },
-        required: ["reaction", "userID"]
-      },
-      'Omit<ServerCreateThread,"id">': {
-        type: "object",
-        properties: {
-          location: {
-            description: "The [location](/reference/location) of this thread.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          url: {
-            description: "A URL where the thread can be seen.  This determines where a user is sent\nwhen they click on a reference to this thread, such as in a notification,\nor if they click on a reference to a message in the thread and the message\ndoesn't have its own URL.",
-            type: "string"
-          },
-          name: {
-            description: "The name of the thread.  This is shown to users when the thread is\nreferenced, such as in notifications.  This should generally be something\nlike the page title.",
-            type: "string"
-          },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          resolved: { type: "boolean" },
-          organizationID: {
-            description: "The organization ID this thread is in.",
-            type: "string"
-          },
-          groupID: {
-            description: "The group ID this thread is in.",
-            type: "string"
-          },
-          extraClassnames: {
-            description: "An optional space separated list of classnames to add to the thread.",
-            type: ["null", "string"]
-          },
-          addSubscribers: {
-            description: "A list of subscribers to add to this thread.",
-            type: "array",
-            items: { type: "string" }
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "location",
-          "url",
-          "name",
-          "metadata",
-          "resolved",
-          "organizationID",
-          "groupID",
-          "extraClassnames",
-          "addSubscribers"
-        ],
-        required: ["groupID", "location", "name", "url"]
-      },
-      MessageAnyNode: {
-        anyOf: [
-          { $ref: "#/definitions/MessageAssigneeNode" },
-          { $ref: "#/definitions/MessageBulletNode" },
-          { $ref: "#/definitions/MessageCodeNode" },
-          { $ref: "#/definitions/MessageLinkNode" },
-          { $ref: "#/definitions/MessageMentionNode" },
-          { $ref: "#/definitions/MessageNumberBulletNode" },
-          { $ref: "#/definitions/MessageParagraphNode" },
-          { $ref: "#/definitions/MessageQuoteNode" },
-          { $ref: "#/definitions/MessageTextNode" },
-          { $ref: "#/definitions/MessageTodoNode" },
-          { $ref: "#/definitions/MessageMarkdownNode" }
-        ]
-      },
-      MessageAssigneeNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "assignee" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          user: {
-            type: "object",
-            properties: { id: { type: "string" } },
-            additionalProperties: false,
-            propertyOrder: ["id"],
-            required: ["id"]
-          }
-        },
-        required: ["children", "type", "user"]
-      },
-      MessageContent: {
-        type: "array",
-        items: { $ref: "#/definitions/MessageAnyNode" }
-      },
-      MessageBulletNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "bullet" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          indent: { type: "number" }
-        },
-        required: ["children", "type"]
-      },
-      MessageCodeNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "code" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      MessageLinkNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "link" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          url: { type: "string" }
-        },
-        required: ["children", "type", "url"]
-      },
-      MessageMentionNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "mention" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          user: {
-            type: "object",
-            properties: { id: { type: "string" } },
-            additionalProperties: false,
-            propertyOrder: ["id"],
-            required: ["id"]
-          }
-        },
-        required: ["children", "type", "user"]
-      },
-      MessageNumberBulletNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "number_bullet" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          bulletNumber: { type: "number" },
-          indent: { type: "number" }
-        },
-        required: ["bulletNumber", "children", "type"]
-      },
-      MessageParagraphNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "p" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      MessageQuoteNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "quote" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      MessageTextNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: {
-            enum: [
-              "assignee",
-              "bullet",
-              "code",
-              "link",
-              "markdown",
-              "mention",
-              "number_bullet",
-              "p",
-              "quote",
-              "todo"
-            ],
-            type: "string"
-          },
-          class: { type: "string" },
-          text: { type: "string" },
-          bold: { type: "boolean" },
-          code: { type: "boolean" },
-          italic: { type: "boolean" },
-          underline: { type: "boolean" }
-        },
-        required: ["text"]
-      },
-      MessageTodoNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "todo" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          todoID: { type: "string" },
-          done: { type: "boolean" }
-        },
-        required: ["children", "done", "todoID", "type"]
-      },
-      MessageMarkdownNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "markdown" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdateMessageVariables: {
-    description: "https://docs.cord.com/rest-apis/messages/",
-    type: "object",
-    properties: {
-      deleted: {
-        description: "Whether we want to mark this message as deleted. Setting this to `true` without\nproviding a value for `deletedTimestamp` is equivalent to setting `deletedTimestamp` to current\ntime and setting this to `false` is equivalent to setting `deletedTimestamp` to `null`.",
-        type: "boolean"
-      },
-      deletedTimestamp: {
-        description: "The timestamp when this message was deleted, if it was. If set to null, the message is not deleted.\nDeleting a message this way will only soft delete it, replacing the content of the message with a\nrecord of the deletion on the frontend. If you'd like to permanently delete it instead, use the\n[delete message endpoint](/rest-apis/messages#Delete-a-message).",
-        anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-      },
-      removeReactions: {
-        description: "The reactions you want to remove from this message.\nRemoving a reaction that does not exist will have no effect and will not return an error.\nAn error is returned if a reaction is both added and deleted in the same request.",
-        type: "array",
-        items: { $ref: "#/definitions/ServerRemoveReactions" }
-      },
-      removeAttachments: {
-        description: "The attachments you want to remove from this message.  Removing an\nattachment that doesn't exist has no effect and won't return an error.\nAttempting to add and remove the same attachment in one request is an\nerror.",
-        type: "array",
-        items: { $ref: "#/definitions/RemoveAttachment" }
-      },
-      type: {
-        description: "The type of message this is.  A `user_message` is a message that the author\nsent.  An `action_message` is a message about something that happened, such\nas the thread being resolved.  The default value is `user_message`.",
-        enum: ["action_message", "user_message"],
-        type: "string"
-      },
-      id: {
-        description: "The ID for the message.  If a message is created with no ID, a random\nUUID-based ID will be automatically created for it.",
-        type: "string"
-      },
-      url: {
-        description: "A URL where the message can be seen.  This determines where a user is sent\nwhen they click on a reference to this message, such as in a notification.\nIf unset, it defaults to the thread's URL.",
-        type: ["null", "string"]
-      },
-      content: {
-        description: "The content of the message.",
-        $ref: "#/definitions/MessageContent"
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      createdTimestamp: {
-        description: "The timestamp when this message was created.  The default value is the\ncurrent time.",
-        type: "string",
-        format: "date-time"
-      },
-      authorID: {
-        description: "The ID for the user that sent the message.",
-        type: "string"
-      },
-      extraClassnames: {
-        description: "A optional space separated list of classnames to add to the message.",
-        type: ["null", "string"]
-      },
-      updatedTimestamp: {
-        description: "The timestamp when this message was last edited, if it ever was.  If unset,\nthe message does not show as edited.",
-        anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-      },
-      iconURL: {
-        description: "The URL of the icon to show next to the message.  This is only used for\n`action_message` messages; other messages show the avatar of the author.\nIf an `action_message` does not have an icon set, no icon is shown.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      translationKey: {
-        description: "An optional translation key used for this message.  This is useful for\nsystem-generated messages where you might want to translate or customize\nthem at runtime.  See [the translations\ndocumentation](/customization/translations) for more\ninformation.",
-        type: ["null", "string"]
-      },
-      skipLinkPreviews: {
-        description: "If set, Cord won't analyze links in the message to generate previews.",
-        type: "boolean"
-      },
-      addReactions: {
-        description: "The reactions you want to add to this message.\nThe default timestamp is the current time.\nTrying to create a reaction that already exists for a user does nothing.\nDoing the same as before with a timestamp will update the reaction with the new timestamp.\nThe reaction users need to be an [active member of the group](/rest-apis/groups#Update-group-members) that the message and thread belong to.",
-        type: "array",
-        items: { $ref: "#/definitions/ServerAddReactions" }
-      },
-      addAttachments: {
-        description: "A list of attachments to add to the message.  The same file cannot be\nattached to the same message multiple times.",
-        type: "array",
-        items: {
-          type: "object",
-          properties: {
-            type: {
-              description: "The type of attachment.  This is `file` for file attachments.",
-              type: "string",
-              const: "file"
-            },
-            id: {
-              description: "The ID of the file to attach.  This must have been previously uploaded via\nthe [file API](/js-apis-and-hooks/file-api/uploadFile).",
-              type: "string"
-            }
-          },
-          additionalProperties: false,
-          propertyOrder: ["type", "id"],
-          required: ["id", "type"]
-        }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "deleted",
-      "deletedTimestamp",
-      "removeReactions",
-      "removeAttachments",
-      "type",
-      "id",
-      "url",
-      "content",
-      "metadata",
-      "createdTimestamp",
-      "authorID",
-      "extraClassnames",
-      "updatedTimestamp",
-      "iconURL",
-      "translationKey",
-      "skipLinkPreviews",
-      "addReactions",
-      "addAttachments"
-    ],
-    definitions: {
-      ServerRemoveReactions: {
-        type: "object",
-        properties: {
-          reaction: { description: "The emoji reaction.", type: "string" },
-          userID: {
-            description: "The ID of the user who reacted to the message.",
-            type: "string"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["reaction", "userID"],
-        required: ["reaction", "userID"]
-      },
-      RemoveAttachment: {
-        anyOf: [
-          {
-            type: "object",
-            properties: {
-              type: {
-                description: "The type of attachment to remove.  This is `file` for file attachments.",
-                type: "string",
-                const: "file"
-              },
-              id: {
-                description: "The ID of the file attachment to remove.",
-                type: "string"
-              }
-            },
-            additionalProperties: false,
-            propertyOrder: ["type", "id"],
-            required: ["id", "type"]
-          },
-          {
-            type: "object",
-            properties: {
-              type: {
-                description: "The type of attachment to remove.  This is `link_preview` for link preview attachments.",
-                type: "string",
-                const: "link_preview"
-              },
-              id: {
-                description: "The ID of the link preview attachment to remove.",
-                type: "string"
-              }
-            },
-            additionalProperties: false,
-            propertyOrder: ["type", "id"],
-            required: ["id", "type"]
-          }
-        ]
-      },
-      MessageAnyNode: {
-        anyOf: [
-          { $ref: "#/definitions/MessageAssigneeNode" },
-          { $ref: "#/definitions/MessageBulletNode" },
-          { $ref: "#/definitions/MessageCodeNode" },
-          { $ref: "#/definitions/MessageLinkNode" },
-          { $ref: "#/definitions/MessageMentionNode" },
-          { $ref: "#/definitions/MessageNumberBulletNode" },
-          { $ref: "#/definitions/MessageParagraphNode" },
-          { $ref: "#/definitions/MessageQuoteNode" },
-          { $ref: "#/definitions/MessageTextNode" },
-          { $ref: "#/definitions/MessageTodoNode" },
-          { $ref: "#/definitions/MessageMarkdownNode" }
-        ]
-      },
-      MessageAssigneeNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "assignee" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          user: {
-            type: "object",
-            properties: { id: { type: "string" } },
-            additionalProperties: false,
-            propertyOrder: ["id"],
-            required: ["id"]
-          }
-        },
-        required: ["children", "type", "user"]
-      },
-      MessageContent: {
-        type: "array",
-        items: { $ref: "#/definitions/MessageAnyNode" }
-      },
-      MessageBulletNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "bullet" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          indent: { type: "number" }
-        },
-        required: ["children", "type"]
-      },
-      MessageCodeNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "code" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      MessageLinkNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "link" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          url: { type: "string" }
-        },
-        required: ["children", "type", "url"]
-      },
-      MessageMentionNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "mention" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          user: {
-            type: "object",
-            properties: { id: { type: "string" } },
-            additionalProperties: false,
-            propertyOrder: ["id"],
-            required: ["id"]
-          }
-        },
-        required: ["children", "type", "user"]
-      },
-      MessageNumberBulletNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "number_bullet" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          bulletNumber: { type: "number" },
-          indent: { type: "number" }
-        },
-        required: ["bulletNumber", "children", "type"]
-      },
-      MessageParagraphNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "p" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      MessageQuoteNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "quote" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      MessageTextNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: {
-            enum: [
-              "assignee",
-              "bullet",
-              "code",
-              "link",
-              "markdown",
-              "mention",
-              "number_bullet",
-              "p",
-              "quote",
-              "todo"
-            ],
-            type: "string"
-          },
-          class: { type: "string" },
-          text: { type: "string" },
-          bold: { type: "boolean" },
-          code: { type: "boolean" },
-          italic: { type: "boolean" },
-          underline: { type: "boolean" }
-        },
-        required: ["text"]
-      },
-      MessageTodoNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "todo" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" },
-          todoID: { type: "string" },
-          done: { type: "boolean" }
-        },
-        required: ["children", "done", "todoID", "type"]
-      },
-      MessageMarkdownNode: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          type: { type: "string", const: "markdown" },
-          class: { type: "string" },
-          children: { $ref: "#/definitions/MessageContent" }
-        },
-        required: ["children", "type"]
-      },
-      ServerAddReactions: {
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          reaction: { description: "The emoji reaction.", type: "string" },
-          userID: {
-            description: "The ID of the user who reacted to the message.",
-            type: "string"
-          },
-          timestamp: {
-            description: "The timestamp of when the reaction was created.",
-            type: "string",
-            format: "date-time"
-          }
-        },
-        required: ["reaction", "userID"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListThreadMessageParameters: {
-    description: "https://docs.cord.com/rest-apis/messages/",
-    type: "object",
-    properties: {
-      sortDirection: {
-        description: "Return messages in ascending or descending order of creation timestamp.  'descending' is the default.",
-        enum: ["ascending", "descending"],
-        type: "string"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["sortDirection"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListMessageParameters: {
-    description: "https://docs.cord.com/rest-apis/messages/",
-    type: "object",
-    properties: {
-      limit: {
-        description: "Number of messages to return. Defaults to 1000.",
-        type: "number"
-      },
-      token: {
-        description: "Pagination token. This is returned in the `pagination` object of a previous response.",
-        type: "string"
-      },
-      filter: {
-        description: "Messages will be matched against the filters specified.\nThis is a partial match, which means any keys other than the ones you specify are ignored\nwhen checking for a match. Please note that because this is a query parameter in a REST API,\nthis JSON object must be URI encoded before being sent.",
-        type: "object",
-        properties: {
-          metadata: {
-            description: "Arbitrary key-value pairs of data associated with the message.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          location: {
-            description: "The [location](/reference/location) of the thread containing the message.",
-            type: "string"
-          },
-          authorID: {
-            description: "If provided, will return messages created by this author.",
-            type: "string"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["metadata", "location", "authorID"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["limit", "token", "filter"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  AppendMessageVariables: {
-    type: "object",
-    properties: {
-      text: {
-        description: "The text that will be appended to the markdown node in the message.",
-        type: "string"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["text"],
-    required: ["text"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreateNotificationVariables: {
-    description: "https://docs.cord.com/rest-apis/notifications/",
-    type: "object",
-    properties: {
-      actorID: {
-        description: 'ID of user who is the "actor" sending the notification, i.e., the user\ntaking the action the notification is about.\n\nRequired if `template` includes `{{actor}}`.',
-        type: "string"
-      },
-      actor_id: { type: "string" },
-      recipientID: {
-        description: "ID of user receiving the notification.",
-        type: "string"
-      },
-      recipient_id: { type: "string" },
-      template: {
-        description: "Template for the header of the notification. The expressions `{{actor}}`\nand `{{recipient}}` will be replaced respectively with the notification's\nactor and recipient. (See below for an example.)",
-        type: "string"
-      },
-      url: {
-        description: "URL of page to go to when the notification is clicked.",
-        type: "string"
-      },
-      iconUrl: {
-        description: "URL of an icon image if a specific one is desired. For notifications with\nan `actor_id` this will default to the sender's profile picture, otherwise\nit will default to a bell icon.",
-        type: "string"
-      },
-      type: {
-        description: "Currently must be set to `url`. In the future this may specify different\ntypes of notifications, but for now only `url` is defined.",
-        type: "string",
-        const: "url"
-      },
-      metadata: {
-        description: "An arbitrary JSON object that can be used to set additional metadata on the\nnotification. When displaying a [list of\nnotifications](/components/cord-notification-list),\nyou can filter the list by metadata value.\n\nKeys are strings, and values can be strings, numbers or booleans.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      extraClassnames: {
-        description: "An optional space separated list of classnames to add to the notification.",
-        type: ["null", "string"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "actorID",
-      "actor_id",
-      "recipientID",
-      "recipient_id",
-      "template",
-      "url",
-      "iconUrl",
-      "type",
-      "metadata",
-      "extraClassnames"
-    ],
-    required: ["template", "type", "url"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdatePlatformOrganizationVariables: {
-    type: "object",
-    properties: {
-      name: {
-        description: "Organization name. Required when creating an organization.",
-        type: "string"
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      status: {
-        description: "Whether this organization is active or deleted.  Attempting to log into a\ndeleted organization will fail.",
-        enum: ["active", "deleted"],
-        type: "string"
-      },
-      members: {
-        description: "List of partner-specific IDs of the users who are members of this organization.\nThis will replace the existing members.",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["name", "metadata", "status", "members"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdatePlatformOrganizationMembersVariables: {
-    type: "object",
-    properties: {
-      add: {
-        description: "The IDs of users to add to this organization.",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      },
-      remove: {
-        description: "The IDs of users to remove from this organization.",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["add", "remove"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreatePlatformOrganizationVariables: {
-    type: "object",
-    properties: {
-      id: { $ref: "#/definitions/ID", description: "ID of the organization" },
-      name: {
-        description: "Organization name. Required when creating an organization.",
-        type: "string"
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      status: {
-        description: "Whether this organization is active or deleted.  Attempting to log into a\ndeleted organization will fail.",
-        enum: ["active", "deleted"],
-        type: "string"
-      },
-      members: {
-        description: "List of partner-specific IDs of the users who are members of this organization",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["id", "name", "metadata", "status", "members"],
-    required: ["id", "name"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdatePlatformGroupVariables: {
-    description: "https://docs.cord.com/rest-apis/groups/",
-    type: "object",
-    properties: {
-      name: {
-        description: "Group name. Required when creating an group.",
-        type: "string"
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      status: {
-        description: "Whether this group is active or deleted.  Attempting to log into a\ndeleted group will fail.",
-        enum: ["active", "deleted"],
-        type: "string"
-      },
-      members: {
-        description: "List of partner-specific IDs of the users who are members of this group.\nThis will replace the existing members.",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["name", "metadata", "status", "members"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdatePlatformGroupMembersVariables: {
-    description: "https://docs.cord.com/rest-apis/groups/",
-    type: "object",
-    properties: {
-      add: {
-        description: "The IDs of users to add to this group.",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      },
-      remove: {
-        description: "The IDs of users to remove from this group.",
-        type: "array",
-        items: { $ref: "#/definitions/ID" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["add", "remove"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdateUserPreferenceVariables: {
-    description: "https://docs.cord.com/rest-apis/preferences/",
-    type: "object",
-    properties: {
-      key: {
-        description: "The preference key. `notification_channels` controls how users get notified about Cord activity.",
-        type: "string",
-        const: "notification_channels"
-      },
-      value: {
-        $ref: "#/definitions/Partial<NotificationPreferences>",
-        description: 'The updated preference value. This will update only the keys that are passed along.\nFor example, to disable Slack notification, but leave email untouched, you can use this value:\n\n```json\n{\n   "value": { "sendViaSlack": "false" },\n}\n```'
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["key", "value"],
-    required: ["key", "value"],
-    definitions: {
-      "Partial<NotificationPreferences>": {
-        type: "object",
-        properties: {
-          sendViaSlack: {
-            description: "Whether notifications should be sent via slack.",
-            type: "boolean"
-          },
-          sendViaEmail: {
-            description: "Whether notifications should be sent via email.",
-            type: "boolean"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["sendViaSlack", "sendViaEmail"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdateUserPresenceVariables: {
-    description: "https://docs.cord.com/rest-apis/presence/",
-    type: "object",
-    properties: {
-      organizationID: { type: "string" },
-      exclusiveWithin: {
-        description: 'Sets an "exclusivity region" for the ephemeral presence set by this update.\nA user can only be present at one location for a given value of exclusiveWithin.\nIf the user becomes present at a different location with the same value of\nexclusiveWithin, they automatically become no longer present at all other\nlocations with that value of exclusive_within.\nThis is useful to more easily track presence as a user moves among sub-locations.\nFor example, suppose we\'d like to track which specific paragraph on a page\na user is present. We could make those updates like this:\n\n```json\n{\n   "groupID": "<GROUP_ID>",\n   "location": { "page": "<PAGE_ID>", "paragraph": "<PARAGRAPH_ID>" },\n   "exclusiveWithin": { "page": "<PAGE_ID>" }\n}\n```\n\nAs a user moves around a page, their paragraphID will change, while their\npageID will remain the same. The above call to setPresent will mark them\npresent at their specific paragraph. However, since every update uses the\nsame exclusiveWithin, each time they are marked present at one paragraph\nthey will become no longer present at their previous paragraph.',
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      location: {
-        description: "The [location](/reference/location) you want the user to be in.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      groupID: {
-        description: "The ID of the group which should be able to see this presence update",
-        type: "string"
-      },
-      durable: {
-        description: "When `true`, this is a [durable presence](/js-apis-and-hooks/presence-api)\nupdate, when `false`, or is not used, it is an [ephemeral presence](/js-apis-and-hooks/presence-api) update.\n\nThis value defaults to `false.`",
-        type: "boolean"
-      },
-      absent: {
-        description: "When `true`, this is an *absence* update, meaning that the user has just left\nthis [location](/reference/location).\nIf the user is currently present at that location, it is cleared.\nThis cannot be used with a [durable presence](/js-apis-and-hooks/presence-api) update.\n\nThis value defaults to `false.` The user will be set as present at the location.",
-        type: "boolean"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "organizationID",
-      "exclusiveWithin",
-      "location",
-      "groupID",
-      "durable",
-      "absent"
-    ],
-    required: ["location"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreateProjectVariables: {
-    description: "https://docs.cord.com/rest-apis/projects/",
-    type: "object",
-    properties: {
-      emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
-      name: {
-        description: "Name of the project",
-        minLength: 1,
-        type: "string"
-      },
-      iconURL: {
-        description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      eventWebhookURL: {
-        description: "The URL that the events webhook is sent to",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      redirectURI: {
-        description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
-        type: ["null", "string"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "emailSettings",
-      "name",
-      "iconURL",
-      "eventWebhookURL",
-      "redirectURI"
-    ],
-    required: ["name"],
-    definitions: {
-      "Partial<EmailSettings>": {
-        type: "object",
-        properties: {
-          name: {
-            description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
-            type: ["null", "string"]
-          },
-          imageURL: {
-            description: "URL for your logo image. The default for this is the Cord logo.",
-            type: ["null", "string"]
-          },
-          sender: {
-            description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
-            format: "email",
-            type: ["null", "string"]
-          },
-          logoConfig: {
-            description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
-            anyOf: [
-              {
-                type: "object",
-                properties: {
-                  width: { minimum: 0, maximum: 240, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["width"],
-                required: ["width"]
-              },
-              {
-                type: "object",
-                properties: {
-                  height: { minimum: 0, maximum: 120, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["height"],
-                required: ["height"]
-              },
-              { type: "null" }
-            ]
-          },
-          enableEmailNotifications: {
-            description: "Whether you want your users to receive notification emails. The default value is true.",
-            type: "boolean"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "name",
-          "imageURL",
-          "sender",
-          "logoConfig",
-          "enableEmailNotifications"
-        ]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdateProjectVariables: {
-    description: "https://docs.cord.com/rest-apis/projects/",
-    type: "object",
-    properties: {
-      emailSettings: { $ref: "#/definitions/Partial<EmailSettings>" },
-      name: {
-        description: "Name of the project",
-        minLength: 1,
-        type: "string"
-      },
-      iconURL: {
-        description: "URL for the project icon. It should be a square image of 256x256. This\nwill be used as the avatar for messages and emails coming from your\nproject.  If not specified, the Cord logo will be used.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      eventWebhookURL: {
-        description: "The URL that the events webhook is sent to",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      redirectURI: {
-        description: "Custom url link contained in email and slack notifications. These notifications are sent when a user is\nmentioned or thread is shared and by default, the link points to the page where the conversation happened.\nFor more information, please refer to the [API docs](/customization/redirect-link)",
-        type: ["null", "string"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "emailSettings",
-      "name",
-      "iconURL",
-      "eventWebhookURL",
-      "redirectURI"
-    ],
-    definitions: {
-      "Partial<EmailSettings>": {
-        type: "object",
-        properties: {
-          name: {
-            description: "Name to show in both the subject and the body of the email.\nDefaults to your project's name.",
-            type: ["null", "string"]
-          },
-          imageURL: {
-            description: "URL for your logo image. The default for this is the Cord logo.",
-            type: ["null", "string"]
-          },
-          sender: {
-            description: "Email from which notifications for your service will be sent from.\nThis will use the provided name for your project to default to `<projectname>-notifications@cord.fyi`.",
-            format: "email",
-            type: ["null", "string"]
-          },
-          logoConfig: {
-            description: 'Customization for your logo size. Providing either a height (maximum 120) or\nwidth (maximum 240) will result in the image being proportionally resized to\nfit in a container of that size. The default value is `{"width": 140}`.',
-            anyOf: [
-              {
-                type: "object",
-                properties: {
-                  width: { minimum: 0, maximum: 240, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["width"],
-                required: ["width"]
-              },
-              {
-                type: "object",
-                properties: {
-                  height: { minimum: 0, maximum: 120, type: "number" }
-                },
-                additionalProperties: false,
-                propertyOrder: ["height"],
-                required: ["height"]
-              },
-              { type: "null" }
-            ]
-          },
-          enableEmailNotifications: {
-            description: "Whether you want your users to receive notification emails. The default value is true.",
-            type: "boolean"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "name",
-          "imageURL",
-          "sender",
-          "logoConfig",
-          "enableEmailNotifications"
-        ]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  DeleteProjectVariables: {
-    description: "https://docs.cord.com/rest-apis/projects/",
-    type: "object",
-    properties: {
-      secret: {
-        description: "Secret key of the project that you want to delete. This can be found\nwithin the Cord Console.",
-        minLength: 1,
-        type: "string"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["secret"],
-    required: ["secret"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreateThreadVariables: {
-    description: "https://docs.cord.com/rest-apis/threads/",
-    type: "object",
-    properties: {
-      location: {
-        description: "The [location](/reference/location) of this thread.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      id: { description: "The ID for this thread.", type: "string" },
-      url: {
-        description: "A URL where the thread can be seen.  This determines where a user is sent\nwhen they click on a reference to this thread, such as in a notification,\nor if they click on a reference to a message in the thread and the message\ndoesn't have its own URL.",
-        type: "string"
-      },
-      name: {
-        description: "The name of the thread.  This is shown to users when the thread is\nreferenced, such as in notifications.  This should generally be something\nlike the page title.",
-        type: "string"
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      groupID: {
-        description: "The group ID this thread is in.",
-        type: "string"
-      },
-      extraClassnames: {
-        description: "An optional space separated list of classnames to add to the thread.",
-        type: ["null", "string"]
-      },
-      addSubscribers: {
-        description: "A list of subscribers to add to this thread.",
-        type: "array",
-        items: { type: "string" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "location",
-      "id",
-      "url",
-      "name",
-      "metadata",
-      "groupID",
-      "extraClassnames",
-      "addSubscribers"
-    ],
-    required: ["groupID", "location", "name", "url"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdateThreadVariables: {
-    description: "https://docs.cord.com/rest-apis/threads/",
-    type: "object",
-    properties: {
-      location: {
-        description: "The [location](/reference/location) of this thread.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      id: { description: "The ID for this thread.", type: "string" },
-      url: {
-        description: "A URL where the thread can be seen.  This determines where a user is sent\nwhen they click on a reference to this thread, such as in a notification,\nor if they click on a reference to a message in the thread and the message\ndoesn't have its own URL.",
-        type: "string"
-      },
-      name: {
-        description: "The name of the thread.  This is shown to users when the thread is\nreferenced, such as in notifications.  This should generally be something\nlike the page title.",
-        type: "string"
-      },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      organizationID: {
-        description: "The organization ID this thread is in.",
-        type: "string"
-      },
-      groupID: {
-        description: "The group ID this thread is in.",
-        type: "string"
-      },
-      extraClassnames: {
-        description: "An optional space separated list of classnames to add to the thread.",
-        type: ["null", "string"]
-      },
-      resolvedTimestamp: {
-        description: "The timestamp when this thread was resolved. Set to `null` if this thread\nis not resolved.",
-        anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-      },
-      userID: {
-        description: `Certain changes to the thread may post a message into the thread -- in
-particular, resolving or unresolving a thread posts a message into the
-thread saying "User un/resolved this thread". This parameter is the ID of
-the User who will be listed as the author of that message. It's optional
--- if no user is specified, then those messages won't get posted.`,
-        type: "string"
-      },
-      typing: {
-        description: "Marks the specified users as typing in this thread.  The typing indicator\nexpires after 3 seconds, so to continually show the indicator it needs to\nbe called on an interval.  Pass an empty array to clear all users' typing indicators.",
-        type: "array",
-        items: { type: "string" }
-      },
-      resolved: {
-        description: "Whether the thread is resolved.  Setting this to `true` is equivalent to\nsetting `resolvedTimestamp` to the current time, and setting this to\n`false` is equivalent to setting `resolvedTimestamp` to `null`.",
-        type: "boolean"
-      },
-      seenByUsers: {
-        description: "Marks the specified users as having seen/not seen this thread. If a user\nis not included in this list, the seen status will not be changed.",
-        type: "array",
-        items: { $ref: "#/definitions/ServerThreadSeenUser" }
-      },
-      addSubscribers: {
-        description: "A list of subscribers to add to this thread.",
-        type: "array",
-        items: { type: "string" }
-      },
-      removeSubscribers: {
-        description: "A list of subscribers to remove from this thread.",
-        type: "array",
-        items: { type: "string" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "location",
-      "id",
-      "url",
-      "name",
-      "metadata",
-      "organizationID",
-      "groupID",
-      "extraClassnames",
-      "resolvedTimestamp",
-      "userID",
-      "typing",
-      "resolved",
-      "seenByUsers",
-      "addSubscribers",
-      "removeSubscribers"
-    ],
-    definitions: {
-      ServerThreadSeenUser: {
-        description: "https://docs.cord.com/rest-apis/threads/",
-        type: "object",
-        properties: {
-          userID: {
-            description: "ID of the user that has seen/not seen the thread.",
-            type: "string"
-          },
-          seen: {
-            description: "Whether the user has seen the thread or not.",
-            type: "boolean"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["userID", "seen"],
-        required: ["seen", "userID"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListThreadQueryParameters: {
-    description: "https://docs.cord.com/rest-apis/threads/",
-    type: "object",
-    properties: {
-      filter: {
-        description: "Threads will be matched against the filters specified.\nThis is a partial match, which means any keys other than the ones you specify are ignored\nwhen checking for a match. Please note that because this is a query parameter in a REST API,\nthis JSON object must be URI encoded before being sent.",
-        $ref: "#/definitions/ServerListThreadFilter"
-      },
-      limit: {
-        description: "Number of threads to return. Defaults to 1000.",
-        type: "number"
-      },
-      token: {
-        description: "Pagination token. This is returned in the `pagination` object of a previous response.",
-        type: "string"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["filter", "limit", "token"],
-    definitions: {
-      ServerListThreadFilter: {
-        type: "object",
-        properties: {
-          location: {
-            description: "The [Location](/reference/location) of the threads.\nThis can either be just the location value or an object with a value for\nboth the location and partialMatch properties.\n\nThe value for partialMatch will default to false if only location is provided.",
-            anyOf: [
-              {
-                type: "object",
-                additionalProperties: { type: ["string", "number", "boolean"] },
-                propertyOrder: []
-              },
-              {
-                type: "object",
-                properties: {
-                  value: {
-                    description: "The [Location](/reference/location) of the threads.",
-                    type: "object",
-                    additionalProperties: {
-                      type: ["string", "number", "boolean"]
-                    },
-                    propertyOrder: []
-                  },
-                  partialMatch: {
-                    description: "If `true`, perform [partial matching](/reference/location#Partial-Matching)\non the specified location. If `false`, fetch information for only exactly the\nlocation specified.",
-                    type: "boolean"
-                  }
-                },
-                additionalProperties: false,
-                propertyOrder: ["value", "partialMatch"],
-                required: ["partialMatch", "value"]
-              }
-            ]
-          },
-          metadata: {
-            description: "Return only objects containing these metadata keys and values. (Metadata is\narbitrary key-value pairs of data that you can associate with an object.)",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          groupID: {
-            description: "Return only threads [belonging to this\ngroup](/reference/permissions).",
-            type: "string"
-          },
-          firstMessageTimestamp: {
-            description: 'Return only threads with a "first message timestamp" within this range. The\n"first message timestamp" of a thread is the timestamp when the first\nmessage in the thread was created. (This is typically when the thread was\ncreated.)',
-            type: "object",
-            properties: {
-              from: {
-                description: "Timestamp from where to start the interval. The thread's timestamp must be\n*newer* than (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no start date and any data will\ninclude everything older than the provided `to` timestamp.",
-                type: "string",
-                format: "date-time"
-              },
-              to: {
-                description: "Timestamp where to end the interval. The thread's timestamp must be *older*\nthan (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no end date and any data will\ninclude everything newer than the provided `from` timestamp.",
-                type: "string",
-                format: "date-time"
-              }
-            },
-            additionalProperties: false,
-            propertyOrder: ["from", "to"]
-          },
-          mostRecentMessageTimestamp: {
-            description: 'Return only threads with a "most recent message timestamp" within this\nrange. The "most recent message timestamp" of a thread is the timestamp\nwhen the most recent message in the thread was created or updated. (This is\ntypically when the thread was most recently replied to.)',
-            type: "object",
-            properties: {
-              from: {
-                description: "Timestamp from where to start the interval. The thread's timestamp must be\n*newer* than (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no start date and any data will\ninclude everything older than the provided `to` timestamp.",
-                type: "string",
-                format: "date-time"
-              },
-              to: {
-                description: "Timestamp where to end the interval. The thread's timestamp must be *older*\nthan (or equal to) this in order to match the filter.\n\nIf not present, the interval will have no end date and any data will\ninclude everything newer than the provided `from` timestamp.",
-                type: "string",
-                format: "date-time"
-              }
-            },
-            additionalProperties: false,
-            propertyOrder: ["from", "to"]
-          },
-          resolvedStatus: {
-            description: "If set to `resolved`, only resolved threads will be returned. If set to `unresolved`,\nonly unresolved threads will be returned. If set to `any`, both resolved and\nunresolved threads will be returned.\n\nIf unset, defaults to `any`.",
-            enum: ["any", "resolved", "unresolved"],
-            type: "string"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "location",
-          "metadata",
-          "groupID",
-          "firstMessageTimestamp",
-          "mostRecentMessageTimestamp",
-          "resolvedStatus"
-        ]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  UpdatePlatformUserVariables: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "object",
-    properties: {
-      name: { description: "Full user name", type: ["null", "string"] },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      status: { enum: ["active", "deleted"], type: "string" },
-      email: {
-        description: "Email address",
-        format: "email",
-        type: ["null", "string"]
-      },
-      shortName: {
-        description: "Short user name. In most cases, this will be preferred over name when set.",
-        type: ["null", "string"]
-      },
-      short_name: { type: ["null", "string"] },
-      profilePictureURL: {
-        description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      profile_picture_url: {
-        description: "Alias for profilePictureURL. This field is deprecated.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      first_name: {
-        description: "User's first name. This field is deprecated and has no effect.",
-        type: ["null", "string"]
-      },
-      last_name: {
-        description: "User's last name. This field is deprecated and has no effect.",
-        type: ["null", "string"]
-      },
-      addGroups: {
-        description: "A list of group IDs this user should be made a member of.  It is an error\nto specify a group that doesn't exist or one that is also being removed in\nthe same call.  It is not an error to add a user to a group they're already\na member of.",
-        type: "array",
-        items: { type: "string" }
-      },
-      removeGroups: {
-        description: "A list of group IDs this user should stop being a member of.  It is an\nerror to specify a group that doesn't exist or one that is also being added\nin the same call.  It is not an error to remove a user from a group they\nare not a member of.",
-        type: "array",
-        items: { type: "string" }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "name",
-      "metadata",
-      "status",
-      "email",
-      "shortName",
-      "short_name",
-      "profilePictureURL",
-      "profile_picture_url",
-      "first_name",
-      "last_name",
-      "addGroups",
-      "removeGroups"
-    ],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreatePlatformUserVariables: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "object",
-    properties: {
-      name: { description: "Full user name", type: ["null", "string"] },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      status: { enum: ["active", "deleted"], type: "string" },
-      email: {
-        description: "Email address",
-        format: "email",
-        type: ["null", "string"]
-      },
-      shortName: {
-        description: "Short user name. In most cases, this will be preferred over name when set.",
-        type: ["null", "string"]
-      },
-      short_name: { type: ["null", "string"] },
-      profilePictureURL: {
-        description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      profile_picture_url: {
-        description: "Alias for profilePictureURL. This field is deprecated.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      first_name: {
-        description: "User's first name. This field is deprecated and has no effect.",
-        type: ["null", "string"]
-      },
-      last_name: {
-        description: "User's last name. This field is deprecated and has no effect.",
-        type: ["null", "string"]
-      },
-      id: { $ref: "#/definitions/ID", description: "Provided ID for the user" }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "name",
-      "metadata",
-      "status",
-      "email",
-      "shortName",
-      "short_name",
-      "profilePictureURL",
-      "profile_picture_url",
-      "first_name",
-      "last_name",
-      "id"
-    ],
-    required: ["id"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListPlatformUserVariables: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "object",
-    properties: {
-      email: { type: ["null", "string"] },
-      id: { $ref: "#/definitions/ID", description: "Provided ID for the user" },
-      name: { description: "Full user name", type: ["null", "string"] },
-      metadata: {
-        description: "Arbitrary key-value pairs that can be used to store additional information.",
-        type: "object",
-        additionalProperties: { type: ["string", "number", "boolean"] },
-        propertyOrder: []
-      },
-      status: { enum: ["active", "deleted"], type: "string" },
-      createdTimestamp: {
-        description: "Creation timestamp",
-        anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-      },
-      shortName: {
-        description: "Short user name. In most cases, this will be preferred over name when set.",
-        type: ["null", "string"]
-      },
-      short_name: { type: ["null", "string"] },
-      profilePictureURL: {
-        description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      profile_picture_url: {
-        description: "Alias for profilePictureURL. This field is deprecated.",
-        format: "uri",
-        type: ["null", "string"]
-      },
-      first_name: {
-        description: "User's first name. This field is deprecated and has no effect.",
-        type: ["null", "string"]
-      },
-      last_name: {
-        description: "User's last name. This field is deprecated and has no effect.",
-        type: ["null", "string"]
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: [
-      "email",
-      "id",
-      "name",
-      "metadata",
-      "status",
-      "createdTimestamp",
-      "shortName",
-      "short_name",
-      "profilePictureURL",
-      "profile_picture_url",
-      "first_name",
-      "last_name"
-    ],
-    required: [
-      "createdTimestamp",
-      "email",
-      "first_name",
-      "id",
-      "last_name",
-      "metadata",
-      "name",
-      "profilePictureURL",
-      "profile_picture_url",
-      "shortName",
-      "short_name",
-      "status"
-    ],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListUsersResponseWithoutPagination: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "array",
-    items: { $ref: "#/definitions/ServerListUser" },
-    definitions: {
-      ServerListUser: {
-        description: "https://docs.cord.com/rest-apis/users/",
-        type: "object",
-        properties: {
-          email: { type: ["null", "string"] },
-          id: {
-            $ref: "#/definitions/ID",
-            description: "Provided ID for the user"
-          },
-          name: { description: "Full user name", type: ["null", "string"] },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: { enum: ["active", "deleted"], type: "string" },
-          createdTimestamp: {
-            description: "Creation timestamp",
-            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-          },
-          shortName: {
-            description: "Short user name. In most cases, this will be preferred over name when set.",
-            type: ["null", "string"]
-          },
-          short_name: { type: ["null", "string"] },
-          profilePictureURL: {
-            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          profile_picture_url: {
-            description: "Alias for profilePictureURL. This field is deprecated.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          first_name: {
-            description: "User's first name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          },
-          last_name: {
-            description: "User's last name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "email",
-          "id",
-          "name",
-          "metadata",
-          "status",
-          "createdTimestamp",
-          "shortName",
-          "short_name",
-          "profilePictureURL",
-          "profile_picture_url",
-          "first_name",
-          "last_name"
-        ],
-        required: [
-          "createdTimestamp",
-          "email",
-          "first_name",
-          "id",
-          "last_name",
-          "metadata",
-          "name",
-          "profilePictureURL",
-          "profile_picture_url",
-          "shortName",
-          "short_name",
-          "status"
-        ]
-      },
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListUsersResponse: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "object",
-    properties: {
-      users: { type: "array", items: { $ref: "#/definitions/ServerListUser" } },
-      pagination: { $ref: "#/definitions/PaginationDetails" }
-    },
-    additionalProperties: false,
-    propertyOrder: ["users", "pagination"],
-    required: ["pagination", "users"],
-    definitions: {
-      ServerListUser: {
-        description: "https://docs.cord.com/rest-apis/users/",
-        type: "object",
-        properties: {
-          email: { type: ["null", "string"] },
-          id: {
-            $ref: "#/definitions/ID",
-            description: "Provided ID for the user"
-          },
-          name: { description: "Full user name", type: ["null", "string"] },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: { enum: ["active", "deleted"], type: "string" },
-          createdTimestamp: {
-            description: "Creation timestamp",
-            anyOf: [{ type: "string", format: "date-time" }, { type: "null" }]
-          },
-          shortName: {
-            description: "Short user name. In most cases, this will be preferred over name when set.",
-            type: ["null", "string"]
-          },
-          short_name: { type: ["null", "string"] },
-          profilePictureURL: {
-            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          profile_picture_url: {
-            description: "Alias for profilePictureURL. This field is deprecated.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          first_name: {
-            description: "User's first name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          },
-          last_name: {
-            description: "User's last name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: [
-          "email",
-          "id",
-          "name",
-          "metadata",
-          "status",
-          "createdTimestamp",
-          "shortName",
-          "short_name",
-          "profilePictureURL",
-          "profile_picture_url",
-          "first_name",
-          "last_name"
-        ],
-        required: [
-          "createdTimestamp",
-          "email",
-          "first_name",
-          "id",
-          "last_name",
-          "metadata",
-          "name",
-          "profilePictureURL",
-          "profile_picture_url",
-          "shortName",
-          "short_name",
-          "status"
-        ]
-      },
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] },
-      PaginationDetails: {
-        type: "object",
-        properties: {
-          token: {
-            description: "The token to use to get the next page of results. If empty, there are no more results.",
-            type: ["null", "string"]
-          },
-          total: {
-            description: 'Total number of results. Might be bigger than the number of results returned on the query. Useful to display a "total" counter.',
-            type: "number"
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["token", "total"],
-        required: ["token", "total"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ListUserQueryParameters: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "object",
-    properties: {
-      limit: {
-        description: "Number of users to return.\nThe default limit is set to 1000.",
-        type: "number"
-      },
-      token: {
-        description: "Pagination token. This is returned in the `pagination` object of a previous response.",
-        type: "string"
-      },
-      filter: {
-        description: "This is a JSON object with one optional entry.  Users will be matched\nagainst the filter specified. This is a partial match, which means any keys\nother than the ones you specify are ignored when checking for a match.\nPlease note that because this is a query parameter in a REST API, this JSON\nobject must be URI encoded before being sent.",
-        $ref: '#/definitions/Pick<FilterParameters,"metadata">'
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["limit", "token", "filter"],
-    definitions: {
-      'Pick<FilterParameters,"metadata">': {
-        type: "object",
-        properties: {
-          metadata: {
-            description: "Return only objects containing these metadata keys and values. (Metadata is\narbitrary key-value pairs of data that you can associate with an object.)",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["metadata"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  DeleteUserVariables: {
-    description: "https://docs.cord.com/rest-apis/users/",
-    type: "object",
-    properties: {
-      permanently_delete: {
-        description: "The user will be deleted only if this value is true.",
-        type: "boolean"
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["permanently_delete"],
-    required: ["permanently_delete"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  CreateWebhookVariables: {
-    type: "object",
-    properties: {
-      url: {
-        description: "The URL to register that will receive webhook events",
-        format: "uri",
-        type: "string"
-      },
-      events: {
-        description: "The events which you will receive",
-        type: "array",
-        items: {
-          enum: [
-            "notification-created",
-            "thread-message-added",
-            "url-verification"
-          ],
-          type: "string"
-        }
-      }
-    },
-    additionalProperties: false,
-    propertyOrder: ["url", "events"],
-    required: ["events", "url"],
-    $schema: "http://json-schema.org/draft-07/schema#"
-  },
-  ClientAuthTokenData: {
-    description: "https://docs.cord.com/reference/authentication/",
-    additionalProperties: true,
-    type: "object",
-    properties: {
-      app_id: { format: "uuid", type: "string" },
-      project_id: {
-        description: "Your project ID",
-        format: "uuid",
-        type: "string"
-      },
-      user_id: { $ref: "#/definitions/ID", description: "The ID for the user" },
-      organization_id: {
-        minLength: 1,
-        maxLength: 128,
-        type: ["string", "number"]
-      },
-      group_id: {
-        minLength: 1,
-        maxLength: 128,
-        description: "The ID for the user\u2019s group",
-        type: ["string", "number"]
-      },
-      user_details: {
-        description: "If present, update\u2019s the user\u2019s details, or creates a user with those\ndetails if the user_id is new to Cord. This is an object that contains the\nsame fields as the [user management REST\nendpoint](/rest-apis/users/)",
-        $ref: "#/definitions/ServerUpdateUser"
-      },
-      organization_details: {
-        $ref: '#/definitions/Partial<Omit<ServerOrganizationData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>'
-      },
-      group_details: {
-        description: "If present, updates the group's details, or creates a group\nwith those details if the group_id is new to Cord. This is an object\nthat contains the same fields as the [group management REST\nendpoint](/rest-apis/groups/)",
-        $ref: '#/definitions/Partial<Omit<ServerGroupData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>'
-      }
-    },
-    propertyOrder: [
-      "app_id",
-      "project_id",
-      "user_id",
-      "organization_id",
-      "group_id",
-      "user_details",
-      "organization_details",
-      "group_details"
-    ],
-    required: ["user_id"],
-    definitions: {
-      ID: { minLength: 1, maxLength: 128, type: ["string", "number"] },
-      ServerUpdateUser: {
-        description: "https://docs.cord.com/rest-apis/users/",
-        additionalProperties: false,
-        type: "object",
-        properties: {
-          name: { description: "Full user name", type: ["null", "string"] },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: { enum: ["active", "deleted"], type: "string" },
-          email: {
-            description: "Email address",
-            format: "email",
-            type: ["null", "string"]
-          },
-          shortName: {
-            description: "Short user name. In most cases, this will be preferred over name when set.",
-            type: ["null", "string"]
-          },
-          short_name: { type: ["null", "string"] },
-          profilePictureURL: {
-            description: "This must be a valid URL, which means it needs to follow the usual URL\nformatting and encoding rules. For example, any space character will need\nto be encoded as `%20`. We recommend using your programming language's\nstandard URL encoding function, such as `encodeURI` in Javascript.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          profile_picture_url: {
-            description: "Alias for profilePictureURL. This field is deprecated.",
-            format: "uri",
-            type: ["null", "string"]
-          },
-          first_name: {
-            description: "User's first name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          },
-          last_name: {
-            description: "User's last name. This field is deprecated and has no effect.",
-            type: ["null", "string"]
-          },
-          addGroups: {
-            description: "A list of group IDs this user should be made a member of.  It is an error\nto specify a group that doesn't exist or one that is also being removed in\nthe same call.  It is not an error to add a user to a group they're already\na member of.",
-            type: "array",
-            items: { type: "string" }
-          },
-          removeGroups: {
-            description: "A list of group IDs this user should stop being a member of.  It is an\nerror to specify a group that doesn't exist or one that is also being added\nin the same call.  It is not an error to remove a user from a group they\nare not a member of.",
-            type: "array",
-            items: { type: "string" }
-          }
-        }
-      },
-      'Partial<Omit<ServerOrganizationData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>': {
-        type: "object",
-        properties: {
-          name: {
-            description: "Organization name. Required when creating an organization.",
-            type: "string"
-          },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: {
-            description: "Whether this organization is active or deleted.  Attempting to log into a\ndeleted organization will fail.",
-            enum: ["active", "deleted"],
-            type: "string"
-          },
-          members: {
-            description: "List of partner-specific IDs of the users who are members of this organization.\nThis will replace the existing members.",
-            type: "array",
-            items: { $ref: "#/definitions/ID" }
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["name", "metadata", "status", "members"]
-      },
-      'Partial<Omit<ServerGroupData,"id"|"members"|"connectedToSlack">&{members?:ID[]|undefined;}>': {
-        type: "object",
-        properties: {
-          name: {
-            description: "Group name. Required when creating an group.",
-            type: "string"
-          },
-          metadata: {
-            description: "Arbitrary key-value pairs that can be used to store additional information.",
-            type: "object",
-            additionalProperties: { type: ["string", "number", "boolean"] },
-            propertyOrder: []
-          },
-          status: {
-            description: "Whether this group is active or deleted.  Attempting to log into a\ndeleted group will fail.",
-            enum: ["active", "deleted"],
-            type: "string"
-          },
-          members: {
-            description: "List of partner-specific IDs of the users who are members of this group.\nThis will replace the existing members.",
-            type: "array",
-            items: { $ref: "#/definitions/ID" }
-          }
-        },
-        additionalProperties: false,
-        propertyOrder: ["name", "metadata", "status", "members"]
-      }
-    },
-    $schema: "http://json-schema.org/draft-07/schema#"
-  }
-};
-
-// server/src/public/routes/platform/validatorFunction.ts
 var ajv = new Ajv.default({
   allErrors: true,
   coerceTypes: false,
@@ -17085,8 +17957,8 @@ function getErrorMessage(typeName, errors) {
 ${errorMessages.join(",\n")}.${schemaDescription ?? ""}`;
 }
 var validate = Object.fromEntries(
-  Object.keys(schema_default).map((typeName) => {
-    const typeSchema = schema_default[typeName];
+  Object.keys(import_api_types.schema).map((typeName) => {
+    const typeSchema = import_api_types.schema[typeName];
     const validator = ajv.compile(typeSchema);
     const isClientAuthTokenData = typeName === "ClientAuthTokenData";
     const errorName = isClientAuthTokenData ? "invalid_session_token" : "invalid_request";
@@ -17120,7 +17992,7 @@ Expected JSON object.${schemaDescription ?? ""}`,
   })
 );
 function getSchemaDescription(typeName) {
-  const schemaByType = schema_default[typeName];
+  const schemaByType = import_api_types.schema[typeName];
   if (!("description" in schemaByType)) {
     return null;
   }
@@ -17159,12 +18031,12 @@ function generateFieldsListToString(fields) {
   }
   return fieldsString;
 }
-function decodeSchema(schema) {
+function decodeSchema(schema2) {
   const message = [];
-  if (!schema) {
+  if (!schema2) {
     return "";
   }
-  schema?.map((schemaItem) => {
+  schema2?.map((schemaItem) => {
     if (typeof schemaItem !== "boolean") {
       const item = schemaItem.format ?? schemaItem.type ?? "";
       message.push(item.toString());
@@ -18530,6 +19402,7 @@ function makeLinkPreview(a) {
 
 // server/src/public/routes/platform/messages/util.ts
 import { unique as unique10 } from "radash";
+var import_types20 = __toESM(require_cjs(), 1);
 async function loadThreadMessage(threadID, externalMessageID) {
   if (!externalMessageID) {
     throw new ApiCallerError("message_not_found");
@@ -18551,7 +19424,7 @@ async function loadThreadMessage(threadID, externalMessageID) {
 async function externalizeContent(content, platformApplicationID) {
   return await Promise.all(
     content.map(async (node) => {
-      if (node.type === "mention" /* MENTION */) {
+      if (node.type === import_types20.MessageNodeType.MENTION) {
         const user = await UserEntity.findByPk(node.user.id);
         const id = user?.platformApplicationID === platformApplicationID && user?.externalID ? user.externalID : externalizeID(node.user.id);
         return {
@@ -18573,7 +19446,7 @@ async function externalizeContent(content, platformApplicationID) {
 }
 function forceExternalizeContent(content) {
   return content.map((node) => {
-    if (node.type === "mention" /* MENTION */) {
+    if (node.type === import_types20.MessageNodeType.MENTION) {
       return {
         ...node,
         user: { id: externalizeID(node.user.id) }
@@ -18590,7 +19463,7 @@ function forceExternalizeContent(content) {
 async function internalizeContent(content, platformApplicationID, orgID) {
   return await Promise.all(
     content.map(async (node) => {
-      if (node.type === "mention" /* MENTION */) {
+      if (node.type === import_types20.MessageNodeType.MENTION) {
         let user = await UserEntity.findOne({
           where: { platformApplicationID, externalID: node.user.id }
         });
@@ -21706,6 +22579,7 @@ function TrelloAuthLoginHandler(req, res) {
 }
 
 // server/src/third_party_tasks/linear/util.ts
+var import_types24 = __toESM(require_cjs(), 1);
 var textNodeToMarkdown = (node) => {
   let wrapper = "";
   const [wsStart, middleText, wsEnd] = splitStringToWsAndText(node.text);
@@ -21727,35 +22601,35 @@ var convertNodeToMarkdown = (node) => {
     return textNodeToMarkdown(node);
   } else {
     switch (node.type) {
-      case "link" /* LINK */: {
+      case import_types24.MessageNodeType.LINK: {
         const nodeText = node.children[0].text;
         return `[${escapeLinkTextAndURL(nodeText)}](${escapeLinkTextAndURL(
           node.url
         )})`;
       }
-      case "p" /* PARAGRAPH */:
+      case import_types24.MessageNodeType.PARAGRAPH:
         return `${convertNodeListToMarkdown(node.children)}
 
 `;
-      case "todo" /* TODO */:
+      case import_types24.MessageNodeType.TODO:
         return `* [ ] ${convertNodeListToMarkdown(node.children)}
 `;
-      case "bullet" /* BULLET */:
+      case import_types24.MessageNodeType.BULLET:
         return `* ${convertNodeListToMarkdown(node.children)}
 `;
-      case "number_bullet" /* NUMBER_BULLET */:
+      case import_types24.MessageNodeType.NUMBER_BULLET:
         return `1. ${convertNodeListToMarkdown(node.children)}
 `;
-      case "assignee" /* ASSIGNEE */:
-      case "mention" /* MENTION */:
+      case import_types24.MessageNodeType.ASSIGNEE:
+      case import_types24.MessageNodeType.MENTION:
         return node.children[0].text;
-      case "quote" /* QUOTE */:
+      case import_types24.MessageNodeType.QUOTE:
         return `> ${convertNodeListToMarkdown(node.children)}
 
 `;
-      case "code" /* CODE */:
+      case import_types24.MessageNodeType.CODE:
         return `\`${convertNodeListToMarkdown(node.children)}\``;
-      case "markdown" /* MARKDOWN */:
+      case import_types24.MessageNodeType.MARKDOWN:
         return `\`${convertNodeListToMarkdown(node.children)}\``;
     }
   }
@@ -25223,6 +26097,7 @@ async function createWebhook2(accessToken, boardID, url6) {
 }
 
 // server/src/third_party_tasks/asana/util.ts
+var import_types33 = __toESM(require_cjs(), 1);
 import { encode as encode2 } from "html-entities";
 function textNodeToHtml(node) {
   let before = "";
@@ -25246,26 +26121,26 @@ function convertNodeToAsanaHtml(node) {
     return textNodeToHtml(node);
   } else {
     switch (node.type) {
-      case "link" /* LINK */:
+      case import_types33.MessageNodeType.LINK:
         return `<a href="${encodeURI(node.url)}">${encode2(
           node.children[0].text
         )}</a>`;
-      case "p" /* PARAGRAPH */:
+      case import_types33.MessageNodeType.PARAGRAPH:
         return `${convertNodeListToAsanaHtml(node.children)}
 `;
-      case "todo" /* TODO */:
-      case "bullet" /* BULLET */:
-      case "number_bullet" /* NUMBER_BULLET */:
+      case import_types33.MessageNodeType.TODO:
+      case import_types33.MessageNodeType.BULLET:
+      case import_types33.MessageNodeType.NUMBER_BULLET:
         return `<li>${convertNodeListToAsanaHtml(node.children)}</li>`;
-      case "assignee" /* ASSIGNEE */:
-      case "mention" /* MENTION */:
+      case import_types33.MessageNodeType.ASSIGNEE:
+      case import_types33.MessageNodeType.MENTION:
         return encode2(node.children[0].text);
-      case "quote" /* QUOTE */:
+      case import_types33.MessageNodeType.QUOTE:
         return `${convertNodeListToAsanaHtml(node.children)}
 `;
-      case "code" /* CODE */:
+      case import_types33.MessageNodeType.CODE:
         return `<code>${convertNodeListToAsanaHtml(node.children)}</code>`;
-      case "markdown" /* MARKDOWN */:
+      case import_types33.MessageNodeType.MARKDOWN:
         return convertNodeListToAsanaHtml(node.children);
     }
   }
@@ -25276,8 +26151,8 @@ function convertNodeListToAsanaHtml(nodes) {
   let orderedListStarted = false;
   for (const node of nodes) {
     const nodeHtml = convertNodeToAsanaHtml(node);
-    const isOrderedItem = node.type === "number_bullet" /* NUMBER_BULLET */;
-    const isUnorderedItem = node.type === "bullet" /* BULLET */ || node.type === "todo" /* TODO */;
+    const isOrderedItem = node.type === import_types33.MessageNodeType.NUMBER_BULLET;
+    const isUnorderedItem = node.type === import_types33.MessageNodeType.BULLET || node.type === import_types33.MessageNodeType.TODO;
     if (!isOrderedItem && orderedListStarted) {
       orderedListStarted = false;
       html2 += "</ol>";
@@ -26207,7 +27082,7 @@ var MessageActionTranslationKeys = {
 function getActionMessageContent(type, user) {
   return [
     {
-      type: "p" /* PARAGRAPH */,
+      type: import_types2.MessageNodeType.PARAGRAPH,
       children: [
         createMentionNode(user.id, userDisplayName(user)),
         createMessageTextNode(" " + MessageActions[type])
@@ -26731,6 +27606,7 @@ async function generateOutboundNotificationData({
 }
 
 // server/src/email/util.ts
+var import_types37 = __toESM(require_cjs(), 1);
 import { encode as encode3 } from "html-entities";
 
 // common/const/Colors.ts
@@ -26791,28 +27667,28 @@ function convertNodeToHtml(node) {
     return textNodeToHtml2(node);
   } else {
     switch (node.type) {
-      case "link" /* LINK */:
+      case import_types37.MessageNodeType.LINK:
         return `<a href="${encodeURI(node.url)}">${encode3(
           node.children[0].text
         )}</a>`;
-      case "p" /* PARAGRAPH */:
+      case import_types37.MessageNodeType.PARAGRAPH:
         return `<p>${convertNodeListToEmailHtml(node.children)}</p>`;
-      case "todo" /* TODO */:
-      case "bullet" /* BULLET */:
-      case "number_bullet" /* NUMBER_BULLET */:
+      case import_types37.MessageNodeType.TODO:
+      case import_types37.MessageNodeType.BULLET:
+      case import_types37.MessageNodeType.NUMBER_BULLET:
         return `<li>${convertNodeListToEmailHtml(node.children)}</li>`;
-      case "assignee" /* ASSIGNEE */:
-      case "mention" /* MENTION */:
+      case import_types37.MessageNodeType.ASSIGNEE:
+      case import_types37.MessageNodeType.MENTION:
         return `<strong>${encode3(
           node.children[0].text
         )}</strong>`;
-      case "quote" /* QUOTE */:
+      case import_types37.MessageNodeType.QUOTE:
         return `<blockquote style="border-left: 1px solid ${Colors.GREY_LIGHT};padding-left: ${Sizes.MEDIUM}px;">${convertNodeListToEmailHtml(
           node.children
         )}</blockquote>`;
-      case "code" /* CODE */:
+      case import_types37.MessageNodeType.CODE:
         return `<code>${convertNodeListToEmailHtml(node.children)}</code>`;
-      case "markdown" /* MARKDOWN */:
+      case import_types37.MessageNodeType.MARKDOWN:
         return convertNodeListToEmailHtml(node.children);
     }
   }
@@ -26823,8 +27699,8 @@ function convertNodeListToEmailHtml(nodes) {
   let orderedListStarted = false;
   for (const node of nodes) {
     const nodeHtml = convertNodeToHtml(node);
-    const isOrderedItem = node.type === "number_bullet" /* NUMBER_BULLET */;
-    const isUnorderedItem = node.type === "bullet" /* BULLET */ || node.type === "todo" /* TODO */;
+    const isOrderedItem = node.type === import_types37.MessageNodeType.NUMBER_BULLET;
+    const isUnorderedItem = node.type === import_types37.MessageNodeType.BULLET || node.type === import_types37.MessageNodeType.TODO;
     if (!isOrderedItem && orderedListStarted) {
       orderedListStarted = false;
       html2 += "</ol></div>";
@@ -28018,6 +28894,7 @@ async function updateMessageTask(context, message, task) {
 import axios from "axios";
 import { load as cheerioLoad } from "cheerio";
 import * as linkify from "linkifyjs";
+var import_types40 = __toESM(require_cjs(), 1);
 
 // server/src/entity/message_link_preview/MessageLinkPreviewMutator.ts
 var MessageLinkPreviewMutator = class {
@@ -28121,10 +28998,10 @@ async function generateLinkPreviews(data, logger) {
 }
 function findLinks(node) {
   const links = /* @__PURE__ */ new Set();
-  if (node.type === "link" /* LINK */) {
+  if (node.type === import_types40.MessageNodeType.LINK) {
     links.add(node.url);
     return links;
-  } else if (!node.type && node.type !== "mention" /* MENTION */) {
+  } else if (!node.type && node.type !== import_types40.MessageNodeType.MENTION) {
     const urls = linkify.find(node.text);
     if (urls) {
       for (const url6 of urls) {
@@ -30659,6 +31536,7 @@ function secondsToFormattedTimestamp(durationSeconds) {
 
 // server/src/public/routes/demo-apps/utils.ts
 import { v4 as uuid10 } from "uuid";
+var import_types47 = __toESM(require_cjs(), 1);
 
 // server/src/entity/page_visitor/PageVisitorMutator.ts
 import { Sequelize as Sequelize15 } from "sequelize";
@@ -30745,7 +31623,7 @@ async function createDemoAppsMessage({
     url: URL3,
     content: content ?? [
       {
-        type: "p" /* PARAGRAPH */,
+        type: import_types47.MessageNodeType.PARAGRAPH,
         children: [
           { text: "Welcome, " },
           createMentionNode(anonymousUser.id, anonymousUser.name),
@@ -30947,7 +31825,7 @@ async function populateDashboardDemoWithData({
     threadExternalId: dashboardChartThreadExternalId,
     threadMetadata: dashboardChartThreadMetadata,
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           {
             text: `${dashboardChartThreadMetadata.seriesName}: ${dashboardChartThreadMetadata.x} Market cap`,
@@ -30984,7 +31862,7 @@ async function populateDashboardDemoWithData({
     threadExternalId: dashboardChartThread2ExternalId,
     threadMetadata: dashboardChartThread2Metadata,
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           {
             text: `${dashboardChartThread2Metadata.seriesName}: ${dashboardChartThread2Metadata.x} Market cap`,
@@ -31018,7 +31896,7 @@ async function populateDashboardDemoWithData({
     threadMetadata: dashboardGridThreadMetadata,
     addReply: false,
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           {
             text: `${dashboardGridThreadMetadata.headerName}: ${dashboardGridThreadMetadata.rowId} Revenue`,
@@ -31061,7 +31939,7 @@ async function populateVideoDemoWithData({
       initallyOpen: true
     },
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           { text: `${secondsToFormattedTimestamp(0)} `, class: "timestamp" },
           { text: "Drop comments anywhere in the video\u2026 try it!" }
@@ -31085,7 +31963,7 @@ async function populateVideoDemoWithData({
       durationOnVideo: 6
     },
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           { text: `${secondsToFormattedTimestamp(4)} `, class: "timestamp" },
           { text: "You can reply, react, and resolve comments, too" }
@@ -31107,7 +31985,7 @@ async function populateVideoDemoWithData({
       timestamp: 21
     },
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           { text: `${secondsToFormattedTimestamp(21)} `, class: "timestamp" },
           { text: "Click this comment and see what happens \u{1F440}" }
@@ -31130,7 +32008,7 @@ async function populateVideoDemoWithData({
       durationOnVideo: 2
     },
     content: [
-      createMessageNode("p" /* PARAGRAPH */, {
+      createMessageNode(import_types2.MessageNodeType.PARAGRAPH, {
         children: [
           { text: `${secondsToFormattedTimestamp(23)} `, class: "timestamp" },
           {
@@ -31775,7 +32653,7 @@ async function addMessage({
       thread,
       content: [
         {
-          type: "p" /* PARAGRAPH */,
+          type: import_types2.MessageNodeType.PARAGRAPH,
           children: [
             {
               text: message
@@ -31812,13 +32690,13 @@ async function addMessageWithMention({
   assertViewerIsFromCordDocsApplication(viewer);
   const messageContent = [
     {
-      type: "p" /* PARAGRAPH */,
+      type: import_types2.MessageNodeType.PARAGRAPH,
       children: [
         {
           text: messageBeforeMention + " "
         },
         {
-          type: "mention" /* MENTION */,
+          type: import_types2.MessageNodeType.MENTION,
           user: {
             id: mentionUserID
           },
@@ -34428,8 +35306,9 @@ async function updateThreadMessage({
 var UpdateThreadMessageHandler_default = forwardHandlerExceptionsToNext(UpdateThreadMessageHandler);
 
 // common/util/appendMessageContent.ts
+var import_types54 = __toESM(require_cjs(), 1);
 function appendMessageContent(content, appendedContent) {
-  if (!content || content.length !== 1 || content[0].type !== "markdown" /* MARKDOWN */) {
+  if (!content || content.length !== 1 || content[0].type !== import_types54.MessageNodeType.MARKDOWN) {
     return null;
   }
   const markdownNode = content[0];
@@ -34528,7 +35407,7 @@ var AppendMessageHandler_default = forwardHandlerExceptionsToNext(AppendMessageH
 // server/src/presence/context.ts
 var timeouts2 = /* @__PURE__ */ new Map();
 function makeKey2(externalUserID, orgID, exclusivityRegion) {
-  return `presenceContext/${orgID}/${externalUserID}/${locationJson(
+  return `presenceContext/${orgID}/${externalUserID}/${(0, import_types.locationJson)(
     exclusivityRegion
   )}`;
 }
@@ -34620,7 +35499,7 @@ async function setUserPresence(logger, externalUserID, orgID, context, exclusivi
   const key = makeKey2(externalUserID, orgID, exclusivityRegion);
   const sequenceNumKey = makeSequenceNumKey(externalUserID, orgID);
   clearPreviousTimeout2(key);
-  const errsAndVals = await getPredis().multi().getset(key, locationJson(context)).expire(key, PAGE_PRESENCE_LOSS_TTL_SECONDS).incr(sequenceNumKey).expire(sequenceNumKey, PAGE_PRESENCE_LOSS_TTL_SECONDS).exec();
+  const errsAndVals = await getPredis().multi().getset(key, (0, import_types.locationJson)(context)).expire(key, PAGE_PRESENCE_LOSS_TTL_SECONDS).incr(sequenceNumKey).expire(sequenceNumKey, PAGE_PRESENCE_LOSS_TTL_SECONDS).exec();
   if (!multiOperationSucceeded(errsAndVals, "Failed getset presence")) {
     console.log("Had some errors");
     return;
@@ -34655,7 +35534,7 @@ async function removeUserPresence(externalUserID, orgID, context, exclusivityReg
   const key = makeKey2(externalUserID, orgID, exclusivityRegion);
   const numOfDeletedKeys = await getPredis().compareAndDelete(
     key,
-    locationJson(context)
+    (0, import_types.locationJson)(context)
   );
   if (numOfDeletedKeys === 1) {
     clearPreviousTimeout2(key);
@@ -35471,17 +36350,17 @@ async function create() {
     authorID: "myhoa",
     content: [
       {
-        type: "p" /* PARAGRAPH */,
+        type: import_types2.MessageNodeType.PARAGRAPH,
         children: [
           { text: "To see more of Cord, " },
           {
-            type: "mention" /* MENTION */,
+            type: import_types2.MessageNodeType.MENTION,
             user: { id: userID },
             children: [{ text: "@You" }]
           },
           { text: " should check out our " },
           {
-            type: "link" /* LINK */,
+            type: import_types2.MessageNodeType.LINK,
             url: "https://v5.cord.com/demos",
             children: [{ text: "demos" }]
           },
@@ -35543,21 +36422,8 @@ async function reheat(req, user, token) {
 var numToKeep = 10;
 var version = 3;
 
-// opensource/sdk-js/packages/server/authToken.ts
-import * as jwt8 from "jsonwebtoken";
-function getClientAuthToken2(project_id, project_secret, payload, options = {}) {
-  if (!payload || !payload.user_id) {
-    throw new Error(
-      "Missing user_id. A token without a user_id can be misinterpreted as an administrative server auth token (which should never be given to clients). If you intended to generate a server auth token, call getServerAuthToken instead."
-    );
-  }
-  return jwt8.sign({ ...payload, project_id }, project_secret, {
-    algorithm: "HS512",
-    expiresIn: options.expires ?? "1 min"
-  });
-}
-
 // server/src/public/routes/warm-demo-users/DemoUserHandler.ts
+var import_server = __toESM(require_cjs3(), 1);
 var DEMO_USER_TYPES = {
   homepage: HomepageDemoUser_exports
 };
@@ -35646,7 +36512,7 @@ async function getDemoToken(req, res) {
     res.status(404);
     return;
   }
-  const clientAuthToken = getClientAuthToken2(demoUser.appID, app.sharedSecret, {
+  const clientAuthToken = (0, import_server.getClientAuthToken)(demoUser.appID, app.sharedSecret, {
     user_id: demoUser.userID,
     organization_id: demoUser.orgID
   });
@@ -37487,9 +38353,9 @@ var threadQueryResolver = async (_, args, context) => {
 };
 
 // server/src/auth/encodeSessionToJWT.ts
-import { sign as sign10 } from "jsonwebtoken";
+import { sign as sign9 } from "jsonwebtoken";
 function encodeSessionToJWT(session, expiresInSeconds) {
-  return sign10(session, Env_default.JWT_SIGNING_SECRET, { expiresIn: expiresInSeconds });
+  return sign9(session, Env_default.JWT_SIGNING_SECRET, { expiresIn: expiresInSeconds });
 }
 
 // server/src/public/queries/viewer.ts
@@ -38424,7 +39290,7 @@ var applicationQueryResolver = async (_, _args, context) => {
 };
 
 // server/src/schema/application.ts
-import * as jwt9 from "jsonwebtoken";
+import * as jwt8 from "jsonwebtoken";
 var applicationResolver = {
   customLinks: (application, _args, _context) => {
     return application.customLinks;
@@ -38463,7 +39329,7 @@ var applicationResolver = {
     );
   },
   serverAccessToken: (application, _args, _context) => {
-    return jwt9.sign({ app_id: application.id }, application.sharedSecret, {
+    return jwt8.sign({ app_id: application.id }, application.sharedSecret, {
       algorithm: "HS512",
       expiresIn: "24 h"
     });
@@ -38473,7 +39339,7 @@ var applicationResolver = {
     if (!customer) {
       throw new Error(`Customer not found`);
     }
-    return jwt9.sign({ customer_id: customer.id }, customer.sharedSecret, {
+    return jwt8.sign({ customer_id: customer.id }, customer.sharedSecret, {
       algorithm: "HS512",
       expiresIn: "24 h"
     });
@@ -39144,11 +40010,11 @@ var sendSampleWelcomeMessageResolver = async (_, args, context) => {
     url: args.url,
     content: [
       {
-        type: "p" /* PARAGRAPH */,
+        type: import_types2.MessageNodeType.PARAGRAPH,
         children: [
           { text: "Hey, " },
           {
-            type: "mention" /* MENTION */,
+            type: import_types2.MessageNodeType.MENTION,
             user: { id: userID },
             children: [{ text: `@Sample User` }]
           },
@@ -39156,7 +40022,7 @@ var sendSampleWelcomeMessageResolver = async (_, args, context) => {
         ]
       },
       {
-        type: "p" /* PARAGRAPH */,
+        type: import_types2.MessageNodeType.PARAGRAPH,
         children: [
           {
             text: "Nice work! Your Cord demo is ready."
@@ -41160,7 +42026,7 @@ var threadFilterablePropertiesUnmatchResolver = {
 
 // server/src/public/schema.graphql
 var documentNode = { "kind": "Document", "definitions": [{ "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "DateTime" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ElementIdentifierVersion" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SimpleValue" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "JSON" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "JSONObject" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Context" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Metadata" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SimpleTranslationParameters" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageContent" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UUID" }, "directives": [] }, { "kind": "ScalarTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "JsonObjectReducerData" }, "directives": [] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Message" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "attachments" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageAttachment" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "content" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageContent" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "source" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageSource" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "timestamp" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "reactions" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageReaction" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "seen" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "seenBy" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "deletedTimestamp" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "lastUpdatedTimestamp" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "importedFromSlackChannel" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "referencedUserData" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ReferencedUserData" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "task" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Task" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "importedSlackMessageType" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ImportedSlackMessageType" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isFromEmailReply" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "translationKey" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "skipLinkPreviews" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ReferencedUserData" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageAttachment" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "MessageFileAttachment" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageAnnotationAttachment" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageScreenshotAttachment" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageLinkPreview" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageScreenshotAttachment" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshot" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "File" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "blurredScreenshot" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "File" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageFileAttachment" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "file" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "File" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "File" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "mimeType" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "uploadStatus" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "FileUploadStatus" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "size" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "FileUploadStatus" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "uploaded" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "uploading" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "failed" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "cancelled" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Point2D" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "x" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "y" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ViewerThreadFilter" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribed" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "mentioned" }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadFilterInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewer" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ViewerThreadFilter" } } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SortBy" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "first_message_timestamp" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "most_recent_message_timestamp" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SortDirection" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "ascending" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "descending" }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LocationFilter" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "value" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadSortInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortBy" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SortBy" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortDirection" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SortDirection" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationFilterInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "organizationID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UserFilterInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MarkThreadsSeenInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "seen" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LocationFilter" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewer" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ViewerThreadFilter" } } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageAnnotationAttachment" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshot" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "File" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "blurredScreenshot" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "File" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DocumentLocation" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "message" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLocation" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customHighlightedTextConfig" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "HighlightedTextConfig" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLabel" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "coordsRelativeToTarget" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Point2D" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AnnotationsOnPage" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "allAnnotations" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageAnnotationAttachment" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "hiddenAnnotationIDs" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "DocumentLocation" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "selector" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "x" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "y" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "iframeSelectors" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "onChart" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "textConfig" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LocationTextConfig" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "elementIdentifier" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ElementIdentifier" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "multimediaConfig" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MultimediaConfig" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "highlightedTextConfig" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "HighlightedTextConfig" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "additionalTargetData" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdditionalTargetData" } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TargetType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "monacoEditor" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "reactTree" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "konvaCanvas" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdditionalTargetData" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "targetType" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TargetType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "monacoEditor" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MonacoEditor" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "reactTree" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ReactTree" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "konvaCanvas" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "KonvaCanvas" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MonacoEditor" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "monacoID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "lineNumber" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ReactTree" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "treeID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "prefixCls" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "KonvaCanvas" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "x" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "y" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LocationTextConfig" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "selectedCharOffset" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToMatch" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToMatchOffset" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "nodeIndex" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "xVsPointer" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "yVsPointer" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MultimediaConfig" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "currentTime" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "HighlightedTextConfig" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "startElementSelector" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "endElementSelector" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "startNodeIndex" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "startNodeOffset" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "endNodeIndex" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "endNodeOffset" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "selectedText" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToDisplay" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ElementIdentifier" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "version" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ElementIdentifierVersion" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "identifier" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Thread" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalOrgID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messages" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "cursor" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "range" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "ignoreDeleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "loadMessages" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "cursor" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "range" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "ignoreDeleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LoadMessagesResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "participants" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadParticipant" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "mentioned" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "typingUsers" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "newMessagesCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "newReactionsCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "replyCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "firstUnseenMessageID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribed" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messagesCountExcludingDeleted" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "allMessagesCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "userMessagesCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "actionMessagesCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "initialMessagesInclDeleted" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "initialFetchCount" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewerIsThreadParticipant" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "navigationURL" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolvedTimestamp" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "sharedToSlack" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SlackMirroredThreadInfo" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "loadNewestMessagesToTarget" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "targetMessage" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "ignoreDeleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LoadMessagesResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "replyingUserIDs" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "actionMessageReplyingUserIDs" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MaybeThread" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SlackMirroredThreadInfo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "channel" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LoadMessagesResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messages" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "olderMessagesCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadParticipant" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "lastSeenTimestamp" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribed" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "User" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "displayName" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "fullName" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "shortName" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "profilePictureURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "userType" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UserWithOrgDetails" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "displayName" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "fullName" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "shortName" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "profilePictureURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "userType" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "linkedUserID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "canBeNotifiedOnSlack" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackUserWithMatchingEmail" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PresenceLiveQueryInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "matcher" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "excludeDurable" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "exactMatch" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PresenceLiveQueryData" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "data" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserLocation" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "complete" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UserLiveQueryData" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "users" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "upto" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageThreadsResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threads" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "hasMore" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "token" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Application" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "sharedSecret" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "serverAccessToken" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customerAccessToken" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLinks" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationLinks" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customEmailTemplate" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationEmailTemplate" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "enableEmailNotifications" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customS3Bucket" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "S3BucketVisible" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "segmentWriteKey" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customNUX" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationNUX" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationTierType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "environment" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationEnvironment" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "defaultProvider" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "supportSlackChannelID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "supportBotInfo" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationSupportBotInfo" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "redirectURI" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customerID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "deploymentInfo" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationDeploymentInfo" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "usageMetrics" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metrics" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "days" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "eventWebhookURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "eventWebhookSubscriptions" }, "arguments": [], "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setupInfo" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationConsoleSetupInfo" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationDeploymentInfo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messages" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "users" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "usersSyncedAllTime" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgs" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgsSyncedAllTime" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLocations" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLocationsAllTime" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "reactPackageVersion" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "components" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "componentsInitializedAllTime" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "browsers" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "operatingSystems" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationConsoleSetupInfo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "firstUser" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "firstOrg" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Organization" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isComponentInitialized" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CustomerType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "verified" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sample" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CustomerImplementationStage" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "launched" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "implementing" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "proof_of_concept" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "inactive" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PricingTier" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "free" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pro" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "scale" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "BillingType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "stripe" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "manual" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "BillingStatus" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "active" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "unpaid" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "inactive" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Addon" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "value" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "StripeSubscriptionRecurrence" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "monthly" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "yearly" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "StripeSubscription" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "status" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "startDate" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "currentPeriodStart" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "currentPeriodEnd" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "amount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "recurrence" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StripeSubscriptionRecurrence" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Customer" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "sharedSecret" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CustomerType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "enableCustomS3Bucket" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "enableCustomSegmentWriteKey" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "implementationStage" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CustomerImplementationStage" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "launchDate" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackChannel" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "signupCoupon" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "pricingTier" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PricingTier" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "billingStatus" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BillingStatus" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "billingType" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BillingType" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "stripeCustomerID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "addons" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Addon" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "renewalDate" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "planDescription" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "stripeSubscription" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StripeSubscription" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ConsoleUser" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "email" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "picture" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customerID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customer" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Customer" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "pendingCustomerID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationTierType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "free" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "starter" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "premium" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationEnvironment" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "production" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "staging" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sample" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sampletoken" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "demo" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageContext" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "data" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "providerID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageVisitor" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "lastPresentTimestamp" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "OrgMemberState" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "inactive" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "active" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "deleted" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UserType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "person" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "bot" }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageSource" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageReaction" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "unicodeReaction" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "timestamp" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Task" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "done" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "assignees" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "todos" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Todo" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "doneStatusLastUpdatedBy" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thirdPartyReference" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThirdPartyConnectionType" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskThirdPartyReference" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thirdPartyReferences" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskThirdPartyReference" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Todo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "done" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TaskThirdPartyReference" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThirdPartyConnectionType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "previewData" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "canEdit" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "imported" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThirdPartyConnectionType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "asana" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "jira" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "linear" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "trello" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "monday" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SlackStateLinkingType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "link_org" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ImportedSlackMessageType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "reply" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "supportBotReply" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "action_message" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "user_message" }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageContextInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "data" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "providerID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ViewerIdentity" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "organization" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Organization" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "email" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isSlackConnected" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "organizations" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Organization" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Viewer" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "accessToken" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "groupID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "organization" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Organization" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "inbox" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Inbox" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thirdPartyConnection" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThirdPartyConnectionType" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThirdPartyConnection" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "email" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isSlackConnected" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "deepLinkInfo" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DeepLinkInfo" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Organization" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "domain" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "imageURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "usersWithOrgDetails" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserFilterInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "nameQuery" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortUsersBy" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortUsersDirection" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SortDirection" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserWithOrgDetails" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "state" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "OrganizationState" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "joinableSlackChannels" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SlackChannelSchema" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "joinedSlackChannels" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SlackChannelSchema" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "recentlyActiveThreads" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "linkedOrganization" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LinkedOrganization" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LinkedOrganization" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "usersWithOrgDetails" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserFilterInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "nameQuery" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortUsersBy" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortUsersDirection" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SortDirection" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserWithOrgDetails" } } } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "OrganizationState" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "inactive" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "active" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SlackChannelSchema" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Inbox" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "count" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threads" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadsArchive" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThirdPartyConnection" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "connected" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "oAuthStateToken" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "configuration" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "HeimdallSwitch" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isOn" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "FeatureFlag" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "value" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SimpleValue" } } }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LogEventInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageLoadID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "installationID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "eventNumber" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "clientTimestamp" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "payload" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "logLevel" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LogLevelType" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "customEventMetadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LogLevelType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "error" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "warn" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "info" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "debug" }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "FileAttachmentInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "fileID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Point2DInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "x" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "y" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AnnotationAttachmentInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshotFileID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "blurredScreenshotFileID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DocumentLocationInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLocation" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "customHighlightedTextConfig" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "HighlightedTextConfigInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLabel" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "coordsRelativeToTarget" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Point2DInput" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ScreenshotAttachmentInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshotFileID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "blurredScreenshotFileID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "DocumentLocationInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "selector" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "x" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "y" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "iframeSelectors" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "onChart" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "textConfig" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LocationTextConfigInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "elementIdentifier" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ElementIdentifierInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "multimediaConfig" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MultimediaConfigInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "highlightedTextConfig" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "HighlightedTextConfigInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "additionalTargetData" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdditionalTargetDataInput" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdditionalTargetDataInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "targetType" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TargetType" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "monacoEditor" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MonacoEditorInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "reactTree" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ReactTreeInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "konvaCanvas" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "KonvaCanvasInput" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MonacoEditorInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "monacoID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "lineNumber" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ReactTreeInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "treeID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "prefixCls" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "KonvaCanvasInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "x" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "y" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MultimediaConfigInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "currentTime" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "HighlightedTextConfigInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "startElementSelector" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "endElementSelector" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "startNodeIndex" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "startNodeOffset" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "endNodeIndex" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "endNodeOffset" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "selectedText" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToDisplay" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LocationTextConfigInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "selectedCharOffset" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToMatch" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToMatchOffset" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "nodeIndex" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "xVsPointer" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "yVsPointer" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ElementIdentifierInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "version" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ElementIdentifierVersion" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "identifier" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TaskInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "done" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "assigneeIDs" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "todos" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskTodoInput" } } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "doneStatusUpdate" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskDoneStatusUpdate" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskInputType" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TaskTodoInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "done" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TaskDoneStatusUpdate" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "update" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "remove" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "none" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TaskInputType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "cord" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "asana" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "jira" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "linear" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "trello" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "monday" }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CreateThreadMessageInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageContext" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageContextInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageName" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "createNewThread" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "newMessageMetadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": { "kind": "StringValue", "value": "Only used when createNewThread is true. To update metadata on an existing\nthread, use the setThreadMetadata mutation.", "block": true }, "name": { "kind": "Name", "value": "newThreadMetadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "content" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageContent" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalContent" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageContent" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "fileAttachments" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "FileAttachmentInput" } } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "annotationAttachments" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AnnotationAttachmentInput" } } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshotAttachment" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ScreenshotAttachmentInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshotID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "task" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadOptions" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadOptionsInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalMessageID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageType" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "addReactions" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconURL" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "translationKey" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "createThread" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CreateThreadInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "skipLinkPreviews" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CreateMessageByExternalIDInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalMessageID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "content" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageContent" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageType" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "addReactions" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconURL" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "translationKey" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "createThread" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CreateThreadInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "addFileAttachments" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshotAttachment" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ScreenshotAttachmentInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "skipLinkPreviews" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribeToThread" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UpdateMessageByExternalIDInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalMessageID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "content" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageContent" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageType" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconURL" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "translationKey" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "deleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "addReactions" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "removeReactions" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "addFileAttachments" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "removeFileAttachments" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "skipLinkPreviews" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "removePreviewLinks" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CreateThreadInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "addSubscribers" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadOptionsInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "additionalSubscribersOnCreate" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadByExternalID2Input" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CreateFileResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "uploadURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "downloadURL" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "IDResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": { "kind": "StringValue", "value": "The details of what kind of failure occurred during the operation.", "block": true }, "name": { "kind": "Name", "value": "FailureDetails" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": { "kind": "StringValue", "value": "A code indicating the class of failure encountered.  For each operation,\nthere should be an enumerated list of possible failure codes that can occur\nhere.", "block": true }, "name": { "kind": "Name", "value": "code" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": { "kind": "StringValue", "value": "A message with additional information about the failure.  This should be\nsafe to display to the user, though it may not be ideal.", "block": true }, "name": { "kind": "Name", "value": "message" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SuccessResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "success" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": { "kind": "StringValue", "value": "If success is false, this field may contain additional details about what\nkind of failure occurred.  If success is true, this field should always be\nnull.", "block": true }, "name": { "kind": "Name", "value": "failureDetails" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "FailureDetails" } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "FileUploadStatusEnumType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "uploaded" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "uploading" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "failed" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "cancelled" }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadEvent" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadCreated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadMessageAdded" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadMessageUpdated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadMessageContentAppended" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadMessageRemoved" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadParticipantsUpdatedIncremental" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadTypingUsersUpdated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadShareToSlack" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadPropertiesUpdated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadSubscriberUpdated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadDeleted" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadCreated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadDeleted" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadMessageAdded" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "message" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadMessageUpdated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "message" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadMessageContentAppended" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "appendedContent" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadPropertiesUpdated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadMessageRemoved" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadParticipantsUpdatedIncremental" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "participant" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadParticipant" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadSubscriberUpdated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscriber" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadParticipant" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadTypingUsersUpdated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "users" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadShareToSlack" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "info" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SlackMirroredThreadInfo" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "EphemeralLocation" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "contexts" }, "arguments": [], "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "DurableLocation" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "context" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "timestamp" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "UserLocation" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalUserID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "ephemeral" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "EphemeralLocation" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "durable" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DurableLocation" } }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageEvent" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "PageThreadAdded" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "PageThreadDeleted" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "PageThreadReplyAdded" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "PageVisitorsUpdated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "PageThreadResolved" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "PageThreadUnresolved" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadFilterablePropertiesMatch" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadFilterablePropertiesUnmatch" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageThreadAdded" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageThreadDeleted" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadFilterablePropertiesMatch" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadFilterablePropertiesUnmatch" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageThreadReplyAdded" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "message" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageVisitorsUpdated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "visitors" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageVisitor" } } } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageThreadResolved" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PageThreadUnresolved" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "S3BucketVisible" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "region" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LogoConfigType" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "height" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "width" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "LogoConfigInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "height" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "width" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationEmailTemplate" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "partnerName" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "imageURL" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "sender" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "logoConfig" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LogoConfigType" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationLinks" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "learnMore" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "upgradePlan" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "leaveFeedback" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationColors" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "launcherOpen" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "launcherClose" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "actions" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "presence" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "avatarTint" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "underlay" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationSupportBotInfo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "profilePictureURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PublicApplication" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customLinks" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ComputedCustomLinks" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customNUX" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationNUX" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "environment" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ApplicationEnvironment" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ComputedCustomLinks" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "learnMore" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "upgradePlan" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "leaveFeedback" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CustomNUXStepContent" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "title" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "text" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "imageURL" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ApplicationNUX" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "initialOpen" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CustomNUXStepContent" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "welcome" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CustomNUXStepContent" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "DeepLinkInfo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageID" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminChatUser" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationEvent" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationAdded" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationReadStateUpdated" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationDeleted" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationAdded" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notification" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Notification" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationReadStateUpdated" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notification" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Notification" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationDeleted" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Notification" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "senders" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationSender" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "iconUrl" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "header" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationHeaderNode" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "headerTranslationKey" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "headerSimpleTranslationParams" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SimpleTranslationParameters" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "attachment" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationAttachment" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "readStatus" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationReadStatus" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "timestamp" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationReadStatus" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "unread" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "read" }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationAttachment" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationURLAttachment" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationMessageAttachment" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationThreadAttachment" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationURLAttachment" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationMessageAttachment" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "message" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationThreadAttachment" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationSender" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationPage" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "nodes" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Notification" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "paginationInfo" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PaginationInfo" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationHeaderTextNode" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "text" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "bold" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationHeaderUserNode" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationHeaderNode" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationHeaderTextNode" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationHeaderUserNode" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "NotificationSummary" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "unreadNotificationCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "PaginationInfo" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "endCursor" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "hasNextPage" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminGoRedirect" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "redirectCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminGoRedirectInputType" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Activity" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadSummary" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadActivitySummary" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "ThreadActivitySummary" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "totalThreadCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "unreadThreadCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "newThreadCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "unreadSubscribedThreadCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolvedThreadCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "emptyThreadCount" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TestToken" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "token" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminCRTComingFrom" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "us" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "them" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminCRTDecision" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "done" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "accepted" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "rejected" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pending" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminCRTCommunicationStatus" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "none" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "request_acked" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "decision_sent" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "decision_acked" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminCRTIssueType" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "request" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "bug" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "onboarding_step" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminCRTPriority" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "blocker" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "high" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "low" }, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "AdminCRTNextAction" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "unknown" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "ack_receipt" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "make_decision" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "send_decision" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "do_work" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "wait_for_ack" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "done" }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CustomerIssue" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "customer" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Customer" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "title" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "body" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "comingFrom" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdminCRTComingFrom" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "decision" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdminCRTDecision" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "communicationStatus" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdminCRTCommunicationStatus" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "nextAction" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdminCRTNextAction" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "lastTouch" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "type" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdminCRTIssueType" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "priority" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AdminCRTPriority" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externallyVisible" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "assignee" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "history" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CustomerIssueChange" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribed" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CustomerIssueUpdate" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "field" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "oldValue" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "newValue" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "CustomerIssueChange" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "created" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "updated" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CustomerIssueUpdate" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "timestamp" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } } }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SearchLocationOptions" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "TimestampRange" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "from" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "to" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DateTime" } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "EnumTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SearchSortByOptions" }, "directives": [], "values": [{ "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "created_timestamp" }, "directives": [] }, { "kind": "EnumValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "relevance" }, "directives": [] }] }, { "kind": "InputObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SearchSortInput" }, "directives": [], "fields": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortBy" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SearchSortByOptions" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortDirection" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SortDirection" } } }, "defaultValue": void 0, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "MessageLinkPreview" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "title" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "description" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "img" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "UnionTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "OrgMemberEvent" }, "directives": [], "types": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "OrgMemberAdded" } }, { "kind": "NamedType", "name": { "kind": "Name", "value": "OrgMemberRemoved" } }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "OrgMemberAdded" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "user" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "OrgMemberRemoved" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalUserID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "OrgMembersResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "users" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "hasMore" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "token" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "SlackConnectedResult" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isOrgConnected" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "isUserConnected" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Query" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewer" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Viewer" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewerIdentity" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ViewerIdentity" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "organization" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Organization" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "organizationByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Organization" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "task" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Task" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "users" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "ids" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "usersByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalIDs" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "User" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "ping" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "thread" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Thread" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadByExternalID2" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadByExternalID2Input" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MaybeThread" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadsAtLocation" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadFilterInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sort" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadSortInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "limit" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "after" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageThreadsResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "application" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "token" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PublicApplication" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "featureFlags" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "keys" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "FeatureFlag" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "annotationsOnPage" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageContext" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageContextInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "includeDeleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AnnotationsOnPage" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notifications" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "first" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "after" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationFilterInput" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationPage" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Notification" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "activity" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageContext" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageContextInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewer" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ViewerThreadFilter" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Activity" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationSummary" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationFilterInput" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationSummary" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageContentSearch" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "textToMatch" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "authorExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "locationOptions" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SearchLocationOptions" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "timestampRange" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TimestampRange" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "limit" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortBy" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SearchSortByOptions" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "sortDirection" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SortDirection" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Message" } } } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgMembersByExternalIDPaginated" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalOrgID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "after" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "limit" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "OrgMembersResult" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Mutation" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "logEvents" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "events" }, "type": { "kind": "NonNullType", "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "LogEventInput" } } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "logDeprecation" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "createThreadMessage" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CreateThreadMessageInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "createMessageByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CreateMessageByExternalIDInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "updateMessage" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "content" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MessageContent" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "fileAttachments" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "FileAttachmentInput" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "annotationAttachments" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AnnotationAttachmentInput" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "deleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "task" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "TaskInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "updateMessageByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UpdateMessageByExternalIDInput" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "updateThreadByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "extraClassnames" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "typing" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "createFile" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "mimeType" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "size" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "provider" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "application" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CreateFileResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "refreshFileUploadURL" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "size" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Int" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setTyping" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "typing" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setPresentContext" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "context" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "present" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "durable" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "exclusivityRegion" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSONObject" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "markThreadSeen" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "markThreadUnseenFromExternalMessageID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalMessageID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "markThreadsSeen" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "MarkThreadsSeenInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "clearNotificationsForMessage" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "byExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "createMessageReaction" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "unicodeReaction" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "deleteMessageReaction" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "reactionID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "addThreadToSlackChannel" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackChannelID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "installBot" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "byExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setPreference" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "key" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "value" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setFileUploadStatus" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "id" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "status" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "FileUploadStatusEnumType" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setSubscribed" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribed" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setSubscribedByExternalID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "subscribed" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "disconnectThirdParty" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "connectionType" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThirdPartyConnectionType" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setDeepLinkThreadID" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "clearDeepLinkThreadID" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setAnnotationVisible" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "annotationID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "visible" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "resetUserHiddenAnnotations" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setThreadResolved" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "unlinkOrgs" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "shareThreadToEmail" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "email" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "screenshotID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "byExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "sendSampleWelcomeMessage" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "messageLocation" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "url" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "markNotificationAsRead" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "byExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "markNotificationAsUnread" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationExternalID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "markAllNotificationsAsRead" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationFilterInput" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "deleteNotification" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "byExternalID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setThreadName" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "name" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "setThreadMetadata" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "hideLinkPreview" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "linkPreviewID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "createThread" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalThreadID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "CreateThreadInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SuccessResult" } } }, "directives": [] }] }, { "kind": "ObjectTypeDefinition", "description": void 0, "name": { "kind": "Name", "value": "Subscription" }, "interfaces": [], "directives": [], "fields": [{ "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadEvents" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadEvent" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "inbox" }, "arguments": [], "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Inbox" } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "presenceLiveQuery" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "input" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PresenceLiveQueryInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PresenceLiveQueryData" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "userLiveQuery" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "since" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UserLiveQueryData" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageEventsWithLocation" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "location" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Context" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadFilterInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageEvent" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "preferencesLiveQuery" }, "arguments": [], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JsonObjectReducerData" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewerIdentityLiveQuery" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ViewerIdentity" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "annotationsOnPageUpdated" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageContext" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageContextInput" } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "includeDeleted" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AnnotationsOnPage" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "threadActivitySummary" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "pageContext" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageContextInput" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "partialMatch" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "metadata" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Metadata" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "viewer" }, "type": { "kind": "ListType", "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ViewerThreadFilter" } } } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "resolved" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }, "defaultValue": void 0, "directives": [] }, { "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "_externalOrgID" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ThreadActivitySummary" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationEvents" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationFilterInput" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationEvent" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "notificationSummaryUpdated" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "filter" }, "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationFilterInput" } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NotificationSummary" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgMembersByExternalIDUpdated" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "externalOrgID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "OrgMemberEvent" } } }, "directives": [] }, { "kind": "FieldDefinition", "description": void 0, "name": { "kind": "Name", "value": "slackConnectedLiveQuery" }, "arguments": [{ "kind": "InputValueDefinition", "description": void 0, "name": { "kind": "Name", "value": "orgID" }, "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "UUID" } } }, "defaultValue": void 0, "directives": [] }], "type": { "kind": "NonNullType", "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SlackConnectedResult" } } }, "directives": [] }] }], "loc": { "start": 0, "end": 31824 } };
-var schema_default2 = documentNode;
+var schema_default = documentNode;
 
 // server/src/public/queries/viewer_identity.ts
 var viewerIdentityQueryResolver = () => ({});
@@ -41414,7 +42280,7 @@ var allResolvers = {
 };
 var apolloResolvers = allResolvers;
 var graphQLSchema = makeExecutableSchema({
-  typeDefs: schema_default2,
+  typeDefs: schema_default,
   resolvers: apolloResolvers
 });
 
@@ -41763,7 +42629,7 @@ function getMessageData({
 }
 function externalizeMessageContent(content, userByInternalID) {
   return content.map((node) => {
-    if (node.type === "mention" /* MENTION */) {
+    if (node.type === import_types2.MessageNodeType.MENTION) {
       const user = userByInternalID(node.user.id);
       const id = user?.externalID ? user.externalID : externalizeID(node.user.id);
       return {
@@ -42389,6 +43255,7 @@ async function streamPartialDump(output, dbconfig, customerID) {
         return Promise.reject(error);
       }
     });
+    output.write("SET search_path = cord, public;\n\n");
     output.write("BEGIN;\n\n");
     await streamPartialDumpImpl(output, pg, customerID);
     output.write("\n\nCOMMIT;\n");
@@ -42694,21 +43561,24 @@ async function CopyFilesHandler(req, res) {
   const filesToCopy = files.filter((f) => !s3Contents.has(f.id));
   const credentialsCache = /* @__PURE__ */ new Map();
   let copied = 0;
-  await doCopy(filesToCopy[copied], bucket, credentialsCache);
+  await doCopy(filesToCopy[copied], region, bucket, credentialsCache);
   copied++;
   const promises = [];
   for (; copied < limit && copied < filesToCopy.length; copied++) {
-    promises.push(doCopy(filesToCopy[copied], bucket, credentialsCache));
+    promises.push(
+      doCopy(filesToCopy[copied], region, bucket, credentialsCache)
+    );
   }
   await Promise.all(promises);
   return res.status(200).json({
     copied
   });
 }
-async function doCopy(fileToCopy, bucket, credentialsCache) {
+async function doCopy(fileToCopy, region, bucket, credentialsCache) {
   const config = await getConfigForCopy(fileToCopy, credentialsCache);
   const srcClient = new S3Client({
-    endpoint: Env_default.S3_ENDPOINT.replace("<REGION>", config.region),
+    region,
+    endpoint: Env_default.S3_ENDPOINT.replace("<REGION>", region),
     ...config.accessKeyID && config.accessKeySecret && {
       credentials: {
         accessKeyId: config.accessKeyID,
@@ -44494,7 +45364,7 @@ function deserializeElement(element, excludeRichContent, parentTypes, listType) 
   );
   if (isParagraphElement) {
     if (!inParagraphAlready) {
-      return createElement("p" /* PARAGRAPH */, children);
+      return createElement(import_types2.MessageNodeType.PARAGRAPH, children);
     } else {
       return children;
     }
@@ -44503,14 +45373,14 @@ function deserializeElement(element, excludeRichContent, parentTypes, listType) 
     case "BODY":
       return jsx("fragment", {}, children);
     case "BLOCKQUOTE":
-      return createElement("quote" /* QUOTE */, children);
+      return createElement(import_types2.MessageNodeType.QUOTE, children);
     case "PRE":
-      return createElement("code" /* CODE */, children);
+      return createElement(import_types2.MessageNodeType.CODE, children);
     case "LI":
       if (listType === "OL") {
         return createElement(
-          "number_bullet" /* NUMBER_BULLET */,
-          [createElement("p" /* PARAGRAPH */, children)],
+          import_types2.MessageNodeType.NUMBER_BULLET,
+          [createElement(import_types2.MessageNodeType.PARAGRAPH, children)],
           {
             bulletNumber: 0,
             // This will get fixed up by withBullets
@@ -44519,8 +45389,8 @@ function deserializeElement(element, excludeRichContent, parentTypes, listType) 
         );
       } else {
         return createElement(
-          "bullet" /* BULLET */,
-          [createElement("p" /* PARAGRAPH */, children)],
+          import_types2.MessageNodeType.BULLET,
+          [createElement(import_types2.MessageNodeType.PARAGRAPH, children)],
           {
             indent: parentTypes.filter((p) => p === "OL" || p === "UL").length - 1
           }
@@ -44559,13 +45429,13 @@ function mergeInlineNodesIntoParagraphs(nodes) {
   const mergedNodes = [];
   let nodesToMerge = [];
   for (const node of nodes) {
-    const inlineNode = !node.type || node.type === "link" /* LINK */ || node.type === "mention" /* MENTION */;
+    const inlineNode = !node.type || node.type === import_types2.MessageNodeType.LINK || node.type === import_types2.MessageNodeType.MENTION;
     if (inlineNode) {
       nodesToMerge.push(node);
     } else {
       if (nodesToMerge.length) {
         mergedNodes.push({
-          type: "p" /* PARAGRAPH */,
+          type: import_types2.MessageNodeType.PARAGRAPH,
           children: nodesToMerge
         });
         nodesToMerge = [];
@@ -44575,17 +45445,17 @@ function mergeInlineNodesIntoParagraphs(nodes) {
   }
   if (nodesToMerge.length) {
     mergedNodes.push({
-      type: "p" /* PARAGRAPH */,
+      type: import_types2.MessageNodeType.PARAGRAPH,
       children: nodesToMerge
     });
   }
   return mergedNodes;
 }
 function cleanTopLevelNode(node, reduceNewlines) {
-  if (isMessageNodeType(node, "p" /* PARAGRAPH */)) {
+  if (isMessageNodeType(node, import_types2.MessageNodeType.PARAGRAPH)) {
     const { children } = node;
     const paragraphNode = {
-      type: "p" /* PARAGRAPH */,
+      type: import_types2.MessageNodeType.PARAGRAPH,
       children: []
     };
     const nodes = [paragraphNode];
@@ -44613,7 +45483,7 @@ function cleanTopLevelNode(node, reduceNewlines) {
               }
               startChar = i + 1;
               nodes.push({
-                type: "p" /* PARAGRAPH */,
+                type: import_types2.MessageNodeType.PARAGRAPH,
                 children: []
               });
             }
@@ -44626,7 +45496,7 @@ function cleanTopLevelNode(node, reduceNewlines) {
     const nodesToAdd = nodes.filter((node2) => node2.children.length);
     return nodesToAdd.length ? nodesToAdd : [];
   } else {
-    const isBullet = isMessageNodeType(node, "bullet" /* BULLET */) || isMessageNodeType(node, "number_bullet" /* NUMBER_BULLET */);
+    const isBullet = isMessageNodeType(node, import_types2.MessageNodeType.BULLET) || isMessageNodeType(node, import_types2.MessageNodeType.NUMBER_BULLET);
     if (isBullet) {
       for (const child of node.children) {
         if ("text" in child) {
@@ -44696,7 +45566,7 @@ async function structuredMessageFromSlackMrkdwn(mrkdwn, viewer) {
 // server/src/admin/routes/SlackLoginHandler.ts
 import * as url4 from "url";
 import * as Slack3 from "@slack/web-api";
-import * as jwt10 from "jsonwebtoken";
+import * as jwt9 from "jsonwebtoken";
 import * as cookie5 from "cookie";
 var slackClient = new Slack3.WebClient();
 var SLACK_LOGIN_ROUTE = "login/slack";

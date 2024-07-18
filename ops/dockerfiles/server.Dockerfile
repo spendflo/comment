@@ -61,8 +61,9 @@ EXPOSE 8171
 # Public downloads app
 EXPOSE 8147 
 
+# app server
+EXPOSE 8179
+
 WORKDIR /radical
 
 RUN npm install sharp
-
-CMD ["npm", "run" ,"start-server-prod"]
