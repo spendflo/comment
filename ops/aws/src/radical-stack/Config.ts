@@ -6,6 +6,27 @@ export const AWS_REGION = 'eu-west-2';
 // Default resource owner, used for tagging resources with tags that Vanta reads
 export const DEFAULT_OWNER = 'dmmiller@cord.com';
 
+// The user group that is allowed to ssh to EC2 instances
+export const EC2_INSTANCE_CONNECT_GROUP = 'engineering';
+
+// The email address to send ops notifications to
+export const OPS_NOTIFICATION_EMAIL = 'YOUR_EMAIL_HERE';
+
+// S3 bucket names have to be globally unique, so prefix all bucket names with
+// this string
+export const S3_BUCKET_PREFIX = '';
+
+// AWS sets up a default VPC and security group in each region, and you're not
+// able to create replacements with exactly the same properties in CF, so
+// instead we import them by ID.  Replace these with the IDs of the objects that
+// AWS creates for you.
+export const DEFAULT_VPC_ID = 'vpc-1f773277';
+export const DEFAULT_SECURITY_GROUP_ID = 'sg-11eaac72';
+export const DEFAULT_PUBLIC_SUBNET_A_ID = 'subnet-c0ae25ba';
+export const DEFAULT_PUBLIC_SUBNET_B_ID = 'subnet-f177a9bd';
+export const DEFAULT_PUBLIC_SUBNET_C_ID = 'subnet-b086c9d9';
+export const DEFAULT_VPC_ID_US_EAST_1 = 'vpc-54696e2e';
+
 // all the domains under which we serve the product
 export const CORD_COM_DOMAINS = [
   'cord.com',
@@ -14,8 +35,9 @@ export const CORD_COM_DOMAINS = [
   'cord.fyi',
 ];
 
-// Web site domain name
-export const WEB_SITE_DOMAIN = 'cord.com';
+// The domain name we want all requests to be redirected to, and that serves as
+// the base for all other domains (eg, api., app.)
+export const PRIMARY_DOMAIN_NAME = CORD_COM_DOMAINS[0];
 
 // domains for which we set up gmail
 export const GMAIL_DOMAINS = ['cord.com', 'cord.so', 'getradical.co'];
