@@ -16,6 +16,13 @@ import yargs from "yargs";
 
 // ops/aws/src/radical-stack/Config.ts
 var AWS_REGION = "eu-west-2";
+var CORD_COM_DOMAINS = [
+  "cord.com",
+  "getradical.co",
+  "cord.so",
+  "cord.fyi"
+];
+var PRIMARY_DOMAIN_NAME = CORD_COM_DOMAINS[0];
 
 // server/src/config/MagicEnv.ts
 var RequiredVariable = class {
