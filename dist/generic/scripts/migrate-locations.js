@@ -2493,7 +2493,7 @@ var package_default = {
     "watch-server": "./build/index.mjs --mode=development --watch --target=server",
     "db-ssh-tunnel": "lsof -i '@localhost:15432' >/dev/null || ssh -f -N -L 15432:database-prod-read.int.cord.com:5432 zero",
     "db-ssh-tunnel-write": "lsof -i '@localhost:25432' >/dev/null || ssh -f -N -L 25432:database-prod.int.cord.com:5432 zero",
-    "start-external-dev": "http-server ./dist/external -c-1 -a :: --silent --port 8179 --cors --ssl --key ./localhost/localhost.key --cert ./localhost/localhost.crt",
+    "start-external-dev": "http-server ./dist/external -c-1 -a :: --silent --port 8179",
     "start-local-s3": "cat ./localhost/localhost.key ./localhost/localhost.crt > ./localhost/localhost.packed && cd ops && docker-compose up localstack",
     "start-postgres": ". ./.env && export POSTGRES_USER POSTGRES_DB POSTGRES_PORT POSTGRES_PASSWORD && cd ops && docker-compose up postgres",
     "start-redis": "cd ops && docker-compose up redis",
