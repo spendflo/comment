@@ -1,4 +1,4 @@
-import type { Redis as RedisClient } from 'ioredis';
+import type { Cluster } from 'ioredis';
 import Redis from 'ioredis';
 import Redlock from 'redlock';
 
@@ -8,7 +8,7 @@ import { anonymousLogger } from 'server/src/logging/Logger.ts';
 
 const compareAndDelete = 'compareAndDelete';
 const incrAndExpire = 'incrAndExpire';
-type RedisWithOurCommands = RedisClient & {
+type RedisWithOurCommands = Cluster & {
   // see defineCommand in initRedis
   // compareAndDelete() executes a Lua script as a single transaction on redis
   // that deletes the key if the value stored under the key matches the
@@ -43,7 +43,7 @@ export function getRedlock(): Redlock {
   return redlock;
 }
 
-function addOurCommands(redisClient: RedisClient) {
+function addOurCommands(redisClient: Cluster) {
   redisClient.defineCommand(compareAndDelete, {
     numberOfKeys: 1,
     lua: `
@@ -81,12 +81,24 @@ export function initRedis() {
   redlock = new Redlock([redis]);
 }
 
-export function createRedisClient(): RedisClient {
-  return new Redis.default(Number(env.REDIS_PORT), env.REDIS_HOST);
+export function createRedisClient(): Cluster {
+  const redisCluster: Cluster = new Redis.Cluster([{port: Number(env.REDIS_PORT), host: env.REDIS_HOST}]);
+  redisCluster.connect().then(() => {
+    return redisCluster;
+  }).catch((err) => {
+    console.log(err);
+  });
+  return redisCluster;
 }
 
-export function createPredisClient(): RedisClient {
-  return new Redis.default(Number(env.PREDIS_PORT), env.PREDIS_HOST);
+export function createPredisClient(): Cluster {
+  const redisCluster: Cluster = new Redis.Cluster([{port: Number(env.REDIS_PORT), host: env.REDIS_HOST}]);
+  redisCluster.connect().then(() => {
+    return redisCluster;
+  }).catch((err) => {
+    console.log(err);
+  });
+  return redisCluster;
 }
 
 // This is a helper function to check for errors after a Redis MULTI

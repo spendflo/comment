@@ -40,7 +40,7 @@ COPY \
 # being cached by Docker.)
 RUN apk upgrade --no-cache
 
-ENV NODE_ENV=development
+ENV NODE_ENV=production
 ENV NODE_OPTIONS=--max_old_space_size=3072
 
 # Status APP
